@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nyanyachi.github.io/nyanya-mini-games/sitemap.xml
+Sitemap: https://nyanya-mini-games.pages.dev/sitemap.xml

@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nyanyachi.github.io/nyanya-mini-games/</loc>
+    <loc>https://nyanya-mini-games.pages.dev/</loc>
   </url>
   <url>
-    <loc>https://nyanyachi.github.io/nyanya-mini-games/games/apple-clicker.html</loc>
+    <loc>https://nyanya-mini-games.pages.dev/games.html</loc>
   </url>
   <url>
-    <loc>https://nyanyachi.github.io/nyanya-mini-games/about.html</loc>
+    <loc>https://nyanya-mini-games.pages.dev/games/apple-clicker.html</loc>
   </url>
   <url>
-    <loc>https://nyanyachi.github.io/nyanya-mini-games/privacy.html</loc>
+    <loc>https://nyanya-mini-games.pages.dev/games/rock-paper-scissors.html</loc>
   </url>
   <url>
-    <loc>https://nyanyachi.github.io/nyanya-mini-games/terms.html</loc>
+    <loc>https://nyanya-mini-games.pages.dev/about.html</loc>
   </url>
   <url>
-    <loc>https://nyanyachi.github.io/nyanya-mini-games/contact.html</loc>
+    <loc>https://nyanya-mini-games.pages.dev/contact.html</loc>
+  </url>
+  <url>
+    <loc>https://nyanya-mini-games.pages.dev/privacy.html</loc>
+  </url>
+  <url>
+    <loc>https://nyanya-mini-games.pages.dev/terms.html</loc>
   </url>
 </urlset>
