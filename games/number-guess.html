@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock Paper Scissors - Nyanya Mini Games</title>
-  <meta name="description" content="Play Rock Paper Scissors online for free. Challenge the computer, track your wins, losses, and draws, and enjoy a simple browser game.">
-  <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/rock-paper-scissors.html" />
+  <title>Number Guess - Nyanya Mini Games</title>
+  <meta name="description" content="Guess the hidden number between 1 and 100. Challenge yourself, track your attempts, and try to beat your best score.">
+  <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/number-guess.html" />
   <link rel="stylesheet" href="../css/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
 crossorigin="anonymous"></script>
@@ -27,45 +27,45 @@ crossorigin="anonymous"></script>
 
   <main>
     <section class="page-title">
-      <p class="eyebrow">Classic mini game</p>
-      <h1>Rock Paper Scissors</h1>
-      <p>Choose rock, paper, or scissors. The computer picks one too, and the winner is shown instantly.</p>
+      <p class="eyebrow">Logic mini game</p>
+      <h1>Number Guess</h1>
+      <p>Guess the hidden number from 1 to 100. Each hint brings you closer to the answer.</p>
     </section>
 
     <aside class="ad-banner ad-before-game" aria-label="Advertisement">
       Advertisement
     </aside>
 
-    <section class="game-shell" aria-labelledby="rock-paper-scissors-title">
+    <section class="game-shell" aria-labelledby="number-guess-title">
       <div class="game-panel">
-        <h2 id="rock-paper-scissors-title">Rock Paper Scissors</h2>
-        <p class="game-description">Rock beats scissors, scissors beats paper, and paper beats rock.</p>
+        <h2 id="number-guess-title">Number Guess</h2>
+        <p class="game-description">Enter a number between 1 and 100. Try to find the answer in as few attempts as possible.</p>
 
         <div class="score-board" aria-live="polite">
           <div>
-            <span class="score-label">Wins</span>
-            <strong id="wins">0</strong>
+            <span class="score-label">Attempts</span>
+            <strong id="attempts">0</strong>
           </div>
           <div>
-            <span class="score-label">Losses</span>
-            <strong id="losses">0</strong>
+            <span class="score-label">Best</span>
+            <strong id="best-score">--</strong>
           </div>
           <div>
-            <span class="score-label">Draws</span>
-            <strong id="draws">0</strong>
+            <span class="score-label">Range</span>
+            <strong>1-100</strong>
           </div>
         </div>
 
-        <div class="choice-buttons" aria-label="Choose your move">
-          <button class="button primary" type="button" data-choice="rock">Rock</button>
-          <button class="button primary" type="button" data-choice="paper">Paper</button>
-          <button class="button primary" type="button" data-choice="scissors">Scissors</button>
-        </div>
+        <form id="guess-form" class="guess-form">
+          <label class="score-label" for="guess-input">Your Guess</label>
+          <input id="guess-input" class="guess-input" type="number" min="1" max="100" required>
+          <button class="button primary" type="submit">Guess</button>
+        </form>
 
-        <p id="round-message" class="game-message" aria-live="polite">Make your choice to start.</p>
-        <p id="choice-message" class="choice-message" aria-live="polite"></p>
+        <p id="guess-message" class="game-message" aria-live="polite">Make your first guess.</p>
 
         <div class="game-actions">
+          <button id="new-game-button" class="button primary" type="button">New Game</button>
           <button id="reset-statistics-button" class="button secondary" type="button">Reset Statistics</button>
         </div>
       </div>
@@ -86,6 +86,6 @@ crossorigin="anonymous"></script>
     </nav>
   </footer>
 
-  <script src="../js/rock-paper-scissors.js"></script>
+  <script src="../js/number-guess.js"></script>
 </body>
 </html>

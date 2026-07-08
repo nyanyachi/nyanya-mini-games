@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apple Clicker | Cute Free Clicker Game | Nyanya Mini Games</title>
-  <meta name="description" content="Play Apple Clicker, a cute free browser clicker game from Nyanya Mini Games. Click apples, save your best score, reset anytime, and buy upgrades.">
-  <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/apple-clicker.html" />
+  <title>Reaction Test - Nyanya Mini Games</title>
+  <meta name="description" content="Test your reaction speed online for free. Wait for the signal, click as fast as you can, and try to beat your best reaction time.">
+  <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/reaction-test.html" />
   <link rel="stylesheet" href="../css/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
 crossorigin="anonymous"></script>
@@ -27,42 +27,42 @@ crossorigin="anonymous"></script>
 
   <main>
     <section class="page-title">
-      <p class="eyebrow">First mini game</p>
-      <h1>Apple Clicker</h1>
-      <p>Tap the apple, collect points, and upgrade your click power.</p>
+      <p class="eyebrow">Speed mini game</p>
+      <h1>Reaction Test</h1>
+      <p>Press start, wait for the signal, then click as fast as you can when the button says Click now.</p>
     </section>
 
     <aside class="ad-banner ad-before-game" aria-label="Advertisement">
       Advertisement
     </aside>
 
-    <section class="game-shell" aria-labelledby="apple-clicker-title">
+    <section class="game-shell" aria-labelledby="reaction-test-title">
       <div class="game-panel">
-        <h2 id="apple-clicker-title">Apple Clicker</h2>
+        <h2 id="reaction-test-title">Reaction Test</h2>
+        <p class="game-description">Click Start, wait without clicking early, then tap the signal to record your reaction time.</p>
+
         <div class="score-board" aria-live="polite">
           <div>
-            <span class="score-label">Score</span>
-            <strong id="score">0</strong>
+            <span class="score-label">Latest</span>
+            <strong id="latest-time">--</strong>
           </div>
           <div>
             <span class="score-label">Best</span>
-            <strong id="best-score">0</strong>
+            <strong id="best-time">--</strong>
           </div>
           <div>
-            <span class="score-label">Per click</span>
-            <strong id="points-per-click">1</strong>
+            <span class="score-label">Attempts</span>
+            <strong id="attempts">0</strong>
           </div>
         </div>
 
-        <button id="apple-button" class="apple-button" type="button" aria-label="Click apple to gain points">
-          <span aria-hidden="true">Apple</span>
-        </button>
+        <button id="reaction-button" class="reaction-button" type="button">Start</button>
+
+        <p id="reaction-message" class="game-message" aria-live="polite">Start a round when you are ready.</p>
 
         <div class="game-actions">
-          <button id="upgrade-button" class="button primary" type="button">Upgrade: 50 points</button>
-          <button id="reset-button" class="button secondary" type="button">Reset</button>
+          <button id="reset-stats-button" class="button secondary" type="button">Reset Stats</button>
         </div>
-        <p id="game-message" class="game-message" aria-live="polite">Each click gives 1 point.</p>
       </div>
     </section>
 
@@ -81,6 +81,6 @@ crossorigin="anonymous"></script>
     </nav>
   </footer>
 
-  <script src="../js/apple-clicker.js"></script>
+  <script src="../js/reaction-test.js"></script>
 </body>
 </html>

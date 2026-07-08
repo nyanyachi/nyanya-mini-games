@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock Paper Scissors - Nyanya Mini Games</title>
-  <meta name="description" content="Play Rock Paper Scissors online for free. Challenge the computer, track your wins, losses, and draws, and enjoy a simple browser game.">
-  <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/rock-paper-scissors.html" />
+  <title>Memory Match - Nyanya Mini Games</title>
+  <meta name="description" content="Play Memory Match online for free. Flip cards, find matching pairs, track your moves, and try to beat your best score.">
+  <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/memory-match.html" />
   <link rel="stylesheet" href="../css/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
 crossorigin="anonymous"></script>
@@ -27,45 +27,41 @@ crossorigin="anonymous"></script>
 
   <main>
     <section class="page-title">
-      <p class="eyebrow">Classic mini game</p>
-      <h1>Rock Paper Scissors</h1>
-      <p>Choose rock, paper, or scissors. The computer picks one too, and the winner is shown instantly.</p>
+      <p class="eyebrow">Memory mini game</p>
+      <h1>Memory Match</h1>
+      <p>Flip cards, remember their symbols, and match all four pairs in as few moves as possible.</p>
     </section>
 
     <aside class="ad-banner ad-before-game" aria-label="Advertisement">
       Advertisement
     </aside>
 
-    <section class="game-shell" aria-labelledby="rock-paper-scissors-title">
+    <section class="game-shell" aria-labelledby="memory-match-title">
       <div class="game-panel">
-        <h2 id="rock-paper-scissors-title">Rock Paper Scissors</h2>
-        <p class="game-description">Rock beats scissors, scissors beats paper, and paper beats rock.</p>
+        <h2 id="memory-match-title">Memory Match</h2>
+        <p class="game-description">Choose two cards at a time. Matching pairs stay revealed, while misses flip back after a moment.</p>
 
         <div class="score-board" aria-live="polite">
           <div>
-            <span class="score-label">Wins</span>
-            <strong id="wins">0</strong>
+            <span class="score-label">Moves</span>
+            <strong id="moves">0</strong>
           </div>
           <div>
-            <span class="score-label">Losses</span>
-            <strong id="losses">0</strong>
+            <span class="score-label">Matches</span>
+            <strong id="matches">0</strong>
           </div>
           <div>
-            <span class="score-label">Draws</span>
-            <strong id="draws">0</strong>
+            <span class="score-label">Best Moves</span>
+            <strong id="best-moves">--</strong>
           </div>
         </div>
 
-        <div class="choice-buttons" aria-label="Choose your move">
-          <button class="button primary" type="button" data-choice="rock">Rock</button>
-          <button class="button primary" type="button" data-choice="paper">Paper</button>
-          <button class="button primary" type="button" data-choice="scissors">Scissors</button>
-        </div>
+        <div id="memory-board" class="memory-board" aria-label="Memory cards"></div>
 
-        <p id="round-message" class="game-message" aria-live="polite">Make your choice to start.</p>
-        <p id="choice-message" class="choice-message" aria-live="polite"></p>
+        <p id="memory-message" class="game-message" aria-live="polite">Find all 4 matching pairs.</p>
 
         <div class="game-actions">
+          <button id="new-game-button" class="button primary" type="button">New Game</button>
           <button id="reset-statistics-button" class="button secondary" type="button">Reset Statistics</button>
         </div>
       </div>
@@ -86,6 +82,6 @@ crossorigin="anonymous"></script>
     </nav>
   </footer>
 
-  <script src="../js/rock-paper-scissors.js"></script>
+  <script src="../js/memory-match.js"></script>
 </body>
 </html>
