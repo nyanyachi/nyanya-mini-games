@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nyanya Mini Games | Cute Free Mini Games Online</title>
-  <meta name="description" content="Play cute, lightweight browser mini games at Nyanya Mini Games. Enjoy Apple Clicker and Rock Paper Scissors now, with Sudoku and Memory Match coming soon.">
+  <title>Games - Nyanya Mini Games</title>
+  <meta name="description" content="Browse free browser games on Nyanya Mini Games, including Apple Clicker, Rock Paper Scissors, and upcoming simple games.">
   <link rel="stylesheet" href="css/style.css">
-  <meta name="google-site-verification" content="Rbl2ouPE6BItLJ-Yy7ChNuDwNsZfv4y-uBACmeNN7Q8" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
 crossorigin="anonymous"></script>
 </head>
@@ -17,8 +16,8 @@ crossorigin="anonymous"></script>
       <span>Nyanya Mini Games</span>
     </a>
     <nav class="site-nav" aria-label="Main navigation">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="games.html">Games</a>
+      <a href="index.html">Home</a>
+      <a href="games.html" aria-current="page">Games</a>
       <a href="games/apple-clicker.html">Apple Clicker</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
@@ -26,37 +25,35 @@ crossorigin="anonymous"></script>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">Tiny games, happy breaks</p>
-        <h1>Nyanya Mini Games</h1>
-        <p>Simple, cute browser games made for quick play on phone, tablet, or desktop.</p>
-        <a class="button primary" href="games/apple-clicker.html">Play Apple Clicker</a>
-      </div>
-      <div class="hero-art" aria-hidden="true">
-        <span class="apple apple-one">Apple</span>
-        <span class="sparkle sparkle-one">*</span>
-        <span class="apple apple-two">Apple</span>
-        <span class="sparkle sparkle-two">*</span>
-      </div>
+    <section class="page-title">
+      <p class="eyebrow">Mini game library</p>
+      <h1>Games</h1>
+      <p>Browse all available and upcoming Nyanya Mini Games in one place. Pick a game to play now or see what is coming next.</p>
     </section>
 
     <aside class="ad-banner" aria-label="Advertisement">
       Advertisement
     </aside>
 
-    <section class="content-section" id="games">
+    <section class="content-section" aria-labelledby="games-list-title">
       <div class="section-heading">
-        <p class="eyebrow">Games</p>
-        <h2>Pick a game</h2>
-        <a class="button secondary" href="games.html">View all games</a>
+        <p class="eyebrow">All games</p>
+        <h2 id="games-list-title">Choose a mini game</h2>
       </div>
       <div class="game-grid">
         <article class="game-card">
           <div class="game-icon" aria-hidden="true">Apple</div>
+          <span class="status-pill">Available</span>
           <h3>Apple Clicker</h3>
           <p>Click the apple, grow your score, and buy upgrades for bigger taps.</p>
           <a class="button secondary" href="games/apple-clicker.html">Play now</a>
+        </article>
+        <article class="game-card">
+          <div class="game-icon text-icon" aria-hidden="true">RPS</div>
+          <span class="status-pill">Available</span>
+          <h3>Rock Paper Scissors</h3>
+          <p>Choose your move, challenge the computer, and track your record.</p>
+          <a class="button secondary" href="games/rock-paper-scissors.html">Play now</a>
         </article>
         <article class="game-card coming-soon" aria-label="Sudoku coming soon">
           <div class="game-icon text-icon" aria-hidden="true">123</div>
@@ -64,11 +61,11 @@ crossorigin="anonymous"></script>
           <h3>Sudoku</h3>
           <p>A calm number puzzle for focused little breaks.</p>
         </article>
-        <article class="game-card">
-          <div class="game-icon text-icon" aria-hidden="true">RPS</div>
-          <h3>Rock Paper Scissors</h3>
-          <p>Choose your move, challenge the computer, and track your record.</p>
-          <a class="button secondary" href="games/rock-paper-scissors.html">Play now</a>
+        <article class="game-card coming-soon" aria-label="Reaction Test coming soon">
+          <div class="game-icon text-icon" aria-hidden="true">Go</div>
+          <span class="status-pill">Coming Soon</span>
+          <h3>Reaction Test</h3>
+          <p>Tap fast when the screen changes and chase your best time.</p>
         </article>
         <article class="game-card coming-soon" aria-label="Memory Match coming soon">
           <div class="game-icon text-icon" aria-hidden="true">Pair</div>

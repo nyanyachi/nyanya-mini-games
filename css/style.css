@@ -445,6 +445,19 @@ a:focus-visible {
   margin-top: 2rem;
 }
 
+.choice-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.game-description,
+.choice-message {
+  margin: 0;
+  color: var(--muted);
+}
+
 .game-message {
   min-height: 1.5rem;
   margin: 1rem 0 0;
@@ -499,6 +512,10 @@ a:focus-visible {
   }
 
   .game-actions .button {
+    width: 100%;
+  }
+
+  .choice-buttons .button {
     width: 100%;
   }
 }

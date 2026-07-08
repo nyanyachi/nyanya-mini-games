@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors - Nyanya Mini Games</title>
+  <meta name="description" content="Play Rock Paper Scissors online for free. Challenge the computer, track your wins, losses, and draws, and enjoy a simple browser game.">
+  <link rel="stylesheet" href="../css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
+crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Nyanya Mini Games home">
+      <span class="brand-mark">N</span>
+      <span>Nyanya Mini Games</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
+      <a href="apple-clicker.html">Apple Clicker</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <p class="eyebrow">Classic mini game</p>
+      <h1>Rock Paper Scissors</h1>
+      <p>Choose rock, paper, or scissors. The computer picks one too, and the winner is shown instantly.</p>
+    </section>
+
+    <aside class="ad-banner ad-before-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="game-shell" aria-labelledby="rock-paper-scissors-title">
+      <div class="game-panel">
+        <h2 id="rock-paper-scissors-title">Rock Paper Scissors</h2>
+        <p class="game-description">Rock beats scissors, scissors beats paper, and paper beats rock.</p>
+
+        <div class="score-board" aria-live="polite">
+          <div>
+            <span class="score-label">Wins</span>
+            <strong id="wins">0</strong>
+          </div>
+          <div>
+            <span class="score-label">Losses</span>
+            <strong id="losses">0</strong>
+          </div>
+          <div>
+            <span class="score-label">Draws</span>
+            <strong id="draws">0</strong>
+          </div>
+        </div>
+
+        <div class="choice-buttons" aria-label="Choose your move">
+          <button class="button primary" type="button" data-choice="rock">Rock</button>
+          <button class="button primary" type="button" data-choice="paper">Paper</button>
+          <button class="button primary" type="button" data-choice="scissors">Scissors</button>
+        </div>
+
+        <p id="round-message" class="game-message" aria-live="polite">Make your choice to start.</p>
+        <p id="choice-message" class="choice-message" aria-live="polite"></p>
+
+        <div class="game-actions">
+          <button id="reset-statistics-button" class="button secondary" type="button">Reset Statistics</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="ad-banner ad-after-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Nyanya Mini Games</p>
+    <nav aria-label="Footer navigation">
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </footer>
+
+  <script src="../js/rock-paper-scissors.js"></script>
+</body>
+</html>
