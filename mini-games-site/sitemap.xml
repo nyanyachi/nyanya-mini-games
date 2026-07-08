@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://YOUR_GITHUB_ID.github.io/REPOSITORY_NAME/</loc>
+  </url>
+  <url>
+    <loc>https://YOUR_GITHUB_ID.github.io/REPOSITORY_NAME/games/apple-clicker.html</loc>
+  </url>
+  <url>
+    <loc>https://YOUR_GITHUB_ID.github.io/REPOSITORY_NAME/about.html</loc>
+  </url>
+  <url>
+    <loc>https://YOUR_GITHUB_ID.github.io/REPOSITORY_NAME/privacy.html</loc>
+  </url>
+  <url>
+    <loc>https://YOUR_GITHUB_ID.github.io/REPOSITORY_NAME/terms.html</loc>
+  </url>
+  <url>
+    <loc>https://YOUR_GITHUB_ID.github.io/REPOSITORY_NAME/contact.html</loc>
+  </url>
+</urlset>

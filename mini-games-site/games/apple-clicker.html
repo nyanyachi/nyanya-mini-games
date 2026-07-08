@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple Clicker | Cute Free Clicker Game | Nyanya Mini Games</title>
+  <meta name="description" content="Play Apple Clicker, a cute free browser clicker game from Nyanya Mini Games. Click apples, save your best score, reset anytime, and buy upgrades.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Nyanya Mini Games home">
+      <span class="brand-mark">N</span>
+      <span>Nyanya Mini Games</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#games">Games</a>
+      <a href="apple-clicker.html" aria-current="page">Apple Clicker</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <p class="eyebrow">First mini game</p>
+      <h1>Apple Clicker</h1>
+      <p>Tap the apple, collect points, and upgrade your click power.</p>
+    </section>
+
+    <aside class="ad-banner ad-before-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="game-shell" aria-labelledby="apple-clicker-title">
+      <div class="game-panel">
+        <h2 id="apple-clicker-title">Apple Clicker</h2>
+        <div class="score-board" aria-live="polite">
+          <div>
+            <span class="score-label">Score</span>
+            <strong id="score">0</strong>
+          </div>
+          <div>
+            <span class="score-label">Best</span>
+            <strong id="best-score">0</strong>
+          </div>
+          <div>
+            <span class="score-label">Per click</span>
+            <strong id="points-per-click">1</strong>
+          </div>
+        </div>
+
+        <button id="apple-button" class="apple-button" type="button" aria-label="Click apple to gain points">
+          <span aria-hidden="true">Apple</span>
+        </button>
+
+        <div class="game-actions">
+          <button id="upgrade-button" class="button primary" type="button">Upgrade: 50 points</button>
+          <button id="reset-button" class="button secondary" type="button">Reset</button>
+        </div>
+        <p id="game-message" class="game-message" aria-live="polite">Each click gives 1 point.</p>
+      </div>
+    </section>
+
+    <aside class="ad-banner ad-after-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Nyanya Mini Games</p>
+    <nav aria-label="Footer navigation">
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </footer>
+
+  <script src="../js/apple-clicker.js"></script>
+</body>
+</html>
