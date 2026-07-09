@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apple Clicker | Cute Free Clicker Game | Nyanya Mini Games</title>
-  <meta name="description" content="Play Apple Clicker, a cute free browser clicker game from Nyanya Mini Games. Click apples, save your best score, reset anytime, and buy upgrades.">
-  <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/apple-clicker.html" />
+  <title>Tic-Tac-Toe - Nyanya Mini Games</title>
+  <meta name="description" content="Play Tic-Tac-Toe online for free. Take turns as X and O, track wins and draws, and enjoy a simple classic browser game.">
+  <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/tic-tac-toe.html" />
   <link rel="stylesheet" href="../css/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
 crossorigin="anonymous"></script>
@@ -28,42 +28,45 @@ crossorigin="anonymous"></script>
 
   <main>
     <section class="page-title">
-      <p class="eyebrow">First mini game</p>
-      <h1>Apple Clicker</h1>
-      <p>Tap the apple, collect points, and upgrade your click power.</p>
+      <p class="eyebrow">Classic mini game</p>
+      <h1>Tic-Tac-Toe</h1>
+      <p>Take turns as X and O. Get three in a row to win, or fill the board for a draw.</p>
     </section>
 
     <aside class="ad-banner ad-before-game" aria-label="Advertisement">
       Advertisement
     </aside>
 
-    <section class="game-shell" aria-labelledby="apple-clicker-title">
+    <section class="game-shell" aria-labelledby="tic-tac-toe-title">
       <div class="game-panel">
-        <h2 id="apple-clicker-title">Apple Clicker</h2>
+        <h2 id="tic-tac-toe-title">Tic-Tac-Toe</h2>
+        <p class="game-description">Two local players share the board. Player X starts, then players alternate turns.</p>
+
         <div class="score-board" aria-live="polite">
           <div>
-            <span class="score-label">Score</span>
-            <strong id="score">0</strong>
+            <span class="score-label">X Wins</span>
+            <strong id="x-wins">0</strong>
           </div>
           <div>
-            <span class="score-label">Best</span>
-            <strong id="best-score">0</strong>
+            <span class="score-label">O Wins</span>
+            <strong id="o-wins">0</strong>
           </div>
           <div>
-            <span class="score-label">Per click</span>
-            <strong id="points-per-click">1</strong>
+            <span class="score-label">Draws</span>
+            <strong id="draws">0</strong>
           </div>
         </div>
 
-        <button id="apple-button" class="apple-button" type="button" aria-label="Click apple to gain points">
-          <span aria-hidden="true">Apple</span>
-        </button>
+        <p class="score-label">Current Player</p>
+        <strong id="current-player" class="turn-display">X</strong>
+
+        <div id="tic-tac-toe-board" class="tic-tac-toe-board" aria-label="Tic-Tac-Toe board"></div>
+        <p id="tic-tac-toe-message" class="game-message" aria-live="polite">Player X's turn.</p>
 
         <div class="game-actions">
-          <button id="upgrade-button" class="button primary" type="button">Upgrade: 50 points</button>
-          <button id="reset-button" class="button secondary" type="button">Reset</button>
+          <button id="new-game-button" class="button primary" type="button">New Game</button>
+          <button id="reset-statistics-button" class="button secondary" type="button">Reset Statistics</button>
         </div>
-        <p id="game-message" class="game-message" aria-live="polite">Each click gives 1 point.</p>
       </div>
     </section>
 
@@ -83,6 +86,6 @@ crossorigin="anonymous"></script>
   </footer>
 
   <script src="../js/sound.js"></script>
-  <script src="../js/apple-clicker.js"></script>
+  <script src="../js/tic-tac-toe.js"></script>
 </body>
 </html>

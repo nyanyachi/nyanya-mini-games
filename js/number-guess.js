@@ -14,6 +14,12 @@
   let bestScore = Number(localStorage.getItem(bestScoreKey)) || 0;
   let roundComplete = false;
 
+  function triggerAnimation(element, className) {
+    element.classList.remove(className);
+    void element.offsetWidth;
+    element.classList.add(className);
+  }
+
   function createTargetNumber() {
     return Math.floor(Math.random() * 100) + 1;
   }
@@ -60,13 +66,19 @@
 
     if (guess > targetNumber) {
       messageElement.textContent = "Too High";
+      window.NyanyaSound?.error();
+      triggerAnimation(messageElement, "animate-shake");
     } else if (guess < targetNumber) {
       messageElement.textContent = "Too Low";
+      window.NyanyaSound?.error();
+      triggerAnimation(messageElement, "animate-shake");
     } else {
       messageElement.textContent = "Correct!";
       roundComplete = true;
       guessInput.disabled = true;
       saveBestScore();
+      window.NyanyaSound?.success();
+      triggerAnimation(messageElement, "animate-pop");
     }
 
     updateDisplay();

@@ -17,6 +17,12 @@
 
   let stats = loadStats();
 
+  function triggerAnimation(element, className) {
+    element.classList.remove(className);
+    void element.offsetWidth;
+    element.classList.add(className);
+  }
+
   function loadStats() {
     let savedStats = {};
 
@@ -52,6 +58,7 @@
   }
 
   function playRound(playerChoice) {
+    window.NyanyaSound?.click();
     const computerChoice = getComputerChoice();
     let result = "Draw";
 
@@ -60,15 +67,18 @@
     } else if (winningMoves[playerChoice] === computerChoice) {
       stats.wins += 1;
       result = "Win";
+      window.NyanyaSound?.success();
     } else {
       stats.losses += 1;
       result = "Lose";
+      window.NyanyaSound?.error();
     }
 
     saveStats();
     updateDisplay();
     roundMessageElement.textContent = result;
     choiceMessageElement.textContent = `You chose ${formatChoice(playerChoice)}. Computer chose ${formatChoice(computerChoice)}.`;
+    triggerAnimation(roundMessageElement, "animate-pop");
   }
 
   choiceButtons.forEach(function (button) {

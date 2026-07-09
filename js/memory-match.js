@@ -103,6 +103,7 @@
 
     card.revealed = true;
     flippedCards.push(cardIndex);
+    window.NyanyaSound?.flip();
     renderBoard();
 
     if (flippedCards.length < 2) {
@@ -119,6 +120,7 @@
       flippedCards = [];
       matches += 1;
       messageElement.textContent = "Match found!";
+      window.NyanyaSound?.success();
 
       if (matches === symbols.length) {
         saveBestMoves();

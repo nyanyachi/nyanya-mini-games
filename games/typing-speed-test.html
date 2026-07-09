@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Memory Match - Nyanya Mini Games</title>
-  <meta name="description" content="Play Memory Match online for free. Flip cards, find matching pairs, track your moves, and try to beat your best score.">
-  <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/memory-match.html" />
+  <title>Typing Speed Test - Nyanya Mini Games</title>
+  <meta name="description" content="Test your typing speed online for free. Type the displayed text, measure your WPM and accuracy, and try to beat your best score.">
+  <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/typing-speed-test.html" />
   <link rel="stylesheet" href="../css/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
 crossorigin="anonymous"></script>
@@ -28,41 +28,49 @@ crossorigin="anonymous"></script>
 
   <main>
     <section class="page-title">
-      <p class="eyebrow">Memory mini game</p>
-      <h1>Memory Match</h1>
-      <p>Flip cards, remember their symbols, and match all four pairs in as few moves as possible.</p>
+      <p class="eyebrow">Typing mini game</p>
+      <h1>Typing Speed Test</h1>
+      <p>Type the displayed text as accurately as possible and try to beat your best WPM.</p>
     </section>
 
     <aside class="ad-banner ad-before-game" aria-label="Advertisement">
       Advertisement
     </aside>
 
-    <section class="game-shell" aria-labelledby="memory-match-title">
+    <section class="game-shell" aria-labelledby="typing-speed-test-title">
       <div class="game-panel">
-        <h2 id="memory-match-title">Memory Match</h2>
-        <p class="game-description">Choose two cards at a time. Matching pairs stay revealed, while misses flip back after a moment.</p>
+        <h2 id="typing-speed-test-title">Typing Speed Test</h2>
+        <p class="game-description">Press Start Test, type the target text exactly, and finish when every character matches.</p>
 
         <div class="score-board" aria-live="polite">
           <div>
-            <span class="score-label">Moves</span>
-            <strong id="moves">0</strong>
+            <span class="score-label">Time</span>
+            <strong><span id="time-seconds">0.0</span>s</strong>
           </div>
           <div>
-            <span class="score-label">Matches</span>
-            <strong id="matches">0</strong>
+            <span class="score-label">WPM</span>
+            <strong id="wpm">0</strong>
           </div>
           <div>
-            <span class="score-label">Best Moves</span>
-            <strong id="best-moves">--</strong>
+            <span class="score-label">Accuracy</span>
+            <strong><span id="accuracy">100</span>%</strong>
+          </div>
+          <div>
+            <span class="score-label">Best WPM</span>
+            <strong id="best-wpm">--</strong>
           </div>
         </div>
 
-        <div id="memory-board" class="memory-board" aria-label="Memory cards"></div>
+        <p id="target-text" class="typing-target"></p>
 
-        <p id="memory-message" class="game-message" aria-live="polite">Find all 4 matching pairs.</p>
+        <label class="score-label" for="typing-input">Your Text</label>
+        <textarea id="typing-input" class="typing-input" rows="5" disabled></textarea>
+
+        <p id="typing-message" class="game-message" aria-live="polite">Press Start Test when you are ready.</p>
 
         <div class="game-actions">
-          <button id="new-game-button" class="button primary" type="button">New Game</button>
+          <button id="start-test-button" class="button primary" type="button">Start Test</button>
+          <button id="new-text-button" class="button secondary" type="button">New Text</button>
           <button id="reset-statistics-button" class="button secondary" type="button">Reset Statistics</button>
         </div>
       </div>
@@ -84,6 +92,6 @@ crossorigin="anonymous"></script>
   </footer>
 
   <script src="../js/sound.js"></script>
-  <script src="../js/memory-match.js"></script>
+  <script src="../js/typing-speed-test.js"></script>
 </body>
 </html>

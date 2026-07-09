@@ -14,6 +14,12 @@
   let pointsPerClick = 1;
   let bestScore = Number(localStorage.getItem(bestScoreKey)) || 0;
 
+  function triggerAnimation(element, className) {
+    element.classList.remove(className);
+    void element.offsetWidth;
+    element.classList.add(className);
+  }
+
   function updateDisplay() {
     scoreElement.textContent = score;
     bestScoreElement.textContent = bestScore;
@@ -30,9 +36,12 @@
   }
 
   appleButton.addEventListener("click", function () {
+    window.NyanyaSound?.click();
     score += pointsPerClick;
     saveBestScore();
     messageElement.textContent = `+${pointsPerClick} point${pointsPerClick === 1 ? "" : "s"}!`;
+    triggerAnimation(appleButton, "animate-pop");
+    triggerAnimation(messageElement, "animate-pop");
     updateDisplay();
   });
 

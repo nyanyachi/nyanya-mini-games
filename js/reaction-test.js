@@ -18,6 +18,12 @@
   let readyAt = 0;
   let waitTimer = null;
 
+  function triggerAnimation(element, className) {
+    element.classList.remove(className);
+    void element.offsetWidth;
+    element.classList.add(className);
+  }
+
   function formatTime(time) {
     return time ? `${time} ms` : "--";
   }
@@ -51,12 +57,14 @@
     waitTimer = setTimeout(function () {
       readyAt = Date.now();
       setState("ready", "Click now!", "Click now!");
+      triggerAnimation(reactionButton, "animate-pulse");
     }, delay);
   }
 
   function recordReaction() {
     latestTime = Date.now() - readyAt;
     attempts += 1;
+    window.NyanyaSound?.success();
 
     if (!bestTime || latestTime < bestTime) {
       bestTime = latestTime;
@@ -76,6 +84,7 @@
 
     if (state === "waiting") {
       clearRoundTimer();
+      window.NyanyaSound?.error();
       setState("idle", "Start", "Too early! Start again and wait for the signal.");
       return;
     }
