@@ -122,11 +122,11 @@ main {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(15rem, 0.9fr);
-  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.9fr);
+  gap: clamp(1.5rem, 5vw, 4rem);
   align-items: center;
-  min-height: clamp(27rem, 66vh, 39rem);
-  padding: 2rem 0 3rem;
+  min-height: clamp(28rem, 68vh, 40rem);
+  padding: clamp(2rem, 6vw, 4rem) 0 3rem;
 }
 
 .hero h1,
@@ -141,6 +141,32 @@ main {
   max-width: 42rem;
   color: var(--muted);
   font-size: 1.1rem;
+}
+
+.hero-copy {
+  display: grid;
+  gap: 1rem;
+  justify-items: start;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.hero-actions .button {
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+
+.hero-actions .button:hover {
+  transform: translateY(-1px);
+}
+
+.hero-actions .button.primary {
+  background: linear-gradient(135deg, var(--accent), #9b6df3);
+  box-shadow: 0 12px 26px rgba(155, 109, 243, 0.28), 0 10px 22px rgba(240, 98, 123, 0.2);
 }
 
 .eyebrow {
@@ -197,13 +223,26 @@ a:focus-visible {
 
 .hero-art {
   position: relative;
-  min-height: 20rem;
+  display: grid;
+  min-height: clamp(18rem, 38vw, 31rem);
+  aspect-ratio: 1;
+  place-items: center;
   border-radius: 2rem;
   background:
-    linear-gradient(135deg, rgba(255, 240, 220, 0.95), rgba(255, 255, 255, 0.68)),
-    repeating-linear-gradient(45deg, transparent 0 18px, rgba(255, 210, 166, 0.35) 18px 20px);
+    linear-gradient(135deg, rgba(246, 235, 255, 0.96), rgba(255, 255, 255, 0.74)),
+    repeating-linear-gradient(45deg, transparent 0 18px, rgba(202, 177, 255, 0.28) 18px 20px);
   overflow: hidden;
   box-shadow: var(--shadow);
+}
+
+.hero-image {
+  display: block;
+  width: min(92%, 32.5rem);
+  max-width: 100%;
+  max-height: min(70vh, 32.5rem);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
 }
 
 .apple,
@@ -862,8 +901,18 @@ a:focus-visible {
     padding-top: 1rem;
   }
 
+  .hero-actions {
+    width: 100%;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
   .hero-art {
+    width: min(100%, 24rem);
     min-height: 16rem;
+    justify-self: center;
   }
 
   .score-board {
@@ -888,5 +937,17 @@ a:focus-visible {
 
   .memory-board {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-image {
+    animation: hero-float 5s ease-in-out infinite;
+  }
+
+  @keyframes hero-float {
+    50% {
+      transform: translateY(-0.35rem);
+    }
   }
 }
