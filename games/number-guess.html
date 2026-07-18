@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Number Guess - Nyanya Mini Games</title>
-  <meta name="description" content="Guess the hidden number between 1 and 100. Challenge yourself, track your attempts, and try to beat your best score.">
+  <meta name="description" content="Play Number Guess, a browser logic game where you find a hidden number from 1 to 100 using Too High and Too Low hints while tracking attempts.">
   <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/number-guess.html" />
   <link rel="stylesheet" href="../css/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
@@ -75,6 +75,58 @@ crossorigin="anonymous"></script>
     <aside class="ad-banner ad-after-game" aria-label="Advertisement">
       Advertisement
     </aside>
+
+    <section class="text-page" aria-labelledby="number-guess-guide-title">
+      <h2 id="number-guess-guide-title">About Number Guess</h2>
+      <p>Number Guess chooses a hidden number in the supported range and asks you to find it by submitting guesses.</p>
+      <p>Each hint helps narrow the possible answer. The goal is to find the correct number using as few valid attempts as possible.</p>
+
+      <h2>How to Play</h2>
+      <ol>
+        <li>Review the displayed range of 1-100.</li>
+        <li>Enter a number in the guess field.</li>
+        <li>Press the Guess button or submit the form.</li>
+        <li>Use the Too High or Too Low message to narrow the range.</li>
+        <li>Keep guessing until the message says Correct!</li>
+        <li>Start a new round when you are ready for another hidden number.</li>
+      </ol>
+
+      <h2>Number Range and Target</h2>
+      <p>The hidden number is an integer from 1 through 100, including both endpoints.</p>
+      <p>A target number is generated when the page loads and again when New Game is pressed. The target stays the same until the round is completed or restarted.</p>
+
+      <h2>Understanding Attempts</h2>
+      <p>The attempt counter increases after a submitted guess passes the game's range check. A single repeated valid guess still counts as another attempt.</p>
+      <p>The final attempt total is the number of valid guesses used to find the target. Fewer attempts are better because Best stores the lowest completed attempt count.</p>
+
+      <h2>Hints and Feedback</h2>
+      <p>Too High means your guess is greater than the hidden number. Too Low means your guess is less than the hidden number.</p>
+      <p>Correct! appears when the guess equals the hidden number. After that, the input is disabled and further submissions show a message asking you to start a new game. Previous guesses are not listed on the page.</p>
+
+      <h2>Input Rules</h2>
+      <p>The field is a required number input with a displayed range of 1 to 100. The script also checks for guesses below 1 or above 100 and shows Enter a number between 1 and 100 without counting an attempt.</p>
+      <p>Browser number-input behavior may block empty or non-numeric entries before the game script runs. Decimal values inside the range can be submitted by the browser, but the hidden target is always a whole number.</p>
+
+      <h2>Tips for Fewer Guesses</h2>
+      <ul>
+        <li>Start near the middle of the remaining range.</li>
+        <li>Use every Too High or Too Low clue to remove part of the range.</li>
+        <li>Keep track of the lowest and highest possible values after each guess.</li>
+        <li>Avoid repeating a guess unless you intentionally want to check it again.</li>
+        <li>Use a steady narrowing approach instead of choosing numbers randomly.</li>
+      </ul>
+
+      <h2>Controls and Devices</h2>
+      <p>Use the number input to enter a guess, then press the Guess button. Because the guess area is a form, pressing Enter while the input is active may also submit the guess in supporting browsers.</p>
+      <p>The game can be played with mouse, touch, or keyboard input on desktop and mobile browsers.</p>
+
+      <h2>Saving and Restarting</h2>
+      <p>Number Guess saves only the Best score in this browser using localStorage. Best is the fewest valid attempts used to complete a round.</p>
+      <p>New Game creates a new target, clears the current attempt count and message, enables the input, and keeps the saved Best score. Reset Statistics removes the saved Best score but does not start a new round by itself. Clearing browser storage may also remove the saved record.</p>
+
+      <h2>Related Games</h2>
+      <p>For more logic and quick-play sessions, try <a href="memory-match.html">Memory Match</a>, <a href="color-guess.html">Color Guess</a>, or <a href="dice-roller.html">Dice Roller</a>.</p>
+    </section>
   </main>
 
   <footer class="site-footer">

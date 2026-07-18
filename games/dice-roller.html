@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dice Roller - Nyanya Mini Games</title>
-  <meta name="description" content="Roll a virtual six-sided die online for free. Track your results and dice statistics in a simple browser game.">
+  <meta name="description" content="Use Dice Roller to roll one six-sided die, view the last result, track total rolls, and save counts for each face in your browser.">
   <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/dice-roller.html" />
   <link rel="stylesheet" href="../css/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
@@ -93,6 +93,52 @@ crossorigin="anonymous"></script>
     <aside class="ad-banner ad-after-game" aria-label="Advertisement">
       Advertisement
     </aside>
+
+    <section class="text-page" aria-labelledby="dice-roller-guide-title">
+      <h2 id="dice-roller-guide-title">About Dice Roller</h2>
+      <p>Dice Roller simulates rolling one six-sided die. Each roll produces a new result from 1 to 6.</p>
+      <p>It is useful for quick casual games, simple random choices, or tabletop-style moments when you do not have a physical die nearby.</p>
+
+      <h2>How to Roll</h2>
+      <ol>
+        <li>Press the Roll Dice button.</li>
+        <li>Review the die face and Last Roll value.</li>
+        <li>Check Total Rolls to see how many rolls are saved in this browser.</li>
+        <li>Review the count for each face from 1 through 6.</li>
+        <li>Roll again whenever you need a new result.</li>
+        <li>Use Reset Statistics only when you want to clear the saved roll totals.</li>
+      </ol>
+
+      <h2>Dice and Result Rules</h2>
+      <p>The game rolls one standard six-sided die. The minimum result is 1 and the maximum result is 6.</p>
+      <p>There is no dice-count option and no multi-dice total because only one die is rolled at a time.</p>
+
+      <h2>Understanding the Results</h2>
+      <p>Last Roll shows the most recent die result. Total Rolls shows how many times the die has been rolled since the saved statistics were last cleared.</p>
+      <p>The counts for 1 through 6 show how often each face has appeared. The visual die face updates to match the most recent roll.</p>
+
+      <h2>Random Roll Behavior</h2>
+      <p>Each press of Roll Dice asks the game's built-in random-number logic for a new value from 1 to 6.</p>
+      <p>Any face can appear again on later rolls, so repeated values are a normal part of random rolling.</p>
+
+      <h2>Common Uses</h2>
+      <ul>
+        <li>Choose movement values for a casual board game.</li>
+        <li>Replace a physical die for quick play.</li>
+        <li>Generate a simple random number from 1 to 6.</li>
+        <li>Settle a lighthearted choice where a random result is acceptable.</li>
+      </ul>
+
+      <h2>Controls and Devices</h2>
+      <p>You can roll with a mouse click or by tapping the Roll Dice button on a touch screen. The roll and reset controls are standard buttons, so browsers may also allow keyboard activation when a button is focused.</p>
+
+      <h2>Saving, History, and Resetting</h2>
+      <p>Dice Roller saves Last Roll, Total Rolls, and the face counts in this browser using localStorage. The page does not keep a separate roll-by-roll history list.</p>
+      <p>Reset Statistics clears the saved dice statistics, sets Last Roll back to --, returns Total Rolls and all face counts to 0, and clears the displayed die pips. Clearing browser storage may also remove saved dice records.</p>
+
+      <h2>Related Games</h2>
+      <p>For more quick random or choice-based games, try <a href="coin-flip.html">Coin Flip</a>, <a href="rock-paper-scissors.html">Rock Paper Scissors</a>, or <a href="number-guess.html">Number Guess</a>.</p>
+    </section>
   </main>
 
   <footer class="site-footer">

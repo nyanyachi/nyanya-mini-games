@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tic-Tac-Toe - Nyanya Mini Games</title>
-  <meta name="description" content="Play Tic-Tac-Toe online for free. Take turns as X and O, track wins and draws, and enjoy a simple classic browser game.">
+  <meta name="description" content="Play local two-player Tic-Tac-Toe on a three-by-three board, alternate X and O turns, complete a line, or track draws in your browser.">
   <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/tic-tac-toe.html" />
   <link rel="stylesheet" href="../css/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
@@ -73,6 +73,57 @@ crossorigin="anonymous"></script>
     <aside class="ad-banner ad-after-game" aria-label="Advertisement">
       Advertisement
     </aside>
+
+    <section class="text-page" aria-labelledby="tic-tac-toe-guide-title">
+      <h2 id="tic-tac-toe-guide-title">About Tic-Tac-Toe</h2>
+      <p>Tic-Tac-Toe uses a three-by-three board where two local players place X and O in empty spaces.</p>
+      <p>The goal is to complete a horizontal, vertical, or diagonal line before the other player. This version is player versus player on the same device, not a computer-opponent game.</p>
+
+      <h2>How to Play</h2>
+      <ol>
+        <li>Start with a fresh board or press New Game to begin another round.</li>
+        <li>Player X selects an empty square first.</li>
+        <li>Player O takes the next turn, then turns continue alternating.</li>
+        <li>Keep selecting empty squares until X wins, O wins, or the board fills.</li>
+        <li>Review the result message and saved totals.</li>
+        <li>Press New Game to clear the board for another round.</li>
+      </ol>
+
+      <h2>Board and Turn Rules</h2>
+      <p>The board contains nine spaces arranged as three rows and three columns. Player X uses X, Player O uses O, and X always moves first in a new game.</p>
+      <p>Occupied squares cannot be selected again. Turns alternate automatically after each valid move. There is no computer move or difficulty setting in this version.</p>
+
+      <h2>Winning and Drawing</h2>
+      <p>A win requires three matching symbols in one line. Horizontal rows, vertical columns, and the two diagonals all count.</p>
+      <p>The round becomes a draw when every square is filled without a winning line. After a win or draw, the board is locked and no more spaces can be selected until New Game is pressed.</p>
+
+      <h2>Understanding the Results</h2>
+      <p>Current Player shows whose turn it is during an active round. The message below the board shows the current turn, X wins!, O wins!, or Draw! when the round ends.</p>
+      <p>X Wins, O Wins, and Draws count completed rounds saved in this browser. The game does not track total rounds separately, streaks, score, or match history.</p>
+
+      <h2>Strategy Tips</h2>
+      <ul>
+        <li>Look for a winning move before choosing a defensive move.</li>
+        <li>Block the other player when they already have two symbols in a line.</li>
+        <li>The center square connects to more winning lines than an edge square.</li>
+        <li>Corners can help create multiple possible lines.</li>
+        <li>Check rows, columns, and diagonals before selecting a space.</li>
+      </ul>
+
+      <h2>Opponent Behavior</h2>
+      <p>This is a local two-player game. Players share the same device and alternate turns manually.</p>
+      <p>There is no computer opponent, random move selection, blocking logic, winning-line strategy, or difficulty level.</p>
+
+      <h2>Controls and Accessibility</h2>
+      <p>You can select spaces with a mouse click or by tapping on a touch screen. The board cells and action controls are standard buttons, so browsers may also allow keyboard activation when a button is focused.</p>
+
+      <h2>Saving and Restarting</h2>
+      <p>Tic-Tac-Toe saves X Wins, O Wins, and Draws in this browser using localStorage. The current board does not survive a page refresh.</p>
+      <p>New Game clears the board, sets the current player back to X, unlocks the board, and keeps the saved totals. Reset Statistics removes the saved totals and returns X Wins, O Wins, and Draws to 0 without starting a new board by itself. Clearing browser storage may also remove saved records.</p>
+
+      <h2>Related Games</h2>
+      <p>For more quick logic and classic play, try <a href="rock-paper-scissors.html">Rock Paper Scissors</a>, <a href="memory-match.html">Memory Match</a>, or <a href="number-guess.html">Number Guess</a>.</p>
+    </section>
   </main>
 
   <footer class="site-footer">

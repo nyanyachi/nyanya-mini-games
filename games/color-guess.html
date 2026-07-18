@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Color Guess - Nyanya Mini Games</title>
-  <meta name="description" content="Play Color Guess online for free. Match the target color, test your color sense, and try to beat your best score.">
+  <meta name="description" content="Play Color Guess, a visual browser game where you match a target color swatch from three shuffled choices while tracking score, attempts, and best score.">
   <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/color-guess.html" />
   <link rel="stylesheet" href="../css/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
@@ -73,6 +73,58 @@ crossorigin="anonymous"></script>
     <aside class="ad-banner ad-after-game" aria-label="Advertisement">
       Advertisement
     </aside>
+
+    <section class="text-page" aria-labelledby="color-guess-guide-title">
+      <h2 id="color-guess-guide-title">About Color Guess</h2>
+      <p>Color Guess asks you to study a target color swatch and choose the matching color from a small set of visual options.</p>
+      <p>Each round is a short comparison challenge. The game uses color swatches rather than color names, RGB text, or HEX codes.</p>
+
+      <h2>How to Play</h2>
+      <ol>
+        <li>Look at the Target Color swatch.</li>
+        <li>Compare it with the three color choices.</li>
+        <li>Select the choice that matches the target swatch.</li>
+        <li>Read the Correct! or Try again! feedback.</li>
+        <li>Press New Round when you want a fresh set of colors.</li>
+        <li>Try to raise your score and saved best score over repeated rounds.</li>
+      </ol>
+
+      <h2>Understanding the Color Prompt</h2>
+      <p>The prompt is a visible target swatch. You compare that swatch with three answer buttons that are also displayed as colors.</p>
+      <p>The game does not ask you to type a color name or interpret a visible RGB or HEX value. Spelling and capitalization do not matter because answers are chosen by selecting a color button.</p>
+
+      <h2>Choices and Round Generation</h2>
+      <p>Each round creates three random RGB colors. One of those colors is always the correct answer because it is also used as the target swatch.</p>
+      <p>The answer positions are shuffled before they appear. New Round creates a new set of colors, and similar colors may appear again in later rounds because colors are generated randomly.</p>
+
+      <h2>Correct and Incorrect Answers</h2>
+      <p>A correct selection adds 1 point to your score, may update Best Score, and shows Correct! as feedback.</p>
+      <p>An incorrect selection shows Try again! and still counts as an attempt. After any selection, the round is marked answered, so the same round cannot be answered again until you press New Round.</p>
+
+      <h2>Understanding Results</h2>
+      <p>Score is the number of correct answers in the current session. Total Attempts is the number of rounds where you selected an answer.</p>
+      <p>Best Score is the highest score saved in this browser. Higher score and best score values are better. The game does not track streaks or timed rounds.</p>
+
+      <h2>Tips for Better Color Matching</h2>
+      <ul>
+        <li>Compare the overall hue first before focusing on brightness.</li>
+        <li>Check whether choices differ mainly in lightness or saturation.</li>
+        <li>Look at all three choices before selecting.</li>
+        <li>Use the same screen when comparing repeated results.</li>
+        <li>Do not rely on the previous answer position, because choices are shuffled each round.</li>
+      </ul>
+
+      <h2>Controls and Accessibility</h2>
+      <p>You can choose colors with a mouse click or by tapping on a touch screen. The choices are standard buttons, so browsers may also allow keyboard activation when a choice is focused.</p>
+      <p>Color perception, screen brightness, and display settings can affect how close the choices appear. This game is a casual visual matching activity, not a color-vision test.</p>
+
+      <h2>Saving and Restarting</h2>
+      <p>Color Guess saves only Best Score in this browser using localStorage. The current score, attempts, and active round are not saved separately.</p>
+      <p>New Round creates a fresh target and three choices while preserving the current score, attempts, and saved best score. Reset Statistics sets score, attempts, and best score back to 0 and removes the saved best score. Clearing browser storage may also remove the saved record.</p>
+
+      <h2>Related Games</h2>
+      <p>For more quick focus games, try <a href="reaction-test.html">Reaction Test</a>, <a href="memory-match.html">Memory Match</a>, or <a href="number-guess.html">Number Guess</a>.</p>
+    </section>
   </main>
 
   <footer class="site-footer">

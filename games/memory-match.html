@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Memory Match - Nyanya Mini Games</title>
-  <meta name="description" content="Play Memory Match online for free. Flip cards, find matching pairs, track your moves, and try to beat your best score.">
+  <meta name="description" content="Play Memory Match, an 8-card browser memory game where you find four matching pairs, track moves, and save your best moves locally.">
   <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/memory-match.html" />
   <link rel="stylesheet" href="../css/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
@@ -71,6 +71,54 @@ crossorigin="anonymous"></script>
     <aside class="ad-banner ad-after-game" aria-label="Advertisement">
       Advertisement
     </aside>
+
+    <section class="text-page" aria-labelledby="memory-match-guide-title">
+      <h2 id="memory-match-guide-title">About Memory Match</h2>
+      <p>Memory Match is a short concentration game where you turn over hidden cards and try to find matching pairs.</p>
+      <p>The goal is to remember card positions, complete the board efficiently, and use fewer moves on future rounds.</p>
+
+      <h2>How to Play</h2>
+      <ol>
+        <li>Select one hidden card to reveal its symbol.</li>
+        <li>Select a second hidden card and compare the two symbols.</li>
+        <li>Matching cards stay revealed and count toward the match total.</li>
+        <li>Non-matching cards turn back over after a short pause.</li>
+        <li>Continue until all pairs are found.</li>
+        <li>Try to complete the board with fewer moves.</li>
+      </ol>
+
+      <h2>Board and Pair Rules</h2>
+      <p>The board has 8 cards and 4 matching pairs. The symbols are Apple, Star, Heart, and Moon, and each symbol appears exactly twice.</p>
+      <p>A new game creates a fresh shuffled board before play begins. Pressing New Game also starts over with a newly shuffled board.</p>
+
+      <h2>Understanding Moves and Results</h2>
+      <p>A move is counted after you reveal two valid cards. Selecting one card by itself does not increase the move counter.</p>
+      <p>The game is complete when all 4 pairs have been matched. Best Moves records the lowest completed move total saved in this browser, so lower numbers are better.</p>
+
+      <h2>Match and Mismatch Behavior</h2>
+      <p>When two cards match, they stay revealed and can no longer be selected. The match counter increases by 1.</p>
+      <p>When two cards do not match, the board is temporarily locked, the message shows that it was not a match, and the cards return to hidden after a short delay.</p>
+
+      <h2>Tips for Fewer Moves</h2>
+      <ul>
+        <li>Pay attention to both the symbol and where it appears on the board.</li>
+        <li>Use information from previous mismatches instead of choosing randomly.</li>
+        <li>Scan the board in a consistent pattern so positions are easier to remember.</li>
+        <li>Once you know several positions, focus on completing known pairs first.</li>
+        <li>Try working through one area of the board at a time.</li>
+      </ul>
+
+      <h2>Controls and Accessibility</h2>
+      <p>You can play by clicking cards with a mouse or tapping cards on a touch screen. The cards are standard buttons, so browsers may also allow keyboard activation when a card is focused.</p>
+      <p>The game relies on visual symbols and card positions, so careful visual comparison is part of the challenge.</p>
+
+      <h2>Saving and Resetting</h2>
+      <p>Memory Match saves only Best Moves in this browser using localStorage. Current moves, matches, and the current board are reset when a new game starts or the page reloads.</p>
+      <p>New Game resets moves and matches, clears revealed cards, and creates a newly shuffled board. Reset Statistics removes the saved Best Moves record but does not start a new board by itself. Clearing browser storage may also remove the saved record.</p>
+
+      <h2>Related Games</h2>
+      <p>For more focus and pattern practice, try <a href="number-guess.html">Number Guess</a>, <a href="color-guess.html">Color Guess</a>, or <a href="typing-speed-test.html">Typing Speed Test</a>.</p>
+    </section>
   </main>
 
   <footer class="site-footer">

@@ -541,6 +541,49 @@ a:focus-visible {
   font-weight: 800;
 }
 
+.games-library .game-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.games-library .game-card .game-icon {
+  width: 100%;
+  max-width: 8.5rem;
+  height: 8.5rem;
+  align-self: center;
+}
+
+.games-library .game-card-image {
+  display: block;
+  box-sizing: border-box;
+  object-fit: contain;
+}
+
+.games-library .game-card p {
+  flex: 1;
+}
+
+.games-library .game-card .button {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.games-library .card-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.games-library .category-pill {
+  display: inline-flex;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(155, 109, 243, 0.1);
+  color: var(--accent-dark);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
 .page-title {
   padding: 3.5rem 0 1.5rem;
 }
