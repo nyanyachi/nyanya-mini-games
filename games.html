@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Games - Nyanya Mini Games</title>
-  <meta name="description" content="Browse free browser games on Nyanya Mini Games, including Apple Clicker, Rock Paper Scissors, Tic-Tac-Toe, Typing Speed Test, Color Guess, Coin Flip, Dice Roller, Reaction Test, Number Guess, Memory Match, and upcoming simple games.">
+  <meta name="description" content="Browse free browser games on Nyanya Mini Games, including Apple Clicker, Snake, 2048, Rock Paper Scissors, Tic-Tac-Toe, Typing Speed Test, Color Guess, Coin Flip, Dice Roller, Reaction Test, Number Guess, Memory Match, and upcoming simple games.">
   <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games.html" />
   <link rel="stylesheet" href="css/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
@@ -31,6 +31,9 @@ crossorigin="anonymous"></script>
       <p class="eyebrow">Mini game library</p>
       <h1>Games</h1>
       <p>Browse all available and upcoming Nyanya Mini Games in one place. Pick a game to play now or see what is coming next.</p>
+      <div class="game-actions">
+        <button id="random-game-button" class="button primary" type="button">🎲 Play a Random Game</button>
+      </div>
     </section>
 
     <aside class="ad-banner" aria-label="Advertisement">
@@ -123,6 +126,28 @@ crossorigin="anonymous"></script>
           <p>Guess a hidden number from 1 to 100 by following the higher and lower hints.</p>
           <a class="button secondary" href="games/number-guess.html">Play now</a>
         </article>
+        <article class="game-card">
+          <div class="game-icon text-icon" aria-hidden="true">S</div>
+          <div class="card-labels">
+            <span class="status-pill">Available</span>
+            <span class="status-pill">NEW</span>
+            <span class="category-pill">Classic</span>
+          </div>
+          <h3>Snake</h3>
+          <p>Steer the snake, collect food, grow longer, and avoid crashing.</p>
+          <a class="button secondary" href="games/snake.html">Play now</a>
+        </article>
+        <article class="game-card">
+          <div class="game-icon text-icon" aria-hidden="true">2048</div>
+          <div class="card-labels">
+            <span class="status-pill">Available</span>
+            <span class="status-pill">NEW</span>
+            <span class="category-pill">Puzzle</span>
+          </div>
+          <h3>2048</h3>
+          <p>Slide matching number tiles, merge values, and try to reach the 2048 tile.</p>
+          <a class="button secondary" href="games/2048.html">Play now</a>
+        </article>
         <article class="game-card coming-soon" aria-label="Sudoku coming soon">
           <div class="game-icon text-icon" aria-hidden="true">123</div>
           <div class="card-labels">
@@ -166,5 +191,29 @@ crossorigin="anonymous"></script>
     </nav>
   </footer>
   <script src="js/sound.js"></script>
+  <script>
+    (function () {
+      const randomGameButton = document.getElementById("random-game-button");
+      const gameUrls = [
+        "games/apple-clicker.html",
+        "games/rock-paper-scissors.html",
+        "games/tic-tac-toe.html",
+        "games/typing-speed-test.html",
+        "games/color-guess.html",
+        "games/coin-flip.html",
+        "games/dice-roller.html",
+        "games/number-guess.html",
+        "games/2048.html",
+        "games/snake.html",
+        "games/reaction-test.html",
+        "games/memory-match.html"
+      ];
+
+      randomGameButton.addEventListener("click", function () {
+        const index = Math.floor(Math.random() * gameUrls.length);
+        window.location.href = gameUrls[index];
+      });
+    })();
+  </script>
 </body>
 </html>

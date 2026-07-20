@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2048 - Nyanya Mini Games</title>
+  <meta name="description" content="Play 2048 online for free. Slide numbered tiles, merge matching values, build your score, and try to reach the 2048 tile.">
+  <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/2048.html" />
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/2048.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
+crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Nyanya Mini Games home">
+      <span class="brand-mark">N</span>
+      <span>Nyanya Mini Games</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
+      <a href="../news.html">News</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <button class="sound-toggle" type="button" data-sound-toggle aria-pressed="false">Sound Off</button>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <p class="eyebrow">Puzzle mini game</p>
+      <h1>2048</h1>
+      <p>Slide matching number tiles together, build a higher score, and try to create the 2048 tile.</p>
+    </section>
+
+    <aside class="ad-banner ad-before-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="game-shell" aria-labelledby="game-2048-title">
+      <div class="game-panel game-2048-panel">
+        <h2 id="game-2048-title">2048</h2>
+        <p class="game-description">Use arrow keys or swipe to move every tile. Matching tiles merge into a larger number.</p>
+
+        <div class="score-board" aria-live="polite">
+          <div>
+            <span class="score-label">Score</span>
+            <strong id="score-2048">0</strong>
+          </div>
+          <div>
+            <span class="score-label">Best</span>
+            <strong id="best-2048">0</strong>
+          </div>
+          <div>
+            <span class="score-label">Goal</span>
+            <strong>2048</strong>
+          </div>
+        </div>
+
+        <div id="board-2048" class="board-2048" role="grid" aria-label="2048 board" tabindex="0"></div>
+        <p id="message-2048" class="game-message" aria-live="polite">Use arrow keys or swipe to start.</p>
+
+        <div class="game-actions">
+          <button id="restart-2048" class="button primary" type="button">Restart</button>
+        </div>
+
+        <div id="debug-2048" class="debug-2048" hidden>
+          <p class="score-label">QA Debug Mode</p>
+          <div class="debug-2048-actions">
+            <button class="button secondary" type="button" data-debug-tile="2">Spawn Tile 2</button>
+            <button class="button secondary" type="button" data-debug-tile="4">Spawn Tile 4</button>
+            <button class="button secondary" type="button" data-debug-tile="1024">Spawn Tile 1024</button>
+            <button class="button secondary" type="button" data-debug-tile="2048">Spawn Tile 2048</button>
+            <button id="debug-force-win-2048" class="button secondary" type="button">Force Win</button>
+            <button id="debug-force-game-over-2048" class="button secondary" type="button">Force Game Over</button>
+            <button id="debug-clear-board-2048" class="button secondary" type="button">Clear Board</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="ad-banner ad-after-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="text-page" aria-labelledby="guide-2048-title">
+      <h2 id="guide-2048-title">About 2048</h2>
+      <p>2048 is a number puzzle where every move slides the full board in one direction. When two tiles with the same value touch during a move, they merge into one larger tile.</p>
+      <p>The goal is to keep creating larger values until a 2048 tile appears. The board fills quickly, so each move matters.</p>
+
+      <h2>How to Play</h2>
+      <ol>
+        <li>Use the arrow keys on desktop or swipe on a touch screen.</li>
+        <li>All tiles slide as far as they can in the chosen direction.</li>
+        <li>Matching tiles merge once per move.</li>
+        <li>A new 2 or 4 tile appears after a valid move.</li>
+        <li>Keep merging tiles until you reach 2048 or no moves remain.</li>
+      </ol>
+
+      <h2>Scoring and Best Score</h2>
+      <p>Your score increases by the value of each tile created through a merge. For example, merging two 16 tiles creates a 32 tile and adds 32 points.</p>
+      <p>Best stores the highest score saved in this browser using localStorage. Restart starts a fresh board while keeping the saved best score.</p>
+
+      <h2>Game Over and Winning</h2>
+      <p>You win when a tile reaches 2048. You can keep viewing the completed board until you restart.</p>
+      <p>Game Over appears when the board is full and no horizontal or vertical merges are possible.</p>
+
+      <h2>Tips</h2>
+      <ul>
+        <li>Try to keep your largest tile in a corner.</li>
+        <li>Avoid moving tiles back and forth without a plan.</li>
+        <li>Leave open spaces so new tiles do not block your next merge.</li>
+        <li>Build smaller tiles toward the side where your largest tile is sitting.</li>
+      </ul>
+
+      <h2>Controls and Devices</h2>
+      <p>Desktop players can use the arrow keys. Mobile and tablet players can swipe left, right, up, or down on the board.</p>
+      <p>The board can receive keyboard focus, and the Restart control is a standard button.</p>
+
+      <h2>Related Games</h2>
+      <p>For more puzzle and quick-thinking games, try <a href="number-guess.html">Number Guess</a>, <a href="memory-match.html">Memory Match</a>, or <a href="tic-tac-toe.html">Tic-Tac-Toe</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Nyanya Mini Games</p>
+    <nav aria-label="Footer navigation">
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </footer>
+
+  <script src="../js/sound.js"></script>
+  <script src="js/2048.js"></script>
+</body>
+</html>

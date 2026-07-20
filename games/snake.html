@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake - Nyanya Mini Games</title>
+  <meta name="description" content="Play Snake online for free. Guide the snake, eat food, grow longer, avoid walls and your own body, and try to beat your best score.">
+  <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/snake.html" />
+  <link rel="stylesheet" href="../css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
+crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Nyanya Mini Games home">
+      <span class="brand-mark">N</span>
+      <span>Nyanya Mini Games</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
+      <a href="../news.html">News</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <button class="sound-toggle" type="button" data-sound-toggle aria-pressed="false">Sound Off</button>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <p class="eyebrow">Classic mini game</p>
+      <h1>Snake</h1>
+      <p>Guide the snake around the grid, eat food to grow longer, and avoid crashing into walls or yourself.</p>
+    </section>
+
+    <aside class="ad-banner ad-before-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="game-shell" aria-labelledby="snake-title">
+      <div class="game-panel">
+        <h2 id="snake-title">Snake</h2>
+        <p class="game-description">The snake moves continuously. Change direction, collect food, and keep the path clear.</p>
+
+        <div class="score-board" aria-live="polite">
+          <div>
+            <span class="score-label">Score</span>
+            <strong id="snake-score">0</strong>
+          </div>
+          <div>
+            <span class="score-label">Best</span>
+            <strong id="snake-best">0</strong>
+          </div>
+          <div>
+            <span class="score-label">Length</span>
+            <strong id="snake-length">3</strong>
+          </div>
+        </div>
+
+        <div class="snake-board-wrap">
+          <div id="snake-board" class="snake-board" role="grid" aria-label="Snake game board" tabindex="0"></div>
+          <div id="snake-countdown" class="snake-countdown" aria-live="assertive" hidden></div>
+        </div>
+        <p id="snake-message" class="game-message" aria-live="polite">Press Start Game when you are ready.</p>
+
+        <div class="game-actions">
+          <button id="snake-restart" class="button primary" type="button">Start Game</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="ad-banner ad-after-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="text-page" aria-labelledby="snake-guide-title">
+      <h2 id="snake-guide-title">About Snake</h2>
+      <p>Snake is a grid-based arcade game where the snake moves one cell at a time across the board.</p>
+      <p>Your goal is to eat food, grow longer, and keep moving without hitting a wall or running into the snake's own body.</p>
+
+      <h2>How to Play</h2>
+      <ol>
+        <li>Press Start Game to reset the board and begin the countdown.</li>
+        <li>Use arrow keys, WASD, or swipe controls to turn.</li>
+        <li>Guide the snake to the food cell.</li>
+        <li>Each food item increases the score and snake length.</li>
+        <li>Keep playing until the snake crashes.</li>
+        <li>After Game Over, press Play Again to restart with the same countdown.</li>
+      </ol>
+
+      <h2>Rules</h2>
+      <p>Only one food item appears at a time, and it is always placed in an empty cell rather than on the snake.</p>
+      <p>The snake cannot instantly reverse into the opposite direction. The round ends when the head crosses the board edge or touches the snake's body.</p>
+
+      <h2>Score and Best Score</h2>
+      <p>Score increases by 1 for each food item eaten. Length shows how many cells the snake currently occupies.</p>
+      <p>Best stores the highest score saved in this browser using localStorage. Start Game and Play Again clear the current round but keep the saved best score.</p>
+
+      <h2>Strategy Tips</h2>
+      <ul>
+        <li>Leave yourself room to turn before collecting food near a wall.</li>
+        <li>Avoid trapping the snake's head inside its own body loop.</li>
+        <li>Use the outer edge carefully, but do not rely on it when the snake gets long.</li>
+        <li>Plan one or two turns ahead as the board fills.</li>
+      </ul>
+
+      <h2>Saving and Resetting</h2>
+      <p>Snake saves only the Best score in this browser. The current board, direction, food position, and current score do not persist after refresh.</p>
+      <p>Clearing browser storage may remove the saved best score.</p>
+
+      <h2>Controls</h2>
+      <p>Desktop players can steer with Arrow keys or WASD. Mobile and tablet players can swipe left, right, up, or down on the board.</p>
+      <p>The board can receive keyboard focus, and the Start Game or Play Again control is a standard button.</p>
+
+      <h2>Related Games</h2>
+      <p>For more quick-play challenges, try <a href="2048.html">2048</a>, <a href="reaction-test.html">Reaction Test</a>, or <a href="memory-match.html">Memory Match</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Nyanya Mini Games</p>
+    <nav aria-label="Footer navigation">
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </footer>
+
+  <script src="../js/sound.js"></script>
+  <script src="../js/snake.js"></script>
+</body>
+</html>
