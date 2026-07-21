@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Games - Nyanya Mini Games</title>
-  <meta name="description" content="Browse free browser games on Nyanya Mini Games, including Apple Clicker, Snake, 2048, Rock Paper Scissors, Tic-Tac-Toe, Typing Speed Test, Color Guess, Coin Flip, Dice Roller, Reaction Test, Number Guess, Memory Match, and upcoming simple games.">
+  <meta name="description" content="Browse free browser games on Nyanya Mini Games, including Apple Clicker, Minesweeper, Snake, 2048, Rock Paper Scissors, Tic-Tac-Toe, Typing Speed Test, Color Guess, Coin Flip, Dice Roller, Reaction Test, Number Guess, Memory Match, and upcoming simple games.">
   <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games.html" />
   <link rel="stylesheet" href="css/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
@@ -32,7 +32,7 @@ crossorigin="anonymous"></script>
       <h1>Games</h1>
       <p>Browse all available and upcoming Nyanya Mini Games in one place. Pick a game to play now or see what is coming next.</p>
       <div class="game-actions">
-        <button id="random-game-button" class="button primary" type="button">🎲 Play a Random Game</button>
+        <button id="random-game-button" class="button primary" type="button">&#127922; Play a Random Game</button>
       </div>
     </section>
 
@@ -127,10 +127,19 @@ crossorigin="anonymous"></script>
           <a class="button secondary" href="games/number-guess.html">Play now</a>
         </article>
         <article class="game-card">
-          <div class="game-icon text-icon" aria-hidden="true">S</div>
+          <img class="game-icon game-card-image" src="mini-game-site/apps/minesweeper.png" width="180" height="180" loading="lazy" alt="Minesweeper game illustration">
           <div class="card-labels">
             <span class="status-pill">Available</span>
-            <span class="status-pill">NEW</span>
+            <span class="category-pill">Puzzle</span>
+          </div>
+          <h3>Minesweeper</h3>
+          <p>Reveal safe cells, flag hidden mines, and clear the board without triggering a mine.</p>
+          <a class="button secondary" href="games/minesweeper.html">Play now</a>
+        </article>
+        <article class="game-card">
+          <img class="game-icon game-card-image" src="mini-game-site/apps/snake.png" width="180" height="180" loading="lazy" alt="Snake game illustration">
+          <div class="card-labels">
+            <span class="status-pill">Available</span>
             <span class="category-pill">Classic</span>
           </div>
           <h3>Snake</h3>
@@ -138,24 +147,25 @@ crossorigin="anonymous"></script>
           <a class="button secondary" href="games/snake.html">Play now</a>
         </article>
         <article class="game-card">
-          <div class="game-icon text-icon" aria-hidden="true">2048</div>
+          <img class="game-icon game-card-image" src="mini-game-site/apps/2048.png" width="180" height="180" loading="lazy" alt="2048 game illustration">
           <div class="card-labels">
             <span class="status-pill">Available</span>
-            <span class="status-pill">NEW</span>
             <span class="category-pill">Puzzle</span>
           </div>
           <h3>2048</h3>
           <p>Slide matching number tiles, merge values, and try to reach the 2048 tile.</p>
           <a class="button secondary" href="games/2048.html">Play now</a>
         </article>
-        <article class="game-card coming-soon" aria-label="Sudoku coming soon">
-          <div class="game-icon text-icon" aria-hidden="true">123</div>
+        <article class="game-card">
+          <img class="game-icon game-card-image" src="mini-game-site/apps/sudoku.png" width="180" height="180" loading="lazy" alt="Sudoku game illustration">
           <div class="card-labels">
-            <span class="status-pill">Coming Soon</span>
+            <span class="status-pill">Available</span>
+            <span class="status-pill">NEW</span>
             <span class="category-pill">Puzzle</span>
           </div>
           <h3>Sudoku</h3>
-          <p>A focused number puzzle for quiet breaks is currently being prepared.</p>
+          <p>Complete the 9 x 9 grid so every row, column, and box contains the numbers 1 through 9.</p>
+          <a class="button secondary" href="games/sudoku.html">Play now</a>
         </article>
         <article class="game-card">
           <img class="game-icon game-card-image" src="mini-game-site/apps/reaction-test.png" width="180" height="180" loading="lazy" alt="Reaction Test game illustration">
@@ -204,6 +214,8 @@ crossorigin="anonymous"></script>
         "games/dice-roller.html",
         "games/number-guess.html",
         "games/2048.html",
+        "games/minesweeper.html",
+        "games/sudoku.html",
         "games/snake.html",
         "games/reaction-test.html",
         "games/memory-match.html"

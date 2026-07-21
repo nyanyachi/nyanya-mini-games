@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minesweeper - Free Online Puzzle Game | Nyanya Mini Games</title>
+  <meta name="description" content="Play Minesweeper online for free. Reveal safe cells, flag hidden mines, and clear the board in Beginner, Intermediate, or Expert mode.">
+  <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/minesweeper.html" />
+  <link rel="stylesheet" href="../css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
+crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Nyanya Mini Games home">
+      <span class="brand-mark">N</span>
+      <span>Nyanya Mini Games</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
+      <a href="../news.html">News</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <button class="sound-toggle" type="button" data-sound-toggle aria-pressed="false">Sound Off</button>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <p class="eyebrow">Puzzle mini game</p>
+      <h1>Minesweeper</h1>
+      <p>Reveal every safe cell without triggering a hidden mine.</p>
+    </section>
+
+    <aside class="ad-banner ad-before-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="game-shell" aria-labelledby="minesweeper-title">
+      <div class="game-panel minesweeper-panel">
+        <h2 id="minesweeper-title">Minesweeper</h2>
+        <p class="game-description">Choose a difficulty, reveal safe cells, and flag the mines before you clear the board.</p>
+
+        <div class="minesweeper-controls">
+          <label class="score-label" for="minesweeper-difficulty">Difficulty</label>
+          <select id="minesweeper-difficulty" class="minesweeper-select">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="expert">Expert</option>
+          </select>
+        </div>
+
+        <div class="score-board minesweeper-score-board" aria-live="polite">
+          <div>
+            <span class="score-label">Status</span>
+            <strong id="minesweeper-status">Ready</strong>
+          </div>
+          <div>
+            <span class="score-label">Mines</span>
+            <strong id="minesweeper-mines">10</strong>
+          </div>
+          <div>
+            <span class="score-label">Timer</span>
+            <strong id="minesweeper-timer">0s</strong>
+          </div>
+          <div>
+            <span class="score-label">Best</span>
+            <strong id="minesweeper-best">--</strong>
+          </div>
+        </div>
+
+        <div class="minesweeper-board-wrap">
+          <div id="minesweeper-board" class="minesweeper-board" role="grid" aria-label="Minesweeper board"></div>
+        </div>
+
+        <p class="game-message">Tap or left click to reveal. Right click or long press to flag.</p>
+
+        <div class="game-actions">
+          <button id="minesweeper-restart" class="button primary" type="button">Restart</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="ad-banner ad-after-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="text-page" aria-labelledby="minesweeper-guide-title">
+      <h2 id="minesweeper-guide-title">How to Play</h2>
+      <ol>
+        <li>Choose Beginner, Intermediate, or Expert.</li>
+        <li>Reveal a cell to start the timer. The first revealed cell is always safe.</li>
+        <li>Use the numbers to work out where hidden mines are located.</li>
+        <li>Place flags on cells you believe contain mines.</li>
+        <li>Reveal every safe cell to win.</li>
+      </ol>
+
+      <h2>Rules</h2>
+      <p>Each number shows how many mines touch that cell, including diagonals. Empty cells automatically open nearby safe areas.</p>
+      <p>Revealing a mine ends the game. The game is won when every non-mine cell has been revealed.</p>
+
+      <h2>Strategy Tips</h2>
+      <ul>
+        <li>Start with open areas and use revealed numbers to narrow down mine positions.</li>
+        <li>Flag cells only when a number gives you enough information.</li>
+        <li>Look for groups of numbers that share the same covered cells.</li>
+        <li>On Expert, use horizontal scrolling on small screens instead of shrinking the board too far.</li>
+      </ul>
+
+      <h2>Saving and Best Times</h2>
+      <p>Minesweeper saves the best completion time separately for Beginner, Intermediate, and Expert using localStorage. A time is saved only after a win.</p>
+      <p>Restarting or changing difficulty resets the current board, timer, mine counter, and state, but keeps saved best times.</p>
+
+      <h2>Controls</h2>
+      <p>Use left click or tap to reveal a cell. Use right click to place or remove a flag on desktop.</p>
+      <p>On mobile, long press a hidden cell to place or remove a flag. Long press does not reveal the same cell.</p>
+
+      <h2>Related Games</h2>
+      <p>For more puzzle games, try <a href="2048.html">2048</a>, <a href="number-guess.html">Number Guess</a>, or <a href="memory-match.html">Memory Match</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Nyanya Mini Games</p>
+    <nav aria-label="Footer navigation">
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </footer>
+
+  <script src="../js/sound.js"></script>
+  <script src="../js/minesweeper.js"></script>
+</body>
+</html>

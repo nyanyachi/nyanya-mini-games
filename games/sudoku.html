@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku - Free Online Number Puzzle | Nyanya Mini Games</title>
+  <meta name="description" content="Play Sudoku online for free. Complete the 9 x 9 number puzzle in Easy, Medium, or Hard mode and beat your best time.">
+  <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/sudoku.html" />
+  <link rel="stylesheet" href="../css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
+crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Nyanya Mini Games home">
+      <span class="brand-mark">N</span>
+      <span>Nyanya Mini Games</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
+      <a href="../news.html">News</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <button class="sound-toggle" type="button" data-sound-toggle aria-pressed="false">Sound Off</button>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <p class="eyebrow">Number puzzle</p>
+      <h1>Sudoku</h1>
+      <p>Fill every row, column, and 3 x 3 box with the numbers 1 through 9.</p>
+    </section>
+
+    <aside class="ad-banner ad-before-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="game-shell" aria-labelledby="sudoku-title">
+      <div class="game-panel sudoku-panel">
+        <h2 id="sudoku-title">Sudoku</h2>
+        <p class="game-description">Choose a difficulty, fill the empty cells, and complete the board without breaking Sudoku rules.</p>
+
+        <div class="sudoku-controls">
+          <label class="score-label" for="sudoku-difficulty">Difficulty</label>
+          <select id="sudoku-difficulty" class="sudoku-select">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+
+        <div class="score-board sudoku-score-board" aria-live="polite">
+          <div>
+            <span class="score-label">Status</span>
+            <strong id="sudoku-status">Ready</strong>
+          </div>
+          <div>
+            <span class="score-label">Time</span>
+            <strong id="sudoku-time">0:00</strong>
+          </div>
+          <div>
+            <span class="score-label">Best Time</span>
+            <strong id="sudoku-best">--</strong>
+          </div>
+          <div>
+            <span class="score-label">Mistakes</span>
+            <strong id="sudoku-mistakes">0</strong>
+          </div>
+        </div>
+
+        <div id="sudoku-board" class="sudoku-board" role="grid" aria-label="Sudoku board"></div>
+
+        <div class="sudoku-number-pad" aria-label="Sudoku number pad">
+          <button class="button secondary" type="button" data-sudoku-number="1">1</button>
+          <button class="button secondary" type="button" data-sudoku-number="2">2</button>
+          <button class="button secondary" type="button" data-sudoku-number="3">3</button>
+          <button class="button secondary" type="button" data-sudoku-number="4">4</button>
+          <button class="button secondary" type="button" data-sudoku-number="5">5</button>
+          <button class="button secondary" type="button" data-sudoku-number="6">6</button>
+          <button class="button secondary" type="button" data-sudoku-number="7">7</button>
+          <button class="button secondary" type="button" data-sudoku-number="8">8</button>
+          <button class="button secondary" type="button" data-sudoku-number="9">9</button>
+          <button id="sudoku-clear" class="button secondary" type="button">Clear</button>
+        </div>
+
+        <p id="sudoku-message" class="game-message">Select an empty cell, then enter a number.</p>
+
+        <div class="game-actions">
+          <button id="sudoku-restart" class="button primary" type="button">Restart</button>
+          <button id="sudoku-new" class="button secondary" type="button">New Puzzle</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="ad-banner ad-after-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="text-page" aria-labelledby="sudoku-guide-title">
+      <h2 id="sudoku-guide-title">How to Play</h2>
+      <ol>
+        <li>Select an empty cell on the board.</li>
+        <li>Enter a number from 1 to 9 with the keyboard or the number pad.</li>
+        <li>Use Backspace, Delete, 0, or Clear to erase an editable cell.</li>
+        <li>Complete the entire board correctly to solve the puzzle.</li>
+      </ol>
+
+      <h2>Rules</h2>
+      <p>Each row must contain the numbers 1 through 9 without duplicates. Each column follows the same rule.</p>
+      <p>Each 3 x 3 box must also contain the numbers 1 through 9 without duplicates. Fixed clue cells are part of the puzzle and cannot be changed.</p>
+
+      <h2>Strategy Tips</h2>
+      <ul>
+        <li>Start with rows, columns, or boxes that already contain many clues.</li>
+        <li>Look for numbers that can fit in only one remaining cell.</li>
+        <li>Compare overlapping rows, columns, and boxes before placing a number.</li>
+        <li>Avoid guessing until logical options are exhausted.</li>
+      </ul>
+
+      <h2>Saving and Best Times</h2>
+      <p>Sudoku saves the best completion time separately for Easy, Medium, and Hard using localStorage. A time is saved only after the puzzle is solved correctly.</p>
+      <p>Restart restores the current puzzle to its original clues and resets the timer. New Puzzle loads a different puzzle for the selected difficulty when one is available.</p>
+
+      <h2>Controls</h2>
+      <p>Use mouse click or tap to select a cell. Number keys enter values, Backspace, Delete, or 0 clears a cell, and arrow keys move the selection around the board.</p>
+      <p>The on-screen number pad works with mouse and touch controls on desktop and mobile.</p>
+
+      <h2>Related Games</h2>
+      <p>For more puzzle games, try <a href="2048.html">2048</a>, <a href="minesweeper.html">Minesweeper</a>, or <a href="number-guess.html">Number Guess</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Nyanya Mini Games</p>
+    <nav aria-label="Footer navigation">
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </footer>
+
+  <script src="../js/sound.js"></script>
+  <script src="../js/sudoku.js"></script>
+</body>
+</html>
