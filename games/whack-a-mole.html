@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whack-a-Mole - Nyanya Mini Games</title>
+  <meta name="description" content="Play Whack-a-Mole online for free. Hit the active target, build your score in 30 seconds, and try to beat your best score.">
+  <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/whack-a-mole.html" />
+  <link rel="stylesheet" href="../css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
+crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Nyanya Mini Games home">
+      <span class="brand-mark">N</span>
+      <span>Nyanya Mini Games</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
+      <a href="../news.html">News</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <button class="sound-toggle" type="button" data-sound-toggle aria-pressed="false">Sound Off</button>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <p class="eyebrow">Quick reflex game</p>
+      <h1>Whack-a-Mole</h1>
+      <p>Hit the active target as many times as you can before the 30-second timer ends.</p>
+    </section>
+
+    <aside class="ad-banner ad-before-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="game-shell" aria-labelledby="whack-title">
+      <div class="game-panel whack-panel">
+        <h2 id="whack-title">Whack-a-Mole</h2>
+        <p class="game-description">Start a round, watch the grid, and tap only the active target to score.</p>
+
+        <div class="score-board whack-score-board" aria-live="polite">
+          <div>
+            <span class="score-label">Score</span>
+            <strong id="whack-score">0</strong>
+          </div>
+          <div>
+            <span class="score-label">Time</span>
+            <strong id="whack-time">30</strong>
+          </div>
+          <div>
+            <span class="score-label">Best</span>
+            <strong id="whack-best">0</strong>
+          </div>
+        </div>
+
+        <div id="whack-grid" class="whack-grid" aria-label="Whack-a-Mole holes">
+          <button class="whack-hole" type="button" data-hole="0" aria-label="Hole 1"></button>
+          <button class="whack-hole" type="button" data-hole="1" aria-label="Hole 2"></button>
+          <button class="whack-hole" type="button" data-hole="2" aria-label="Hole 3"></button>
+          <button class="whack-hole" type="button" data-hole="3" aria-label="Hole 4"></button>
+          <button class="whack-hole" type="button" data-hole="4" aria-label="Hole 5"></button>
+          <button class="whack-hole" type="button" data-hole="5" aria-label="Hole 6"></button>
+          <button class="whack-hole" type="button" data-hole="6" aria-label="Hole 7"></button>
+          <button class="whack-hole" type="button" data-hole="7" aria-label="Hole 8"></button>
+          <button class="whack-hole" type="button" data-hole="8" aria-label="Hole 9"></button>
+        </div>
+
+        <p id="whack-message" class="game-message" aria-live="polite">Press Start Game when you are ready.</p>
+
+        <div class="game-actions">
+          <button id="whack-start" class="button primary" type="button">Start Game</button>
+          <button id="whack-play-again" class="button primary" type="button" hidden>Play Again</button>
+        </div>
+
+        <div id="whack-debug-panel" class="whack-debug-panel" hidden>
+          <h3>Whack-a-Mole Debug</h3>
+          <div class="whack-debug-stats" aria-live="polite">
+            <p>State: <strong id="whack-debug-state">Ready</strong></p>
+            <p>Active hole: <strong id="whack-debug-hole">--</strong></p>
+            <p>Score: <strong id="whack-debug-score">0</strong></p>
+            <p>Time: <strong id="whack-debug-time">30</strong></p>
+          </div>
+
+          <div class="whack-debug-row">
+            <label for="whack-debug-hole-select">Force hole</label>
+            <select id="whack-debug-hole-select" class="whack-debug-select">
+              <option value="0">1</option>
+              <option value="1">2</option>
+              <option value="2">3</option>
+              <option value="3">4</option>
+              <option value="4">5</option>
+              <option value="5">6</option>
+              <option value="6">7</option>
+              <option value="7">8</option>
+              <option value="8">9</option>
+            </select>
+          </div>
+
+          <div class="whack-debug-actions">
+            <button id="whack-debug-start" class="button secondary" type="button">Start Debug Game</button>
+            <button id="whack-debug-add-score" class="button secondary" type="button">Add 1 Point</button>
+            <button id="whack-debug-score-20" class="button secondary" type="button">Set Score to 20</button>
+            <button id="whack-debug-time-5" class="button secondary" type="button">Set Time to 5</button>
+            <button id="whack-debug-move" class="button secondary" type="button">Move Target</button>
+            <button id="whack-debug-force-hole" class="button secondary" type="button">Force Selected Hole</button>
+            <button id="whack-debug-game-over" class="button secondary" type="button">Force Game Over</button>
+            <button id="whack-debug-reset" class="button secondary" type="button">Reset Game</button>
+            <button id="whack-debug-clear-best" class="button secondary" type="button">Clear Best Score</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="ad-banner ad-after-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="text-page" aria-labelledby="whack-guide-title">
+      <h2 id="whack-guide-title">About Whack-a-Mole</h2>
+      <p>Whack-a-Mole is a fast tapping game where one target appears in a 3 x 3 grid. Your goal is to hit the active target as many times as possible before time runs out.</p>
+      <p>The target keeps moving during the round, so quick focus and accurate taps matter more than random clicking.</p>
+
+      <h2>How to Play</h2>
+      <ol>
+        <li>Press Start Game to begin a 30-second round.</li>
+        <li>Watch for the active target in one of the nine holes.</li>
+        <li>Click, tap, or keyboard-activate the active target to earn one point.</li>
+        <li>Keep scoring until the timer reaches zero.</li>
+        <li>Use Play Again after the round ends to start fresh.</li>
+      </ol>
+
+      <h2>Rules</h2>
+      <p>Only the active target gives a point. Empty holes do not change the score.</p>
+      <p>After a successful hit, the target immediately moves to another hole when possible. Scoring is disabled before the round starts and after the game is finished.</p>
+
+      <h2>Tips and Strategy</h2>
+      <ul>
+        <li>Keep your pointer or thumb near the center of the grid so every hole is easy to reach.</li>
+        <li>Tap deliberately; empty holes do not help your score.</li>
+        <li>Watch the full board instead of focusing on one corner.</li>
+        <li>On mobile, use short taps to avoid accidental text selection or missed inputs.</li>
+      </ul>
+
+      <h2>Saving and Best Score</h2>
+      <p>Whack-a-Mole saves your best score in this browser using localStorage. A new best is saved when a finished round beats the previous record.</p>
+      <p>Clearing browser storage may remove the saved best score.</p>
+
+      <h2>Controls</h2>
+      <p>Use mouse click, touch, or keyboard activation when a hole button is focused. The grid remains visible in every state, and the buttons are sized for desktop and mobile play.</p>
+
+      <h2>Related Games</h2>
+      <p>For more quick games, try <a href="reaction-test.html">Reaction Test</a>, <a href="apple-clicker.html">Apple Clicker</a>, or <a href="hangman.html">Hangman</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Nyanya Mini Games</p>
+    <nav aria-label="Footer navigation">
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </footer>
+
+  <script src="../js/sound.js"></script>
+  <script src="../js/whack-a-mole.js"></script>
+</body>
+</html>

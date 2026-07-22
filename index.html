@@ -6,6 +6,7 @@
   <title>Nyanya Mini Games | Cute Free Mini Games Online</title>
   <meta name="description" content="Play cute, lightweight browser mini games at Nyanya Mini Games. Enjoy Rock Paper Scissors, Reaction Test, Number Guess, Memory Match, and more simple games.">
   <link rel="canonical" href="https://nyanya-mini-games.pages.dev/" />
+  <script>document.documentElement.classList.add("home-games-loading");</script>
   <link rel="stylesheet" href="css/style.css">
   <meta name="google-site-verification" content="Rbl2ouPE6BItLJ-Yy7ChNuDwNsZfv4y-uBACmeNN7Q8" />
   <!-- Add Cloudflare Pages Google Search Console verification meta tag here if needed -->
@@ -48,7 +49,7 @@ crossorigin="anonymous"></script>
       Advertisement
     </aside>
 
-    <section class="featured-game" aria-labelledby="featured-game-title">
+    <section id="featured-game" class="featured-game" aria-labelledby="featured-game-title">
       <div class="featured-game-art">
         <img src="mini-game-site/apps/apple-clicker.png" width="360" height="360" alt="Nyanya character playing Apple Clicker">
       </div>
@@ -56,7 +57,7 @@ crossorigin="anonymous"></script>
         <p class="eyebrow">Featured Game</p>
         <h2 id="featured-game-title">Apple Clicker</h2>
         <p>Click apples, build your score, and enjoy a quick relaxing break with Nyanya.</p>
-        <a class="button primary" href="games/apple-clicker.html">Play Apple Clicker</a>
+        <a id="featured-game-link" class="button primary" href="games/apple-clicker.html">Play Apple Clicker</a>
       </div>
     </section>
 
@@ -66,7 +67,7 @@ crossorigin="anonymous"></script>
         <h2>Pick a game</h2>
         <a class="button secondary" href="games.html">View all games</a>
       </div>
-      <div class="game-grid">
+      <div id="pick-game-grid" class="game-grid">
         <article class="game-card">
           <img class="game-icon game-card-image" src="mini-game-site/apps/reaction-test.png" width="180" height="180" alt="Reaction Test mini game artwork">
           <h3>Reaction Test</h3>
@@ -100,22 +101,22 @@ crossorigin="anonymous"></script>
         <h2 id="recently-added-title">New games to try</h2>
         <div class="game-grid">
           <article class="game-card">
+            <img class="game-icon game-card-image" src="mini-game-site/apps/whack-a-mole.png" width="180" height="180" loading="lazy" alt="Whack-a-Mole mini game artwork">
+            <h3>Whack-a-Mole</h3>
+            <p>Hit the active target, avoid empty holes, and score as much as possible in 30 seconds.</p>
+            <a class="button primary" href="games/whack-a-mole.html">Play Whack-a-Mole</a>
+          </article>
+          <article class="game-card">
+            <img class="game-icon game-card-image" src="mini-game-site/apps/hangman.png" width="180" height="180" loading="lazy" alt="Hangman mini game artwork">
+            <h3>Hangman</h3>
+            <p>Guess the hidden word letter by letter before six wrong guesses run out.</p>
+            <a class="button secondary" href="games/hangman.html">Play Hangman</a>
+          </article>
+          <article class="game-card">
             <img class="game-icon game-card-image" src="mini-game-site/apps/sudoku.png" width="180" height="180" loading="lazy" alt="Sudoku mini game artwork">
             <h3>Sudoku</h3>
             <p>Complete the 9 x 9 grid so every row, column, and 3 x 3 box contains the numbers 1 through 9.</p>
-            <a class="button primary" href="games/sudoku.html">Play Sudoku</a>
-          </article>
-          <article class="game-card">
-            <img class="game-icon game-card-image" src="mini-game-site/apps/minesweeper.png" width="180" height="180" loading="lazy" alt="Minesweeper mini game artwork">
-            <h3>Minesweeper</h3>
-            <p>Reveal safe cells, flag hidden mines, and clear the board without triggering a mine.</p>
-            <a class="button secondary" href="games/minesweeper.html">Play Minesweeper</a>
-          </article>
-          <article class="game-card">
-            <img class="game-icon game-card-image" src="mini-game-site/apps/snake.png" width="180" height="180" loading="lazy" alt="Snake mini game artwork">
-            <h3>Snake</h3>
-            <p>Guide the snake, collect food, grow longer, and beat your best score.</p>
-            <a class="button secondary" href="games/snake.html">Play Snake</a>
+            <a class="button secondary" href="games/sudoku.html">Play Sudoku</a>
           </article>
         </div>
       </div>
@@ -140,6 +141,156 @@ crossorigin="anonymous"></script>
       <a href="about.html">About</a>
     </nav>
   </footer>
+
+  <script>
+    (function () {
+      const FEATURED_GROUP_WEIGHTS = {
+        new: 0.4,
+        popular: 0.3,
+        standard: 0.3
+      };
+
+      const publicGames = [
+        { title: "Apple Clicker", description: "Click apples, buy upgrades, and build a higher score with every round.", image: "mini-game-site/apps/apple-clicker.png", url: "games/apple-clicker.html", featureGroup: "popular" },
+        { title: "Rock Paper Scissors", description: "Choose your move, challenge the computer, and track your wins, losses, and draws.", image: "mini-game-site/apps/rock-paper-scissors.png", url: "games/rock-paper-scissors.html" },
+        { title: "Tic-Tac-Toe", description: "Take turns placing X and O, complete a line of three, and avoid a draw.", image: "mini-game-site/apps/Tic-Tac-Toe.png", url: "games/tic-tac-toe.html" },
+        { title: "Typing Speed Test", description: "Type the displayed text accurately and measure your speed and typing accuracy.", image: "mini-game-site/apps/Typing-Speed-Test.png", url: "games/typing-speed-test.html" },
+        { title: "Color Guess", description: "Compare the target color with three choices and test how precisely you recognize colors.", image: "mini-game-site/apps/Color-Guess.png", url: "games/color-guess.html" },
+        { title: "Coin Flip", description: "Flip a virtual coin and keep track of the total number of heads and tails.", image: "mini-game-site/apps/Coin-Flip.png", url: "games/coin-flip.html" },
+        { title: "Dice Roller", description: "Roll a six-sided die and review how often each number appears during your session.", image: "mini-game-site/apps/Dice-Roller.png", url: "games/dice-roller.html" },
+        { title: "Number Guess", description: "Guess a hidden number from 1 to 100 by following the higher and lower hints.", image: "mini-game-site/apps/number-guess.png", url: "games/number-guess.html" },
+        { title: "Minesweeper", description: "Reveal safe cells, flag hidden mines, and clear the board without triggering a mine.", image: "mini-game-site/apps/minesweeper.png", url: "games/minesweeper.html" },
+        { title: "Snake", description: "Steer the snake, collect food, grow longer, and avoid crashing.", image: "mini-game-site/apps/snake.png", url: "games/snake.html", featureGroup: "popular" },
+        { title: "2048", description: "Slide matching number tiles, merge values, and try to reach the 2048 tile.", image: "mini-game-site/apps/2048.png", url: "games/2048.html", featureGroup: "popular" },
+        { title: "Hangman", description: "Guess the hidden word letter by letter before six wrong guesses run out.", image: "mini-game-site/apps/hangman.png", url: "games/hangman.html", featureGroup: "new" },
+        { title: "Whack-a-Mole", description: "Hit the active target, avoid empty holes, and score as much as possible in 30 seconds.", image: "mini-game-site/apps/whack-a-mole.png", url: "games/whack-a-mole.html", featureGroup: "new" },
+        { title: "Sudoku", description: "Complete the 9 x 9 grid so every row, column, and box contains the numbers 1 through 9.", image: "mini-game-site/apps/sudoku.png", url: "games/sudoku.html" },
+        { title: "Reaction Test", description: "Wait for the signal, react as quickly as possible, and compare your latest and best times.", image: "mini-game-site/apps/reaction-test.png", url: "games/reaction-test.html" },
+        { title: "Memory Match", description: "Turn over cards, remember their positions, and match all pairs in as few moves as possible.", image: "mini-game-site/apps/memory-match.png", url: "games/memory-match.html" }
+      ];
+
+      function getPublicGames() {
+        return publicGames.filter(function (game) {
+          return game && game.title && game.url && game.image;
+        });
+      }
+
+      function chooseRandom(games) {
+        return games[Math.floor(Math.random() * games.length)];
+      }
+
+      function chooseWeightedFeaturedGame(games) {
+        const roll = Math.random();
+        let cumulativeWeight = 0;
+        let selectedGroup = "standard";
+
+        Object.keys(FEATURED_GROUP_WEIGHTS).some(function (group) {
+          cumulativeWeight += FEATURED_GROUP_WEIGHTS[group];
+
+          if (roll <= cumulativeWeight) {
+            selectedGroup = group;
+            return true;
+          }
+
+          return false;
+        });
+
+        const groupGames = games.filter(function (game) {
+          return (game.featureGroup || "standard") === selectedGroup;
+        });
+
+        return chooseRandom(groupGames.length ? groupGames : games);
+      }
+
+      function shuffle(games) {
+        const shuffled = games.slice();
+
+        for (let index = shuffled.length - 1; index > 0; index -= 1) {
+          const swapIndex = Math.floor(Math.random() * (index + 1));
+          const current = shuffled[index];
+          shuffled[index] = shuffled[swapIndex];
+          shuffled[swapIndex] = current;
+        }
+
+        return shuffled;
+      }
+
+      function renderFeaturedGame(game) {
+        const section = document.getElementById("featured-game");
+        const image = section.querySelector(".featured-game-art img");
+        const title = document.getElementById("featured-game-title");
+        const description = section.querySelector(".featured-game-copy p:not(.eyebrow)");
+        const link = document.getElementById("featured-game-link");
+
+        image.src = game.image;
+        image.alt = game.title + " mini game artwork";
+        title.textContent = game.title;
+        description.textContent = game.description;
+        link.href = game.url;
+        link.textContent = "Play " + game.title;
+      }
+
+      function createGameCard(game) {
+        const article = document.createElement("article");
+        const image = document.createElement("img");
+        const title = document.createElement("h3");
+        const description = document.createElement("p");
+        const link = document.createElement("a");
+
+        article.className = "game-card";
+        image.className = "game-icon game-card-image";
+        image.src = game.image;
+        image.width = 180;
+        image.height = 180;
+        image.alt = game.title + " mini game artwork";
+        title.textContent = game.title;
+        description.textContent = game.description;
+        link.className = "button secondary";
+        link.href = game.url;
+        link.textContent = "Play now";
+
+        article.appendChild(image);
+        article.appendChild(title);
+        article.appendChild(description);
+        article.appendChild(link);
+        return article;
+      }
+
+      function renderPickGames(featuredGame, games) {
+        const grid = document.getElementById("pick-game-grid");
+        let candidates = games.filter(function (game) {
+          return game.url !== featuredGame.url;
+        });
+
+        if (candidates.length < 4) {
+          candidates = games.slice();
+        }
+
+        grid.innerHTML = "";
+        shuffle(candidates).slice(0, 4).forEach(function (game) {
+          grid.appendChild(createGameCard(game));
+        });
+      }
+
+      function revealHomeGames() {
+        document.documentElement.classList.remove("home-games-loading");
+      }
+
+      try {
+        const games = getPublicGames();
+
+        if (games.length) {
+          const featuredGame = chooseWeightedFeaturedGame(games);
+          renderFeaturedGame(featuredGame);
+          renderPickGames(featuredGame, games);
+        }
+      } catch (error) {
+        console.error("Home game randomization failed.", error);
+      } finally {
+        revealHomeGames();
+      }
+    })();
+  </script>
   <script src="js/sound.js"></script>
 </body>
 </html>

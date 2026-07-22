@@ -24,6 +24,28 @@
   const newsPosts = [
     {
       section: "July 2026",
+      title: "Whack-a-Mole Game Released",
+      date: "July 21, 2026",
+      category: "Game Release",
+      description: [
+        "Whack-a-Mole is now available on Nyanya Mini Games. Hit the active target in a 3 x 3 grid, avoid empty holes, and build your score before the 30-second timer ends.",
+        "The game includes score tracking, Best Score saving in the browser, keyboard-accessible hole buttons, touch-friendly controls, and responsive layout support."
+      ],
+      link: { href: "games/whack-a-mole.html", label: "Play Whack-a-Mole" }
+    },
+    {
+      section: "July 2026",
+      title: "Hangman Game Released",
+      date: "July 21, 2026",
+      category: "Game Release",
+      description: [
+        "Hangman is now available as a new word game. Guess letters, reveal every matching character, and solve the hidden word before six incorrect guesses are used.",
+        "The game includes clickable A to Z letter buttons, keyboard letter input on desktop browsers, repeated-letter handling, and clear win and loss messages."
+      ],
+      link: { href: "games/hangman.html", label: "Play Hangman" }
+    },
+    {
+      section: "July 2026",
       title: "Sudoku Game Released",
       date: "July 20, 2026",
       category: "Game Release",
@@ -125,7 +147,7 @@
       title: "Current Status",
       category: "Under Development",
       description: [
-        "The site currently has 13 playable games, a responsive layout, SEO-focused page metadata, Google Search Console configuration, and AdSense review in progress."
+        "The site currently has 15 playable games, a responsive layout, SEO-focused page metadata, Google Search Console configuration, and AdSense review in progress."
       ]
     },
     {
@@ -158,12 +180,15 @@
     return categoryImages[category];
   }
 
-  function createCategoryCard(category) {
-    const card = document.createElement("div");
+  function createCategoryCard(category, onSelect) {
+    const card = document.createElement("button");
     const image = document.createElement("img");
     const label = document.createElement("span");
 
     card.className = "news-category-card";
+    card.type = "button";
+    card.dataset.category = category;
+    card.setAttribute("aria-pressed", "false");
     image.src = getCategoryImage(category);
     image.width = 72;
     image.height = 72;
@@ -173,6 +198,9 @@
 
     card.appendChild(image);
     card.appendChild(label);
+    card.addEventListener("click", function () {
+      onSelect(category);
+    });
     return card;
   }
 
@@ -185,6 +213,7 @@
     const category = document.createElement("span");
 
     article.className = "news-post-card";
+    article.dataset.category = post.category;
     image.className = "news-entry-icon";
     image.src = getCategoryImage(post.category);
     image.width = 72;
@@ -230,17 +259,53 @@
     return article;
   }
 
+  function setActiveCategory(categoryList, postsElement, selectedCategory) {
+    const buttons = categoryList.querySelectorAll(".news-category-card");
+    const posts = postsElement.querySelectorAll(".news-post-card");
+    const headings = postsElement.querySelectorAll(".news-month-heading");
+
+    buttons.forEach(function (button) {
+      const isActive = button.dataset.category === selectedCategory;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+
+    posts.forEach(function (post) {
+      post.hidden = selectedCategory ? post.dataset.category !== selectedCategory : false;
+    });
+
+    headings.forEach(function (heading) {
+      let next = heading.nextElementSibling;
+      let hasVisiblePost = false;
+
+      while (next && !next.classList.contains("news-month-heading")) {
+        if (next.classList.contains("news-post-card") && !next.hidden) {
+          hasVisiblePost = true;
+          break;
+        }
+
+        next = next.nextElementSibling;
+      }
+
+      heading.hidden = !hasVisiblePost;
+    });
+  }
+
   function renderNews() {
     const categoryList = document.getElementById("news-category-list");
     const postsElement = document.getElementById("news-posts");
     let currentSection = "";
+    let activeCategory = "";
 
     if (!categoryList || !postsElement) {
       return;
     }
 
     categories.forEach(function (category) {
-      categoryList.appendChild(createCategoryCard(category));
+      categoryList.appendChild(createCategoryCard(category, function (selectedCategory) {
+        activeCategory = activeCategory === selectedCategory ? "" : selectedCategory;
+        setActiveCategory(categoryList, postsElement, activeCategory);
+      }));
     });
 
     newsPosts.forEach(function (post) {

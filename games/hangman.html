@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hangman - Free Online Word Game | Nyanya Mini Games</title>
+  <meta name="description" content="Play Hangman online for free. Guess the hidden word, choose letters, track mistakes, and solve the word before six wrong guesses.">
+  <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/hangman.html" />
+  <link rel="stylesheet" href="../css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
+crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Nyanya Mini Games home">
+      <span class="brand-mark">N</span>
+      <span>Nyanya Mini Games</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
+      <a href="../news.html">News</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <button class="sound-toggle" type="button" data-sound-toggle aria-pressed="false">Sound Off</button>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <p class="eyebrow">Word game</p>
+      <h1>Hangman</h1>
+      <p>Guess the hidden word one letter at a time before six incorrect guesses are used.</p>
+    </section>
+
+    <aside class="ad-banner ad-before-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="game-shell" aria-labelledby="hangman-title">
+      <div class="game-panel hangman-panel">
+        <h2 id="hangman-title">Hangman</h2>
+        <p class="game-description">Pick letters, reveal the word, and keep your mistake count below six.</p>
+
+        <div class="score-board hangman-score-board" aria-live="polite">
+          <div>
+            <span class="score-label">Status</span>
+            <strong id="hangman-status">Ready</strong>
+          </div>
+          <div>
+            <span class="score-label">Mistakes</span>
+            <strong id="hangman-mistakes">0 / 6</strong>
+          </div>
+        </div>
+
+        <div id="hangman-progress" class="hangman-progress" aria-label="Mistake progress"></div>
+        <div id="hangman-word" class="hangman-word" aria-label="Hidden word"></div>
+        <div id="hangman-letters" class="hangman-letter-buttons" aria-label="Choose a letter"></div>
+
+        <p id="hangman-message" class="game-message">Choose a letter to begin.</p>
+
+        <div class="game-actions">
+          <button id="hangman-new-game" class="button primary" type="button">New Game</button>
+        </div>
+
+        <div id="hangman-debug-panel" class="hangman-debug-panel" hidden>
+          <h3>Hangman Debug</h3>
+          <p>Current answer: <strong id="hangman-debug-answer">--</strong></p>
+
+          <div class="hangman-debug-row">
+            <label for="hangman-debug-word">Force word</label>
+            <input id="hangman-debug-word" class="hangman-debug-input" type="text" inputmode="latin" pattern="[A-Za-z]+" autocomplete="off">
+            <button id="hangman-debug-force-word" class="button secondary" type="button">Start Forced Word</button>
+          </div>
+
+          <div class="hangman-debug-actions" aria-label="Test words">
+            <button class="button secondary" type="button" data-hangman-debug-word="CAT">CAT</button>
+            <button class="button secondary" type="button" data-hangman-debug-word="LETTER">LETTER</button>
+            <button class="button secondary" type="button" data-hangman-debug-word="MISSISSIPPI">MISSISSIPPI</button>
+            <button class="button secondary" type="button" data-hangman-debug-word="ELEPHANT">ELEPHANT</button>
+            <button class="button secondary" type="button" data-hangman-debug-word="STRAWBERRY">STRAWBERRY</button>
+          </div>
+
+          <div class="hangman-debug-actions">
+            <button id="hangman-debug-add-mistake" class="button secondary" type="button">Add Incorrect Guess</button>
+            <button id="hangman-debug-set-five" class="button secondary" type="button">Set Mistakes to 5</button>
+            <button id="hangman-debug-reveal" class="button secondary" type="button">Reveal Word</button>
+            <button id="hangman-debug-force-loss" class="button secondary" type="button">Force Loss</button>
+            <button id="hangman-debug-restart-forced" class="button secondary" type="button">Restart Forced Word</button>
+            <button id="hangman-debug-random" class="button secondary" type="button">Return to Random</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="ad-banner ad-after-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="text-page" aria-labelledby="hangman-guide-title">
+      <h2 id="hangman-guide-title">About Hangman</h2>
+      <p>Hangman is a classic word guessing game. The goal is to reveal the hidden word by choosing letters from the alphabet.</p>
+      <p>Each correct guess fills in every matching letter. Each incorrect guess adds one mistake, so the challenge is to solve the word before reaching six mistakes.</p>
+
+      <h2>How to Play</h2>
+      <ol>
+        <li>Choose a letter from the A to Z buttons.</li>
+        <li>Correct letters appear in every matching slot of the hidden word.</li>
+        <li>Incorrect letters increase the mistake counter.</li>
+        <li>Solve the whole word before making six incorrect guesses.</li>
+        <li>Use New Game to start over with a different word.</li>
+      </ol>
+
+      <h2>Rules</h2>
+      <p>The word is selected randomly from a local list of common English words. The same letter cannot be guessed twice in one round.</p>
+      <p>You win when every letter is revealed. You lose after exactly six incorrect guesses, and the correct word is shown after the round ends.</p>
+
+      <h2>Score and Progress</h2>
+      <p>Hangman tracks the current mistake count for the active round. There is no saved score or best record in this version.</p>
+      <p>The six-part progress indicator fills as incorrect guesses are made, giving a quick view of how many chances remain.</p>
+
+      <h2>Tips and Strategy</h2>
+      <ul>
+        <li>Start with common vowels such as A, E, I, O, and U.</li>
+        <li>Try frequent consonants such as R, S, T, L, and N once you know some vowels.</li>
+        <li>Use revealed letter positions to narrow down possible word patterns.</li>
+        <li>Save less common letters such as Q, X, and Z until you have a clue they might fit.</li>
+      </ul>
+
+      <h2>Controls</h2>
+      <p>Use mouse click or touch controls to choose letters. Keyboard letter input is also supported on desktop browsers.</p>
+      <p>Letter buttons are disabled after use, and all letter input stops once the round has been won or lost.</p>
+
+      <h2>Saving and Resetting</h2>
+      <p>Hangman does not store round progress or statistics in localStorage. Starting a New Game clears the current word, mistakes, used letters, and message.</p>
+
+      <h2>Related Games</h2>
+      <p>For more quick thinking games, try <a href="typing-speed-test.html">Typing Speed Test</a>, <a href="number-guess.html">Number Guess</a>, or <a href="sudoku.html">Sudoku</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Nyanya Mini Games</p>
+    <nav aria-label="Footer navigation">
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </footer>
+
+  <script src="../js/sound.js"></script>
+  <script src="../js/hangman.js"></script>
+</body>
+</html>

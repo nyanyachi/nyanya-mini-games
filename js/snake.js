@@ -23,6 +23,8 @@
   let isCountingDown = false;
   let touchStartX = 0;
   let touchStartY = 0;
+  let isTouchSwiping = false;
+  const minSwipeDistance = 28;
 
   function sameCell(first, second) {
     return first.row === second.row && first.col === second.col;
@@ -43,6 +45,28 @@
     if (!isOpposite(newDirection, direction)) {
       nextDirection = newDirection;
     }
+  }
+
+  function handleSwipeMove(touch) {
+    const deltaX = touch.clientX - touchStartX;
+    const deltaY = touch.clientY - touchStartY;
+    const absX = Math.abs(deltaX);
+    const absY = Math.abs(deltaY);
+
+    if (Math.max(absX, absY) < minSwipeDistance) {
+      return false;
+    }
+
+    if (absX > absY) {
+      setDirection(deltaX > 0 ? "right" : "left");
+    } else {
+      setDirection(deltaY > 0 ? "down" : "up");
+    }
+
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+    isTouchSwiping = true;
+    return true;
   }
 
   function getEmptyCells() {
@@ -285,23 +309,25 @@
     const touch = event.changedTouches[0];
     touchStartX = touch.clientX;
     touchStartY = touch.clientY;
+    isTouchSwiping = false;
   }, { passive: true });
+
+  boardElement.addEventListener("touchmove", function (event) {
+    const touch = event.changedTouches[0];
+
+    if (handleSwipeMove(touch)) {
+      event.preventDefault();
+    }
+  }, { passive: false });
 
   boardElement.addEventListener("touchend", function (event) {
     const touch = event.changedTouches[0];
-    const deltaX = touch.clientX - touchStartX;
-    const deltaY = touch.clientY - touchStartY;
-    const minSwipe = 30;
 
-    if (Math.max(Math.abs(deltaX), Math.abs(deltaY)) < minSwipe) {
-      return;
+    if (!isTouchSwiping) {
+      handleSwipeMove(touch);
     }
 
-    if (Math.abs(deltaX) > Math.abs(deltaY)) {
-      setDirection(deltaX > 0 ? "right" : "left");
-    } else {
-      setDirection(deltaY > 0 ? "down" : "up");
-    }
+    isTouchSwiping = false;
   }, { passive: true });
 
   restartButton.addEventListener("click", startCountdown);
