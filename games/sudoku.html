@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sudoku - Free Online Number Puzzle | Nyanya Mini Games</title>
-  <meta name="description" content="Play Sudoku online for free. Complete the 9 x 9 number puzzle in Easy, Medium, or Hard mode and beat your best time.">
+  <title>Sudoku - Free Browser Game | Nyanya Mini Games</title>
+  <meta name="description" content="Complete a 9 by 9 Sudoku grid in Easy, Medium, or Hard mode with timer, mistakes, and best-time saving.">
   <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/sudoku.html" />
   <link rel="stylesheet" href="../css/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
@@ -99,49 +99,57 @@ crossorigin="anonymous"></script>
     </aside>
 
     <section class="text-page" aria-labelledby="sudoku-guide-title">
-      <h2 id="sudoku-guide-title">How to Play</h2>
+      <h2 id="sudoku-guide-title">Game Details</h2>
+      <div class="game-details-block" data-game-details></div>
+
+      <h2>About This Game</h2>
+      <p>Sudoku is a number puzzle played on a 9 by 9 grid divided into 3 by 3 boxes. The goal is to fill every empty cell so each row, column, and box contains the numbers 1 through 9 without duplicates. This version includes Easy, Medium, and Hard puzzles, mistake tracking, a timer, keyboard input, an on-screen number pad, and best-time saving for each difficulty.</p>
+
+      <h2>How to Play</h2>
       <ol>
+        <li>Choose Easy, Medium, or Hard.</li>
         <li>Select an empty cell on the board.</li>
-        <li>Enter a number from 1 to 9 with the keyboard or the number pad.</li>
-        <li>Use Backspace, Delete, 0, or Clear to erase an editable cell.</li>
-        <li>Complete the entire board correctly to solve the puzzle.</li>
+        <li>Enter a number using the keyboard or on-screen number pad.</li>
+        <li>Use the row, column, box, and matching-number highlights to review the board.</li>
+        <li>Complete every cell without breaking Sudoku rules.</li>
       </ol>
 
       <h2>Rules</h2>
-      <p>Each row must contain the numbers 1 through 9 without duplicates. Each column follows the same rule.</p>
-      <p>Each 3 x 3 box must also contain the numbers 1 through 9 without duplicates. Fixed clue cells are part of the puzzle and cannot be changed.</p>
-
-      <h2>Strategy Tips</h2>
       <ul>
-        <li>Start with rows, columns, or boxes that already contain many clues.</li>
-        <li>Look for numbers that can fit in only one remaining cell.</li>
-        <li>Compare overlapping rows, columns, and boxes before placing a number.</li>
-        <li>Avoid guessing until logical options are exhausted.</li>
+        <li>Fixed clues cannot be changed.</li>
+        <li>Each row must contain 1 through 9 without duplicates.</li>
+        <li>Each column must contain 1 through 9 without duplicates.</li>
+        <li>Each 3 by 3 box must contain 1 through 9 without duplicates.</li>
+        <li>Best times are saved separately by difficulty after completed puzzles.</li>
       </ul>
 
-      <h2>Saving and Best Times</h2>
-      <p>Sudoku saves the best completion time separately for Easy, Medium, and Hard using localStorage. A time is saved only after the puzzle is solved correctly.</p>
-      <p>Restart restores the current puzzle to its original clues and resets the timer. New Puzzle loads a different puzzle for the selected difficulty when one is available.</p>
-
-      <h2>Controls</h2>
-      <p>Use mouse click or tap to select a cell. Number keys enter values, Backspace, Delete, or 0 clears a cell, and arrow keys move the selection around the board.</p>
-      <p>The on-screen number pad works with mouse and touch controls on desktop and mobile.</p>
+      <h2>Tips</h2>
+      <ul>
+        <li>Start with rows, columns, or boxes that already have many clues.</li>
+        <li>Use matching-number highlights to spot where a number is already placed.</li>
+        <li>Check intersections before entering a number in a crowded area.</li>
+        <li>If mistakes rise, slow down and verify the row, column, and box together.</li>
+      </ul>
 
       <h2>Related Games</h2>
-      <p>For more puzzle games, try <a href="2048.html">2048</a>, <a href="minesweeper.html">Minesweeper</a>, or <a href="number-guess.html">Number Guess</a>.</p>
+      <div class="related-games-grid" data-related-games></div>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>&copy; 2026 Nyanya Mini Games</p>
     <nav aria-label="Footer navigation">
-      <a href="../privacy.html">Privacy</a>
-      <a href="../terms.html">Terms</a>
-      <a href="../contact.html">Contact</a>
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
       <a href="../about.html">About</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../terms.html">Terms</a>
     </nav>
   </footer>
 
+  <script src="../js/game-data.js"></script>
+  <script src="../js/game-page-details.js"></script>
   <script src="../js/sound.js"></script>
   <script src="../js/sudoku.js"></script>
 </body>

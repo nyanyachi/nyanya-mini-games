@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minesweeper - Free Online Puzzle Game | Nyanya Mini Games</title>
-  <meta name="description" content="Play Minesweeper online for free. Reveal safe cells, flag hidden mines, and clear the board in Beginner, Intermediate, or Expert mode.">
+  <title>Minesweeper - Free Browser Game | Nyanya Mini Games</title>
+  <meta name="description" content="Reveal safe cells, flag hidden mines, and clear Beginner, Intermediate, or Expert boards while saving best completion times.">
   <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/minesweeper.html" />
   <link rel="stylesheet" href="../css/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
@@ -87,50 +87,57 @@ crossorigin="anonymous"></script>
     </aside>
 
     <section class="text-page" aria-labelledby="minesweeper-guide-title">
-      <h2 id="minesweeper-guide-title">How to Play</h2>
+      <h2 id="minesweeper-guide-title">Game Details</h2>
+      <div class="game-details-block" data-game-details></div>
+
+      <h2>About This Game</h2>
+      <p>Minesweeper is a logic puzzle about clearing a hidden minefield without revealing a mine. Each safe number tells how many mines touch that cell, including diagonals. The game offers Beginner, Intermediate, and Expert boards with different sizes and mine counts. Desktop players can reveal and flag with mouse controls, while mobile players can tap to reveal and long press to flag suspected mines.</p>
+
+      <h2>How to Play</h2>
       <ol>
         <li>Choose Beginner, Intermediate, or Expert.</li>
-        <li>Reveal a cell to start the timer. The first revealed cell is always safe.</li>
-        <li>Use the numbers to work out where hidden mines are located.</li>
-        <li>Place flags on cells you believe contain mines.</li>
-        <li>Reveal every safe cell to win.</li>
+        <li>Reveal a cell to begin the timer.</li>
+        <li>Use numbers to identify nearby mines.</li>
+        <li>Flag cells you believe contain mines.</li>
+        <li>Reveal every safe cell to win the board.</li>
       </ol>
 
       <h2>Rules</h2>
-      <p>Each number shows how many mines touch that cell, including diagonals. Empty cells automatically open nearby safe areas.</p>
-      <p>Revealing a mine ends the game. The game is won when every non-mine cell has been revealed.</p>
-
-      <h2>Strategy Tips</h2>
       <ul>
-        <li>Start with open areas and use revealed numbers to narrow down mine positions.</li>
-        <li>Flag cells only when a number gives you enough information.</li>
-        <li>Look for groups of numbers that share the same covered cells.</li>
-        <li>On Expert, use horizontal scrolling on small screens instead of shrinking the board too far.</li>
+        <li>The first revealed cell is always safe.</li>
+        <li>Revealing a mine ends the game.</li>
+        <li>A numbered cell counts adjacent mines in all eight surrounding directions.</li>
+        <li>The game is won when every non-mine cell is revealed.</li>
+        <li>Best completion times are saved separately for each difficulty.</li>
       </ul>
 
-      <h2>Saving and Best Times</h2>
-      <p>Minesweeper saves the best completion time separately for Beginner, Intermediate, and Expert using localStorage. A time is saved only after a win.</p>
-      <p>Restarting or changing difficulty resets the current board, timer, mine counter, and state, but keeps saved best times.</p>
-
-      <h2>Controls</h2>
-      <p>Use left click or tap to reveal a cell. Use right click to place or remove a flag on desktop.</p>
-      <p>On mobile, long press a hidden cell to place or remove a flag. Long press does not reveal the same cell.</p>
+      <h2>Tips</h2>
+      <ul>
+        <li>Use clear number patterns before guessing.</li>
+        <li>Flag only when the surrounding numbers support the mine location.</li>
+        <li>Open safe areas first to reveal more information.</li>
+        <li>On Expert, scroll the board on small screens instead of trying to shrink every cell.</li>
+      </ul>
 
       <h2>Related Games</h2>
-      <p>For more puzzle games, try <a href="2048.html">2048</a>, <a href="number-guess.html">Number Guess</a>, or <a href="memory-match.html">Memory Match</a>.</p>
+      <div class="related-games-grid" data-related-games></div>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>&copy; 2026 Nyanya Mini Games</p>
     <nav aria-label="Footer navigation">
-      <a href="../privacy.html">Privacy</a>
-      <a href="../terms.html">Terms</a>
-      <a href="../contact.html">Contact</a>
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
       <a href="../about.html">About</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../terms.html">Terms</a>
     </nav>
   </footer>
 
+  <script src="../js/game-data.js"></script>
+  <script src="../js/game-page-details.js"></script>
   <script src="../js/sound.js"></script>
   <script src="../js/minesweeper.js"></script>
 </body>

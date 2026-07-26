@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hangman - Free Online Word Game | Nyanya Mini Games</title>
-  <meta name="description" content="Play Hangman online for free. Guess the hidden word, choose letters, track mistakes, and solve the word before six wrong guesses.">
+  <title>Hangman - Free Browser Game | Nyanya Mini Games</title>
+  <meta name="description" content="Guess a hidden word with on-screen letter buttons, avoid six wrong guesses, and use keyboard input where supported.">
   <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/hangman.html" />
   <link rel="stylesheet" href="../css/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
@@ -98,57 +98,57 @@ crossorigin="anonymous"></script>
     </aside>
 
     <section class="text-page" aria-labelledby="hangman-guide-title">
-      <h2 id="hangman-guide-title">About Hangman</h2>
-      <p>Hangman is a classic word guessing game. The goal is to reveal the hidden word by choosing letters from the alphabet.</p>
-      <p>Each correct guess fills in every matching letter. Each incorrect guess adds one mistake, so the challenge is to solve the word before reaching six mistakes.</p>
+      <h2 id="hangman-guide-title">Game Details</h2>
+      <div class="game-details-block" data-game-details></div>
+
+      <h2>About This Game</h2>
+      <p>Hangman is a word guessing game where a hidden word is shown as blank letter slots. Choosing a correct letter reveals every matching position in the word, including repeated letters. Incorrect guesses increase the mistake count, and the round is lost after six wrong letters. The game uses a local word list, on-screen A to Z buttons, and optional keyboard letter input for quick play.</p>
 
       <h2>How to Play</h2>
       <ol>
-        <li>Choose a letter from the A to Z buttons.</li>
-        <li>Correct letters appear in every matching slot of the hidden word.</li>
-        <li>Incorrect letters increase the mistake counter.</li>
-        <li>Solve the whole word before making six incorrect guesses.</li>
-        <li>Use New Game to start over with a different word.</li>
+        <li>Start with the blank word slots.</li>
+        <li>Choose letters from the on-screen keyboard or type a letter.</li>
+        <li>Watch correct guesses reveal all matching letters.</li>
+        <li>Avoid reaching six incorrect guesses.</li>
+        <li>Use New Game to reset and choose a new random word.</li>
       </ol>
 
       <h2>Rules</h2>
-      <p>The word is selected randomly from a local list of common English words. The same letter cannot be guessed twice in one round.</p>
-      <p>You win when every letter is revealed. You lose after exactly six incorrect guesses, and the correct word is shown after the round ends.</p>
-
-      <h2>Score and Progress</h2>
-      <p>Hangman tracks the current mistake count for the active round. There is no saved score or best record in this version.</p>
-      <p>The six-part progress indicator fills as incorrect guesses are made, giving a quick view of how many chances remain.</p>
-
-      <h2>Tips and Strategy</h2>
       <ul>
-        <li>Start with common vowels such as A, E, I, O, and U.</li>
-        <li>Try frequent consonants such as R, S, T, L, and N once you know some vowels.</li>
-        <li>Use revealed letter positions to narrow down possible word patterns.</li>
-        <li>Save less common letters such as Q, X, and Z until you have a clue they might fit.</li>
+        <li>Each letter can be guessed only once per round.</li>
+        <li>Correct repeated letters are revealed together.</li>
+        <li>Six incorrect guesses causes a loss and reveals the answer.</li>
+        <li>The player wins when every letter in the word is revealed.</li>
+        <li>The game does not use saved score statistics.</li>
       </ul>
 
-      <h2>Controls</h2>
-      <p>Use mouse click or touch controls to choose letters. Keyboard letter input is also supported on desktop browsers.</p>
-      <p>Letter buttons are disabled after use, and all letter input stops once the round has been won or lost.</p>
-
-      <h2>Saving and Resetting</h2>
-      <p>Hangman does not store round progress or statistics in localStorage. Starting a New Game clears the current word, mistakes, used letters, and message.</p>
+      <h2>Tips</h2>
+      <ul>
+        <li>Start with common vowels to reveal the word shape.</li>
+        <li>Look for repeated patterns before guessing rare letters.</li>
+        <li>Use common consonants like T, R, S, and N when the word has several blanks.</li>
+        <li>After a few letters appear, think about full word possibilities before choosing again.</li>
+      </ul>
 
       <h2>Related Games</h2>
-      <p>For more quick thinking games, try <a href="typing-speed-test.html">Typing Speed Test</a>, <a href="number-guess.html">Number Guess</a>, or <a href="sudoku.html">Sudoku</a>.</p>
+      <div class="related-games-grid" data-related-games></div>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>&copy; 2026 Nyanya Mini Games</p>
     <nav aria-label="Footer navigation">
-      <a href="../privacy.html">Privacy</a>
-      <a href="../terms.html">Terms</a>
-      <a href="../contact.html">Contact</a>
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
       <a href="../about.html">About</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../terms.html">Terms</a>
     </nav>
   </footer>
 
+  <script src="../js/game-data.js"></script>
+  <script src="../js/game-page-details.js"></script>
   <script src="../js/sound.js"></script>
   <script src="../js/hangman.js"></script>
 </body>

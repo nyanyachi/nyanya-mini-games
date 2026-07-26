@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2048 - Nyanya Mini Games</title>
-  <meta name="description" content="Play 2048 online for free. Slide numbered tiles, merge matching values, build your score, and try to reach the 2048 tile.">
+  <title>2048 - Free Browser Game | Nyanya Mini Games</title>
+  <meta name="description" content="Slide and merge matching tiles, build your score, save your best score, and try to reach 2048 and beyond.">
   <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/2048.html" />
   <link rel="stylesheet" href="../css/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
@@ -84,54 +84,57 @@ crossorigin="anonymous"></script>
     </aside>
 
     <section class="text-page" aria-labelledby="guide-2048-title">
-      <h2 id="guide-2048-title">About 2048</h2>
-      <p>2048 is a number puzzle where every move slides the full board in one direction. When two tiles with the same value touch during a move, they merge into one larger tile.</p>
-      <p>The goal is to keep creating larger values until a 2048 tile appears. The board fills quickly, so each move matters.</p>
+      <h2 id="guide-2048-title">Game Details</h2>
+      <div class="game-details-block" data-game-details></div>
+
+      <h2>About This Game</h2>
+      <p>2048 is a sliding tile puzzle played on a 4 by 4 board. Each move shifts every tile in one direction, and equal-number tiles merge into a larger value. New 2 or 4 tiles appear after valid moves, gradually filling the board. The main objective is to reach the 2048 tile, but the board can continue beyond that milestone if moves remain available.</p>
 
       <h2>How to Play</h2>
       <ol>
-        <li>Use the arrow keys on desktop or swipe on a touch screen.</li>
-        <li>All tiles slide as far as they can in the chosen direction.</li>
-        <li>Matching tiles merge once per move.</li>
-        <li>A new 2 or 4 tile appears after a valid move.</li>
-        <li>Keep merging tiles until you reach 2048 or no moves remain.</li>
+        <li>Use Arrow keys on desktop or swipe on touch screens.</li>
+        <li>Slide all tiles up, down, left, or right.</li>
+        <li>Merge tiles with the same number to create larger values.</li>
+        <li>Use Restart when you want to begin a fresh board.</li>
+        <li>Watch the score and best score as tiles merge.</li>
       </ol>
 
-      <h2>Scoring and Best Score</h2>
-      <p>Your score increases by the value of each tile created through a merge. For example, merging two 16 tiles creates a 32 tile and adds 32 points.</p>
-      <p>Best stores the highest score saved in this browser using localStorage. Restart starts a fresh board while keeping the saved best score.</p>
-
-      <h2>Game Over and Winning</h2>
-      <p>You win when a tile reaches 2048. You can keep viewing the completed board until you restart.</p>
-      <p>Game Over appears when the board is full and no horizontal or vertical merges are possible.</p>
+      <h2>Rules</h2>
+      <ul>
+        <li>Only matching values merge during a move.</li>
+        <li>Each tile can merge once per move.</li>
+        <li>A new tile appears after a valid board change.</li>
+        <li>The game is over when the board is full and no merges are available.</li>
+        <li>Best score is saved locally in this browser.</li>
+      </ul>
 
       <h2>Tips</h2>
       <ul>
-        <li>Try to keep your largest tile in a corner.</li>
-        <li>Avoid moving tiles back and forth without a plan.</li>
-        <li>Leave open spaces so new tiles do not block your next merge.</li>
-        <li>Build smaller tiles toward the side where your largest tile is sitting.</li>
+        <li>Keep larger tiles near one corner when possible.</li>
+        <li>Avoid scattering high-value tiles across the board.</li>
+        <li>Think about where the next new tile could create trouble.</li>
+        <li>Do not swipe randomly when the board is crowded.</li>
       </ul>
 
-      <h2>Controls and Devices</h2>
-      <p>Desktop players can use the arrow keys. Mobile and tablet players can swipe left, right, up, or down on the board.</p>
-      <p>The board can receive keyboard focus, and the Restart control is a standard button.</p>
-
       <h2>Related Games</h2>
-      <p>For more puzzle and quick-thinking games, try <a href="number-guess.html">Number Guess</a>, <a href="memory-match.html">Memory Match</a>, or <a href="tic-tac-toe.html">Tic-Tac-Toe</a>.</p>
+      <div class="related-games-grid" data-related-games></div>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>&copy; 2026 Nyanya Mini Games</p>
     <nav aria-label="Footer navigation">
-      <a href="../privacy.html">Privacy</a>
-      <a href="../terms.html">Terms</a>
-      <a href="../contact.html">Contact</a>
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
       <a href="../about.html">About</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../terms.html">Terms</a>
     </nav>
   </footer>
 
+  <script src="../js/game-data.js"></script>
+  <script src="../js/game-page-details.js"></script>
   <script src="../js/sound.js"></script>
   <script src="../js/2048.js"></script>
 </body>

@@ -45,170 +45,139 @@ crossorigin="anonymous"></script>
         <p class="eyebrow">All games</p>
         <h2 id="games-list-title">Choose a mini game</h2>
       </div>
-      <div class="game-grid">
+      <div class="game-browser-controls">
+        <label class="game-search-label" for="game-search-input">Search games</label>
+        <div class="game-search-row">
+          <input id="game-search-input" class="game-search-input" type="search" placeholder="Search games" autocomplete="off" data-game-search>
+          <button class="button secondary game-search-clear" type="button" data-clear-search>Clear</button>
+        </div>
+        <p class="game-result-count" data-result-count aria-live="polite">Showing 16 of 16 games</p>
+      </div>
+      <div class="game-category-filters" aria-label="Filter games by category">
+        <button class="category-filter-button" type="button" data-category-filter="all" aria-pressed="true">All <span data-filter-count>0</span></button>
+        <button class="category-filter-button" type="button" data-category-filter="arcade" aria-pressed="false">Arcade <span data-filter-count>0</span></button>
+        <button class="category-filter-button" type="button" data-category-filter="puzzle" aria-pressed="false">Puzzle <span data-filter-count>0</span></button>
+        <button class="category-filter-button" type="button" data-category-filter="word" aria-pressed="false">Word <span data-filter-count>0</span></button>
+        <button class="category-filter-button" type="button" data-category-filter="casual" aria-pressed="false">Casual <span data-filter-count>0</span></button>
+        <button class="category-filter-button" type="button" data-category-filter="strategy" aria-pressed="false">Strategy <span data-filter-count>0</span></button>
+      </div>
+      <div class="game-grid" data-games-grid>
         <article class="game-card">
           <img class="game-icon game-card-image" src="mini-game-site/apps/apple-clicker.png" width="180" height="180" loading="lazy" alt="Apple Clicker game illustration">
-          <div class="card-labels">
-            <span class="status-pill">Available</span>
-            <span class="category-pill">Clicker</span>
-          </div>
+          <div class="card-labels game-card-metadata" data-game-metadata></div>
           <h3>Apple Clicker</h3>
           <p>Click apples, buy upgrades, and build a higher score with every round.</p>
           <a class="button secondary" href="games/apple-clicker.html">Play now</a>
         </article>
         <article class="game-card">
           <img class="game-icon game-card-image" src="mini-game-site/apps/rock-paper-scissors.png" width="180" height="180" loading="lazy" alt="Rock Paper Scissors game illustration">
-          <div class="card-labels">
-            <span class="status-pill">Available</span>
-            <span class="category-pill">Classic</span>
-          </div>
+          <div class="card-labels game-card-metadata" data-game-metadata></div>
           <h3>Rock Paper Scissors</h3>
           <p>Choose your move, challenge the computer, and track your wins, losses, and draws.</p>
           <a class="button secondary" href="games/rock-paper-scissors.html">Play now</a>
         </article>
         <article class="game-card">
           <img class="game-icon game-card-image" src="mini-game-site/apps/Tic-Tac-Toe.png" width="180" height="180" loading="lazy" alt="Tic-Tac-Toe game illustration">
-          <div class="card-labels">
-            <span class="status-pill">Available</span>
-            <span class="category-pill">Board</span>
-          </div>
+          <div class="card-labels game-card-metadata" data-game-metadata></div>
           <h3>Tic-Tac-Toe</h3>
           <p>Take turns placing X and O, complete a line of three, and avoid a draw.</p>
           <a class="button secondary" href="games/tic-tac-toe.html">Play now</a>
         </article>
         <article class="game-card">
           <img class="game-icon game-card-image" src="mini-game-site/apps/Typing-Speed-Test.png" width="180" height="180" loading="lazy" alt="Typing Speed Test game illustration">
-          <div class="card-labels">
-            <span class="status-pill">Available</span>
-            <span class="category-pill">Typing</span>
-          </div>
+          <div class="card-labels game-card-metadata" data-game-metadata></div>
           <h3>Typing Speed Test</h3>
           <p>Type the displayed text accurately and measure your speed and typing accuracy.</p>
           <a class="button secondary" href="games/typing-speed-test.html">Play now</a>
         </article>
         <article class="game-card">
           <img class="game-icon game-card-image" src="mini-game-site/apps/Color-Guess.png" width="180" height="180" loading="lazy" alt="Color Guess game illustration">
-          <div class="card-labels">
-            <span class="status-pill">Available</span>
-            <span class="category-pill">Color</span>
-          </div>
+          <div class="card-labels game-card-metadata" data-game-metadata></div>
           <h3>Color Guess</h3>
           <p>Compare the target color with three choices and test how precisely you recognize colors.</p>
           <a class="button secondary" href="games/color-guess.html">Play now</a>
         </article>
         <article class="game-card">
           <img class="game-icon game-card-image" src="mini-game-site/apps/Coin-Flip.png" width="180" height="180" loading="lazy" alt="Coin Flip game illustration">
-          <div class="card-labels">
-            <span class="status-pill">Available</span>
-            <span class="category-pill">Luck</span>
-          </div>
+          <div class="card-labels game-card-metadata" data-game-metadata></div>
           <h3>Coin Flip</h3>
           <p>Flip a virtual coin and keep track of the total number of heads and tails.</p>
           <a class="button secondary" href="games/coin-flip.html">Play now</a>
         </article>
         <article class="game-card">
           <img class="game-icon game-card-image" src="mini-game-site/apps/Dice-Roller.png" width="180" height="180" loading="lazy" alt="Dice Roller game illustration">
-          <div class="card-labels">
-            <span class="status-pill">Available</span>
-            <span class="category-pill">Luck</span>
-          </div>
+          <div class="card-labels game-card-metadata" data-game-metadata></div>
           <h3>Dice Roller</h3>
           <p>Roll a six-sided die and review how often each number appears during your session.</p>
           <a class="button secondary" href="games/dice-roller.html">Play now</a>
         </article>
         <article class="game-card">
           <img class="game-icon game-card-image" src="mini-game-site/apps/number-guess.png" width="180" height="180" loading="lazy" alt="Number Guess game illustration">
-          <div class="card-labels">
-            <span class="status-pill">Available</span>
-            <span class="category-pill">Logic</span>
-          </div>
+          <div class="card-labels game-card-metadata" data-game-metadata></div>
           <h3>Number Guess</h3>
           <p>Guess a hidden number from 1 to 100 by following the higher and lower hints.</p>
           <a class="button secondary" href="games/number-guess.html">Play now</a>
         </article>
         <article class="game-card">
           <img class="game-icon game-card-image" src="mini-game-site/apps/minesweeper.png" width="180" height="180" loading="lazy" alt="Minesweeper game illustration">
-          <div class="card-labels">
-            <span class="status-pill">Available</span>
-            <span class="category-pill">Puzzle</span>
-          </div>
+          <div class="card-labels game-card-metadata" data-game-metadata></div>
           <h3>Minesweeper</h3>
           <p>Reveal safe cells, flag hidden mines, and clear the board without triggering a mine.</p>
           <a class="button secondary" href="games/minesweeper.html">Play now</a>
         </article>
         <article class="game-card">
           <img class="game-icon game-card-image" src="mini-game-site/apps/snake.png" width="180" height="180" loading="lazy" alt="Snake game illustration">
-          <div class="card-labels">
-            <span class="status-pill">Available</span>
-            <span class="category-pill">Classic</span>
-          </div>
+          <div class="card-labels game-card-metadata" data-game-metadata></div>
           <h3>Snake</h3>
           <p>Steer the snake, collect food, grow longer, and avoid crashing.</p>
           <a class="button secondary" href="games/snake.html">Play now</a>
         </article>
         <article class="game-card">
           <img class="game-icon game-card-image" src="mini-game-site/apps/2048.png" width="180" height="180" loading="lazy" alt="2048 game illustration">
-          <div class="card-labels">
-            <span class="status-pill">Available</span>
-            <span class="category-pill">Puzzle</span>
-          </div>
+          <div class="card-labels game-card-metadata" data-game-metadata></div>
           <h3>2048</h3>
           <p>Slide matching number tiles, merge values, and try to reach the 2048 tile.</p>
           <a class="button secondary" href="games/2048.html">Play now</a>
         </article>
         <article class="game-card">
           <img class="game-icon game-card-image" src="mini-game-site/apps/whack-a-mole.png" width="180" height="180" loading="lazy" alt="Whack-a-Mole mini game artwork">
-          <div class="card-labels">
-            <span class="status-pill">Available</span>
-            <span class="status-pill">NEW</span>
-            <span class="category-pill">Reflex</span>
-          </div>
+          <div class="card-labels game-card-metadata" data-game-metadata></div>
           <h3>Whack-a-Mole</h3>
           <p>Hit the active target, avoid empty holes, and score as much as possible in 30 seconds.</p>
           <a class="button secondary" href="games/whack-a-mole.html">Play now</a>
         </article>
         <article class="game-card">
           <img class="game-icon game-card-image" src="mini-game-site/apps/hangman.png" width="180" height="180" loading="lazy" alt="Hangman mini game artwork">
-          <div class="card-labels">
-            <span class="status-pill">Available</span>
-            <span class="status-pill">NEW</span>
-            <span class="category-pill">Word</span>
-          </div>
+          <div class="card-labels game-card-metadata" data-game-metadata></div>
           <h3>Hangman</h3>
           <p>Guess the hidden word letter by letter before six wrong guesses run out.</p>
           <a class="button secondary" href="games/hangman.html">Play now</a>
         </article>
         <article class="game-card">
           <img class="game-icon game-card-image" src="mini-game-site/apps/sudoku.png" width="180" height="180" loading="lazy" alt="Sudoku game illustration">
-          <div class="card-labels">
-            <span class="status-pill">Available</span>
-            <span class="status-pill">NEW</span>
-            <span class="category-pill">Puzzle</span>
-          </div>
+          <div class="card-labels game-card-metadata" data-game-metadata></div>
           <h3>Sudoku</h3>
           <p>Complete the 9 x 9 grid so every row, column, and box contains the numbers 1 through 9.</p>
           <a class="button secondary" href="games/sudoku.html">Play now</a>
         </article>
         <article class="game-card">
           <img class="game-icon game-card-image" src="mini-game-site/apps/reaction-test.png" width="180" height="180" loading="lazy" alt="Reaction Test game illustration">
-          <div class="card-labels">
-            <span class="status-pill">Available</span>
-            <span class="category-pill">Reflex</span>
-          </div>
+          <div class="card-labels game-card-metadata" data-game-metadata></div>
           <h3>Reaction Test</h3>
           <p>Wait for the signal, react as quickly as possible, and compare your latest and best times.</p>
           <a class="button secondary" href="games/reaction-test.html">Play now</a>
         </article>
         <article class="game-card">
           <img class="game-icon game-card-image" src="mini-game-site/apps/memory-match.png" width="180" height="180" loading="lazy" alt="Memory Match game illustration">
-          <div class="card-labels">
-            <span class="status-pill">Available</span>
-            <span class="category-pill">Memory</span>
-          </div>
+          <div class="card-labels game-card-metadata" data-game-metadata></div>
           <h3>Memory Match</h3>
           <p>Turn over cards, remember their positions, and match all pairs in as few moves as possible.</p>
           <a class="button secondary" href="games/memory-match.html">Play now</a>
         </article>
+      </div>
+      <div class="empty-state" data-empty-category hidden>
+        <p data-empty-message>No games match your search.</p>
+        <button class="button secondary" type="button" data-show-all-games>Show all games</button>
       </div>
     </section>
   </main>
@@ -216,34 +185,174 @@ crossorigin="anonymous"></script>
   <footer class="site-footer">
     <p>&copy; 2026 Nyanya Mini Games</p>
     <nav aria-label="Footer navigation">
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="games.html">Games</a>
       <a href="about.html">About</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="contact.html">Contact</a>
+      <a href="terms.html">Terms</a>
     </nav>
   </footer>
+  <script src="js/game-data.js"></script>
   <script src="js/sound.js"></script>
   <script>
     (function () {
       const randomGameButton = document.getElementById("random-game-button");
-      const gameUrls = [
-        "games/apple-clicker.html",
-        "games/rock-paper-scissors.html",
-        "games/tic-tac-toe.html",
-        "games/typing-speed-test.html",
-        "games/color-guess.html",
-        "games/coin-flip.html",
-        "games/dice-roller.html",
-        "games/number-guess.html",
-        "games/2048.html",
-        "games/minesweeper.html",
-        "games/sudoku.html",
-        "games/hangman.html",
-        "games/whack-a-mole.html",
-        "games/snake.html",
-        "games/reaction-test.html",
-        "games/memory-match.html"
-      ];
+      const grid = document.querySelector("[data-games-grid]");
+      const emptyState = document.querySelector("[data-empty-category]");
+      const emptyMessage = document.querySelector("[data-empty-message]");
+      const resultCount = document.querySelector("[data-result-count]");
+      const searchInput = document.querySelector("[data-game-search]");
+      const clearSearchButton = document.querySelector("[data-clear-search]");
+      const showAllButton = document.querySelector("[data-show-all-games]");
+      const filterButtons = Array.from(document.querySelectorAll("[data-category-filter]"));
+      let currentCategory = "all";
+      let currentSearchQuery = "";
+
+      if (!window.NyanyaGameData) {
+        return;
+      }
+
+      const publicGames = window.NyanyaGameData.getPublicGames();
+      const gameCards = Array.from(document.querySelectorAll(".games-library .game-card")).map(function (card) {
+        const link = card.querySelector("a.button[href]");
+        const metadata = card.querySelector("[data-game-metadata]");
+        const game = link ? window.NyanyaGameData.getGameByUrl(link.getAttribute("href")) : null;
+
+        if (game) {
+          window.NyanyaGameData.renderMetadata(metadata, game);
+        }
+
+        return { card: card, game: game };
+      }).filter(function (item) {
+        return item.game;
+      });
+
+      function getCategoryCounts() {
+        return publicGames.reduce(function (counts, game) {
+          counts.all += 1;
+          counts[game.category] = (counts[game.category] || 0) + 1;
+          return counts;
+        }, { all: 0 });
+      }
+
+      function updateFilterCounts() {
+        const counts = getCategoryCounts();
+
+        filterButtons.forEach(function (button) {
+          const category = button.getAttribute("data-category-filter");
+          const count = button.querySelector("[data-filter-count]");
+
+          if (count) {
+            count.textContent = "(" + (counts[category] || 0) + ")";
+          }
+        });
+      }
+
+      function normalizeSearchText(value) {
+        return String(value || "").toLowerCase().trim().replace(/\s+/g, " ");
+      }
+
+      function getSearchText(game) {
+        const metadata = window.NyanyaGameData.getDisplayMetadata(game);
+        return normalizeSearchText([
+          game.title,
+          game.description,
+          metadata.details.join(" ")
+        ].join(" "));
+      }
+
+      function updateResultCount(count) {
+        if (resultCount) {
+          resultCount.textContent = "Showing " + count + " of " + publicGames.length + " games";
+        }
+      }
+
+      function renderFilteredGames(category) {
+        const validFilters = filterButtons.map(function (button) {
+          return button.getAttribute("data-category-filter");
+        });
+        const validCategory = validFilters.indexOf(category) !== -1;
+        const searchQuery = normalizeSearchText(currentSearchQuery);
+        currentCategory = validCategory ? category : "all";
+        const matchingCards = gameCards.filter(function (item) {
+          const matchesCategory = currentCategory === "all" || item.game.category === currentCategory;
+          const matchesSearch = !searchQuery || getSearchText(item.game).indexOf(searchQuery) !== -1;
+          return matchesCategory && matchesSearch;
+        });
+
+        filterButtons.forEach(function (button) {
+          button.setAttribute("aria-pressed", String(button.getAttribute("data-category-filter") === currentCategory));
+        });
+
+        if (grid) {
+          grid.innerHTML = "";
+          matchingCards.forEach(function (item) {
+            grid.appendChild(item.card);
+          });
+        }
+
+        updateResultCount(matchingCards.length);
+
+        if (emptyMessage) {
+          emptyMessage.textContent = searchQuery && currentCategory !== "all" ? "No games match your search in this category." : "No games match your search.";
+        }
+
+        if (emptyState) {
+          emptyState.hidden = matchingCards.length > 0;
+        }
+      }
+
+      updateFilterCounts();
+      renderFilteredGames(currentCategory);
+
+      filterButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          renderFilteredGames(button.getAttribute("data-category-filter"));
+        });
+      });
+
+      if (searchInput) {
+        searchInput.addEventListener("input", function () {
+          currentSearchQuery = searchInput.value;
+          renderFilteredGames(currentCategory);
+        });
+      }
+
+      if (clearSearchButton) {
+        clearSearchButton.addEventListener("click", function () {
+          currentSearchQuery = "";
+
+          if (searchInput) {
+            searchInput.value = "";
+            searchInput.focus();
+          }
+
+          renderFilteredGames(currentCategory);
+        });
+      }
+
+      if (showAllButton) {
+        showAllButton.addEventListener("click", function () {
+          currentCategory = "all";
+          currentSearchQuery = "";
+
+          if (searchInput) {
+            searchInput.value = "";
+            searchInput.focus();
+          }
+
+          renderFilteredGames(currentCategory);
+        });
+      }
+
+      if (!randomGameButton) {
+        return;
+      }
+
+      const gameUrls = publicGames.map(function (game) {
+        return game.url;
+      });
 
       randomGameButton.addEventListener("click", function () {
         const index = Math.floor(Math.random() * gameUrls.length);

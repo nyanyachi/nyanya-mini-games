@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dice Roller - Nyanya Mini Games</title>
-  <meta name="description" content="Use Dice Roller to roll one six-sided die, view the last result, track total rolls, and save counts for each face in your browser.">
+  <title>Dice Roller - Free Browser Game | Nyanya Mini Games</title>
+  <meta name="description" content="Roll one six-sided die, view the last roll, track total rolls, and save counts for each result in your browser.">
   <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/dice-roller.html" />
   <link rel="stylesheet" href="../css/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
@@ -95,62 +95,56 @@ crossorigin="anonymous"></script>
     </aside>
 
     <section class="text-page" aria-labelledby="dice-roller-guide-title">
-      <h2 id="dice-roller-guide-title">About Dice Roller</h2>
-      <p>Dice Roller simulates rolling one six-sided die. Each roll produces a new result from 1 to 6.</p>
-      <p>It is useful for quick casual games, simple random choices, or tabletop-style moments when you do not have a physical die nearby.</p>
+      <h2 id="dice-roller-guide-title">Game Details</h2>
+      <div class="game-details-block" data-game-details></div>
 
-      <h2>How to Roll</h2>
+      <h2>About This Game</h2>
+      <p>Dice Roller is a simple utility-style game that rolls one virtual six-sided die. Each roll shows a number from 1 to 6 on a CSS dice face, then updates the total roll count and the count for that result. It is useful when you want a quick random result without physical dice, while still keeping a lightweight history of how often each face has appeared in this browser.</p>
+
+      <h2>How to Play</h2>
       <ol>
-        <li>Press the Roll Dice button.</li>
-        <li>Review the die face and Last Roll value.</li>
-        <li>Check Total Rolls to see how many rolls are saved in this browser.</li>
-        <li>Review the count for each face from 1 through 6.</li>
-        <li>Roll again whenever you need a new result.</li>
-        <li>Use Reset Statistics only when you want to clear the saved roll totals.</li>
+        <li>Press Roll Dice to roll the die.</li>
+        <li>Read the number shown on the dice face.</li>
+        <li>Check Last Roll for the most recent result.</li>
+        <li>Review Total Rolls and the counts for faces 1 through 6.</li>
+        <li>Use Reset Statistics when you want to clear the saved roll history.</li>
       </ol>
 
-      <h2>Dice and Result Rules</h2>
-      <p>The game rolls one standard six-sided die. The minimum result is 1 and the maximum result is 6.</p>
-      <p>There is no dice-count option and no multi-dice total because only one die is rolled at a time.</p>
-
-      <h2>Understanding the Results</h2>
-      <p>Last Roll shows the most recent die result. Total Rolls shows how many times the die has been rolled since the saved statistics were last cleared.</p>
-      <p>The counts for 1 through 6 show how often each face has appeared. The visual die face updates to match the most recent roll.</p>
-
-      <h2>Random Roll Behavior</h2>
-      <p>Each press of Roll Dice asks the game's built-in random-number logic for a new value from 1 to 6.</p>
-      <p>Any face can appear again on later rolls, so repeated values are a normal part of random rolling.</p>
-
-      <h2>Common Uses</h2>
+      <h2>Rules</h2>
       <ul>
-        <li>Choose movement values for a casual board game.</li>
-        <li>Replace a physical die for quick play.</li>
-        <li>Generate a simple random number from 1 to 6.</li>
-        <li>Settle a lighthearted choice where a random result is acceptable.</li>
+        <li>Each roll randomly produces one result from 1 to 6.</li>
+        <li>Every roll increases Total Rolls by 1.</li>
+        <li>Only the count for the rolled face increases.</li>
+        <li>Roll totals are saved locally in this browser.</li>
       </ul>
 
-      <h2>Controls and Devices</h2>
-      <p>You can roll with a mouse click or by tapping the Roll Dice button on a touch screen. The roll and reset controls are standard buttons, so browsers may also allow keyboard activation when a button is focused.</p>
-
-      <h2>Saving, History, and Resetting</h2>
-      <p>Dice Roller saves Last Roll, Total Rolls, and the face counts in this browser using localStorage. The page does not keep a separate roll-by-roll history list.</p>
-      <p>Reset Statistics clears the saved dice statistics, sets Last Roll back to --, returns Total Rolls and all face counts to 0, and clears the displayed die pips. Clearing browser storage may also remove saved dice records.</p>
+      <h2>Tips</h2>
+      <ul>
+        <li>Use Reset Statistics before starting a separate tracking session.</li>
+        <li>Check the face counts if you want to see the spread of results over many rolls.</li>
+        <li>Roll one at a time when you need a single clear result.</li>
+        <li>Keep the page open if you want to continue the same local session.</li>
+      </ul>
 
       <h2>Related Games</h2>
-      <p>For more quick random or choice-based games, try <a href="coin-flip.html">Coin Flip</a>, <a href="rock-paper-scissors.html">Rock Paper Scissors</a>, or <a href="number-guess.html">Number Guess</a>.</p>
+      <div class="related-games-grid" data-related-games></div>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>&copy; 2026 Nyanya Mini Games</p>
     <nav aria-label="Footer navigation">
-      <a href="../privacy.html">Privacy</a>
-      <a href="../terms.html">Terms</a>
-      <a href="../contact.html">Contact</a>
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
       <a href="../about.html">About</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../terms.html">Terms</a>
     </nav>
   </footer>
 
+  <script src="../js/game-data.js"></script>
+  <script src="../js/game-page-details.js"></script>
   <script src="../js/sound.js"></script>
   <script src="../js/dice-roller.js"></script>
 </body>

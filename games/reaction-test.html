@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reaction Test - Nyanya Mini Games</title>
-  <meta name="description" content="Play Reaction Test, a quick browser timing game where you wait for the signal, click as fast as possible, and track latest time, best time, and attempts.">
+  <title>Reaction Test - Free Browser Game | Nyanya Mini Games</title>
+  <meta name="description" content="Test your reaction speed by waiting for the signal, clicking at the right moment, and tracking your latest time, best time, and attempts.">
   <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/reaction-test.html" />
   <link rel="stylesheet" href="../css/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
@@ -72,58 +72,56 @@ crossorigin="anonymous"></script>
     </aside>
 
     <section class="text-page" aria-labelledby="reaction-test-guide-title">
-      <h2 id="reaction-test-guide-title">About Reaction Test</h2>
-      <p>Reaction Test measures how quickly you respond after the visual signal changes from waiting to ready.</p>
-      <p>The challenge is to stay ready without clicking too early, then click or tap as soon as the button says Click now. It is built for short, repeatable timing rounds.</p>
+      <h2 id="reaction-test-guide-title">Game Details</h2>
+      <div class="game-details-block" data-game-details></div>
+
+      <h2>About This Game</h2>
+      <p>Reaction Test is a quick timing game built around one simple challenge: wait patiently, then react as soon as the signal appears. The page measures the time between the ready signal and your click or tap, then shows your latest result alongside your best saved reaction time. Because early clicks reset the round instead of counting as fast reactions, the game rewards focus as much as raw speed.</p>
 
       <h2>How to Play</h2>
       <ol>
         <li>Press Start to begin a round.</li>
-        <li>Wait while the button shows Wait...</li>
-        <li>Do not click during the waiting state.</li>
-        <li>Click or tap when the button says Click now!</li>
-        <li>Review your measured time and repeat rounds to compare attempts.</li>
+        <li>Wait while the game shows the waiting state.</li>
+        <li>Click or tap only after the signal changes to Click now.</li>
+        <li>Read your latest reaction time in milliseconds.</li>
+        <li>Repeat rounds to compare attempts against your best time.</li>
       </ol>
 
-      <h2>Understanding Your Results</h2>
-      <p>Latest shows the most recent valid reaction time in milliseconds. Lower times mean a faster recorded reaction for that round.</p>
-      <p>Best shows your fastest saved valid reaction time in this browser. Attempts counts valid completed rounds only.</p>
-
-      <h2>Early Clicks</h2>
-      <p>If you click before the signal appears, the round stops and the message says it was too early. That early click does not increase the attempts count.</p>
-      <p>After an early click, the button returns to Start so you can begin a fresh round and wait for the signal again.</p>
-
-      <h2>Tips for More Consistent Results</h2>
+      <h2>Rules</h2>
       <ul>
-        <li>Keep your pointer or finger ready near the button without pressing early.</li>
-        <li>Focus on the button label so you notice the change to Click now.</li>
-        <li>Use the same device when comparing repeated results.</li>
-        <li>Try several rounds instead of judging your timing from one attempt.</li>
+        <li>Clicking too early shows a Too early message and resets the round.</li>
+        <li>A valid reaction is recorded only after the Click now state appears.</li>
+        <li>Attempts and best reaction time are saved in this browser.</li>
+        <li>Reset Stats clears the saved best time and attempt count.</li>
       </ul>
 
-      <h2>Controls and Devices</h2>
-      <p>You can play with a mouse click or by tapping the button on a touch screen. The reaction control is a standard button, so browsers may also allow keyboard activation when the button is focused.</p>
-      <p>The layout is designed to remain usable on desktop and mobile browsers.</p>
-
-      <h2>Saving and Resetting</h2>
-      <p>Reaction Test saves your best time and valid attempt count in your browser using localStorage. The latest time is shown for the current session but is not saved separately.</p>
-      <p>Reset Stats clears the saved best time and attempts, resets the latest time display, cancels any active waiting timer, and returns the button to Start. Clearing browser storage may also remove saved records.</p>
+      <h2>Tips</h2>
+      <ul>
+        <li>Keep your pointer or finger ready before starting the round.</li>
+        <li>Focus on waiting for the color or message change instead of guessing.</li>
+        <li>Try several rounds and compare consistency, not just one fast result.</li>
+        <li>Use a stable device surface to avoid accidental early clicks.</li>
+      </ul>
 
       <h2>Related Games</h2>
-      <p>For more quick skill sessions, try <a href="typing-speed-test.html">Typing Speed Test</a>, <a href="color-guess.html">Color Guess</a>, or <a href="apple-clicker.html">Apple Clicker</a>.</p>
+      <div class="related-games-grid" data-related-games></div>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>&copy; 2026 Nyanya Mini Games</p>
     <nav aria-label="Footer navigation">
-      <a href="../privacy.html">Privacy</a>
-      <a href="../terms.html">Terms</a>
-      <a href="../contact.html">Contact</a>
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
       <a href="../about.html">About</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../terms.html">Terms</a>
     </nav>
   </footer>
 
+  <script src="../js/game-data.js"></script>
+  <script src="../js/game-page-details.js"></script>
   <script src="../js/sound.js"></script>
   <script src="../js/reaction-test.js"></script>
 </body>

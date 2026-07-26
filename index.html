@@ -33,8 +33,14 @@ crossorigin="anonymous"></script>
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow">Tiny games, happy breaks</p>
-        <h1>Nyanya Mini Games</h1>
-        <p>Simple, cute browser games made for quick play on phone, tablet, or desktop.</p>
+        <h1>Play <span data-public-game-count>16</span> Free Browser Games</h1>
+        <p>Puzzle, arcade, word, strategy, and casual games you can play instantly in your browser.</p>
+        <p class="hero-benefit">No downloads. No sign-up. Just play.</p>
+        <ul class="hero-value-list" aria-label="Nyanya Mini Games highlights">
+          <li><span data-public-game-count>16</span> Games</li>
+          <li>100% Free</li>
+          <li>Play Instantly</li>
+        </ul>
         <div class="hero-actions">
           <a class="button primary" href="games.html">Browse Games</a>
           <a class="button secondary" href="news.html">Latest Updates</a>
@@ -55,6 +61,7 @@ crossorigin="anonymous"></script>
       </div>
       <div class="featured-game-copy">
         <p class="eyebrow">Featured Game</p>
+        <div class="card-labels featured-game-metadata" data-featured-game-metadata></div>
         <h2 id="featured-game-title">Apple Clicker</h2>
         <p>Click apples, build your score, and enjoy a quick relaxing break with Nyanya.</p>
         <a id="featured-game-link" class="button primary" href="games/apple-clicker.html">Play Apple Clicker</a>
@@ -135,13 +142,16 @@ crossorigin="anonymous"></script>
   <footer class="site-footer">
     <p>&copy; 2026 Nyanya Mini Games</p>
     <nav aria-label="Footer navigation">
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="games.html">Games</a>
       <a href="about.html">About</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="contact.html">Contact</a>
+      <a href="terms.html">Terms</a>
     </nav>
   </footer>
 
+  <script src="js/game-data.js"></script>
   <script>
     (function () {
       const FEATURED_GROUP_WEIGHTS = {
@@ -150,33 +160,24 @@ crossorigin="anonymous"></script>
         standard: 0.3
       };
 
-      const publicGames = [
-        { title: "Apple Clicker", description: "Click apples, buy upgrades, and build a higher score with every round.", image: "mini-game-site/apps/apple-clicker.png", url: "games/apple-clicker.html", featureGroup: "popular" },
-        { title: "Rock Paper Scissors", description: "Choose your move, challenge the computer, and track your wins, losses, and draws.", image: "mini-game-site/apps/rock-paper-scissors.png", url: "games/rock-paper-scissors.html" },
-        { title: "Tic-Tac-Toe", description: "Take turns placing X and O, complete a line of three, and avoid a draw.", image: "mini-game-site/apps/Tic-Tac-Toe.png", url: "games/tic-tac-toe.html" },
-        { title: "Typing Speed Test", description: "Type the displayed text accurately and measure your speed and typing accuracy.", image: "mini-game-site/apps/Typing-Speed-Test.png", url: "games/typing-speed-test.html" },
-        { title: "Color Guess", description: "Compare the target color with three choices and test how precisely you recognize colors.", image: "mini-game-site/apps/Color-Guess.png", url: "games/color-guess.html" },
-        { title: "Coin Flip", description: "Flip a virtual coin and keep track of the total number of heads and tails.", image: "mini-game-site/apps/Coin-Flip.png", url: "games/coin-flip.html" },
-        { title: "Dice Roller", description: "Roll a six-sided die and review how often each number appears during your session.", image: "mini-game-site/apps/Dice-Roller.png", url: "games/dice-roller.html" },
-        { title: "Number Guess", description: "Guess a hidden number from 1 to 100 by following the higher and lower hints.", image: "mini-game-site/apps/number-guess.png", url: "games/number-guess.html" },
-        { title: "Minesweeper", description: "Reveal safe cells, flag hidden mines, and clear the board without triggering a mine.", image: "mini-game-site/apps/minesweeper.png", url: "games/minesweeper.html" },
-        { title: "Snake", description: "Steer the snake, collect food, grow longer, and avoid crashing.", image: "mini-game-site/apps/snake.png", url: "games/snake.html", featureGroup: "popular" },
-        { title: "2048", description: "Slide matching number tiles, merge values, and try to reach the 2048 tile.", image: "mini-game-site/apps/2048.png", url: "games/2048.html", featureGroup: "popular" },
-        { title: "Hangman", description: "Guess the hidden word letter by letter before six wrong guesses run out.", image: "mini-game-site/apps/hangman.png", url: "games/hangman.html", featureGroup: "new" },
-        { title: "Whack-a-Mole", description: "Hit the active target, avoid empty holes, and score as much as possible in 30 seconds.", image: "mini-game-site/apps/whack-a-mole.png", url: "games/whack-a-mole.html", featureGroup: "new" },
-        { title: "Sudoku", description: "Complete the 9 x 9 grid so every row, column, and box contains the numbers 1 through 9.", image: "mini-game-site/apps/sudoku.png", url: "games/sudoku.html" },
-        { title: "Reaction Test", description: "Wait for the signal, react as quickly as possible, and compare your latest and best times.", image: "mini-game-site/apps/reaction-test.png", url: "games/reaction-test.html" },
-        { title: "Memory Match", description: "Turn over cards, remember their positions, and match all pairs in as few moves as possible.", image: "mini-game-site/apps/memory-match.png", url: "games/memory-match.html" }
-      ];
-
-      function getPublicGames() {
-        return publicGames.filter(function (game) {
-          return game && game.title && game.url && game.image;
-        });
-      }
-
       function chooseRandom(games) {
         return games[Math.floor(Math.random() * games.length)];
+      }
+
+      function getFeaturedGroup(game) {
+        if (window.NyanyaGameData && window.NyanyaGameData.getFeaturedGroup) {
+          return window.NyanyaGameData.getFeaturedGroup(game);
+        }
+
+        if (game && game.isNew) {
+          return "new";
+        }
+
+        if (game && game.isPopular) {
+          return "popular";
+        }
+
+        return "standard";
       }
 
       function chooseWeightedFeaturedGame(games) {
@@ -196,7 +197,7 @@ crossorigin="anonymous"></script>
         });
 
         const groupGames = games.filter(function (game) {
-          return (game.featureGroup || "standard") === selectedGroup;
+          return getFeaturedGroup(game) === selectedGroup;
         });
 
         return chooseRandom(groupGames.length ? groupGames : games);
@@ -215,12 +216,19 @@ crossorigin="anonymous"></script>
         return shuffled;
       }
 
+      function updateHeroGameCount(count) {
+        document.querySelectorAll("[data-public-game-count]").forEach(function (element) {
+          element.textContent = count;
+        });
+      }
+
       function renderFeaturedGame(game) {
         const section = document.getElementById("featured-game");
         const image = section.querySelector(".featured-game-art img");
         const title = document.getElementById("featured-game-title");
         const description = section.querySelector(".featured-game-copy p:not(.eyebrow)");
         const link = document.getElementById("featured-game-link");
+        const metadata = section.querySelector("[data-featured-game-metadata]");
 
         image.src = game.image;
         image.alt = game.title + " mini game artwork";
@@ -228,6 +236,10 @@ crossorigin="anonymous"></script>
         description.textContent = game.description;
         link.href = game.url;
         link.textContent = "Play " + game.title;
+
+        if (window.NyanyaGameData && window.NyanyaGameData.renderMetadata) {
+          window.NyanyaGameData.renderMetadata(metadata, game);
+        }
       }
 
       function createGameCard(game) {
@@ -236,6 +248,8 @@ crossorigin="anonymous"></script>
         const title = document.createElement("h3");
         const description = document.createElement("p");
         const link = document.createElement("a");
+
+        const metadata = document.createElement("div");
 
         article.className = "game-card";
         image.className = "game-icon game-card-image";
@@ -248,8 +262,14 @@ crossorigin="anonymous"></script>
         link.className = "button secondary";
         link.href = game.url;
         link.textContent = "Play now";
+        metadata.className = "card-labels game-card-metadata";
+
+        if (window.NyanyaGameData && window.NyanyaGameData.renderMetadata) {
+          window.NyanyaGameData.renderMetadata(metadata, game);
+        }
 
         article.appendChild(image);
+        article.appendChild(metadata);
         article.appendChild(title);
         article.appendChild(description);
         article.appendChild(link);
@@ -277,9 +297,10 @@ crossorigin="anonymous"></script>
       }
 
       try {
-        const games = getPublicGames();
+        const games = window.NyanyaGameData ? window.NyanyaGameData.getPublicGames() : [];
 
         if (games.length) {
+          updateHeroGameCount(games.length);
           const featuredGame = chooseWeightedFeaturedGame(games);
           renderFeaturedGame(featuredGame);
           renderPickGames(featuredGame, games);
