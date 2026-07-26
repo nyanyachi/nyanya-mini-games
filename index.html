@@ -47,7 +47,7 @@ crossorigin="anonymous"></script>
         </div>
       </div>
       <div class="hero-art">
-        <img class="hero-image" src="mini-game-site/mini-game-Hero.png" width="520" height="520" alt="Nyanya character holding a game controller surrounded by mini-game icons">
+        <img class="hero-image" src="mini-game-site/mini-game-Hero.webp" width="1040" height="693" loading="eager" fetchpriority="high" decoding="async" alt="Nyanya character holding a game controller surrounded by mini-game icons">
       </div>
     </section>
 
@@ -57,7 +57,7 @@ crossorigin="anonymous"></script>
 
     <section id="featured-game" class="featured-game" aria-labelledby="featured-game-title">
       <div class="featured-game-art">
-        <img src="mini-game-site/apps/apple-clicker.png" width="360" height="360" alt="Nyanya character playing Apple Clicker">
+        <img src="mini-game-site/apps/optimized/apple-clicker.webp" width="360" height="240" loading="lazy" decoding="async" alt="Nyanya character playing Apple Clicker">
       </div>
       <div class="featured-game-copy">
         <p class="eyebrow">Featured Game</p>
@@ -76,25 +76,25 @@ crossorigin="anonymous"></script>
       </div>
       <div id="pick-game-grid" class="game-grid">
         <article class="game-card">
-          <img class="game-icon game-card-image" src="mini-game-site/apps/reaction-test.png" width="180" height="180" alt="Reaction Test mini game artwork">
+          <img class="game-icon game-card-image" src="mini-game-site/apps/optimized/reaction-test.webp" width="180" height="120" loading="lazy" decoding="async" alt="Reaction Test mini game artwork">
           <h3>Reaction Test</h3>
           <p>Wait for the signal, tap fast, and try to beat your best time.</p>
           <a class="button secondary" href="games/reaction-test.html">Play now</a>
         </article>
         <article class="game-card">
-          <img class="game-icon game-card-image" src="mini-game-site/apps/rock-paper-scissors.png" width="180" height="180" alt="Rock Paper Scissors mini game artwork">
+          <img class="game-icon game-card-image" src="mini-game-site/apps/optimized/rock-paper-scissors.webp" width="180" height="120" loading="lazy" decoding="async" alt="Rock Paper Scissors mini game artwork">
           <h3>Rock Paper Scissors</h3>
           <p>Choose your move, challenge the computer, and track your record.</p>
           <a class="button secondary" href="games/rock-paper-scissors.html">Play now</a>
         </article>
         <article class="game-card">
-          <img class="game-icon game-card-image" src="mini-game-site/apps/number-guess.png" width="180" height="180" alt="Number Guess mini game artwork">
+          <img class="game-icon game-card-image" src="mini-game-site/apps/optimized/number-guess.webp" width="180" height="120" loading="lazy" decoding="async" alt="Number Guess mini game artwork">
           <h3>Number Guess</h3>
           <p>Guess the hidden number and beat your best score.</p>
           <a class="button secondary" href="games/number-guess.html">Play now</a>
         </article>
         <article class="game-card">
-          <img class="game-icon game-card-image" src="mini-game-site/apps/memory-match.png" width="180" height="180" alt="Memory Match mini game artwork">
+          <img class="game-icon game-card-image" src="mini-game-site/apps/optimized/memory-match.webp" width="180" height="120" loading="lazy" decoding="async" alt="Memory Match mini game artwork">
           <h3>Memory Match</h3>
           <p>Flip cards, find pairs, and warm up your memory.</p>
           <a class="button secondary" href="games/memory-match.html">Play now</a>
@@ -108,19 +108,19 @@ crossorigin="anonymous"></script>
         <h2 id="recently-added-title">New games to try</h2>
         <div class="game-grid">
           <article class="game-card">
-            <img class="game-icon game-card-image" src="mini-game-site/apps/whack-a-mole.png" width="180" height="180" loading="lazy" alt="Whack-a-Mole mini game artwork">
+            <img class="game-icon game-card-image" src="mini-game-site/apps/optimized/whack-a-mole.webp" width="180" height="120" loading="lazy" decoding="async" alt="Whack-a-Mole mini game artwork">
             <h3>Whack-a-Mole</h3>
             <p>Hit the active target, avoid empty holes, and score as much as possible in 30 seconds.</p>
             <a class="button primary" href="games/whack-a-mole.html">Play Whack-a-Mole</a>
           </article>
           <article class="game-card">
-            <img class="game-icon game-card-image" src="mini-game-site/apps/hangman.png" width="180" height="180" loading="lazy" alt="Hangman mini game artwork">
+            <img class="game-icon game-card-image" src="mini-game-site/apps/optimized/hangman.webp" width="180" height="120" loading="lazy" decoding="async" alt="Hangman mini game artwork">
             <h3>Hangman</h3>
             <p>Guess the hidden word letter by letter before six wrong guesses run out.</p>
             <a class="button secondary" href="games/hangman.html">Play Hangman</a>
           </article>
           <article class="game-card">
-            <img class="game-icon game-card-image" src="mini-game-site/apps/sudoku.png" width="180" height="180" loading="lazy" alt="Sudoku mini game artwork">
+            <img class="game-icon game-card-image" src="mini-game-site/apps/optimized/sudoku.webp" width="180" height="120" loading="lazy" decoding="async" alt="Sudoku mini game artwork">
             <h3>Sudoku</h3>
             <p>Complete the 9 x 9 grid so every row, column, and 3 x 3 box contains the numbers 1 through 9.</p>
             <a class="button secondary" href="games/sudoku.html">Play Sudoku</a>
@@ -231,6 +231,10 @@ crossorigin="anonymous"></script>
         const metadata = section.querySelector("[data-featured-game-metadata]");
 
         image.src = game.image;
+        image.width = 360;
+        image.height = 240;
+        image.loading = "lazy";
+        image.decoding = "async";
         image.alt = game.title + " mini game artwork";
         title.textContent = game.title;
         description.textContent = game.description;
@@ -255,7 +259,9 @@ crossorigin="anonymous"></script>
         image.className = "game-icon game-card-image";
         image.src = game.image;
         image.width = 180;
-        image.height = 180;
+        image.height = 120;
+        image.loading = "lazy";
+        image.decoding = "async";
         image.alt = game.title + " mini game artwork";
         title.textContent = game.title;
         description.textContent = game.description;

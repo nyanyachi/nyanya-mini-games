@@ -28,8 +28,9 @@
     image.className = "game-icon game-card-image";
     image.src = toImageSrc(game);
     image.width = 180;
-    image.height = 180;
+    image.height = 120;
     image.loading = "lazy";
+    image.decoding = "async";
     image.alt = game.title + " mini game artwork";
     title.textContent = game.title;
     description.textContent = game.description;
