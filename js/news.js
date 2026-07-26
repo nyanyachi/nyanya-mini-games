@@ -24,6 +24,19 @@
   const newsPosts = [
     {
       section: "July 2026",
+      title: "Two New Games Added: Simon Says & Connect Four",
+      date: "July 26, 2026",
+      category: "Game Release",
+      description: [
+        'Test your memory in <a href="games/simon-says.html">Simon Says</a> or challenge a friend in <a href="games/connect-four.html">Connect Four</a>. Nyanya Mini Games now includes 18 free browser games.',
+        "Added Simon Says, a growing color-sequence memory game, and Connect Four, a local two-player strategy game.",
+        "Both games were added to Home, Games, search, filters, Random Game, New Games to Try, and Related Games.",
+        "Their game images were updated and optimized in WebP format, and Related Games now selects random recommendations from all public games."
+      ],
+      link: { href: "games/simon-says.html", label: "Play Simon Says" }
+    },
+    {
+      section: "July 2026",
       title: "Whack-a-Mole Game Released",
       date: "July 21, 2026",
       category: "Game Release",
