@@ -33,11 +33,11 @@ crossorigin="anonymous"></script>
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow">Tiny games, happy breaks</p>
-        <h1>Play <span data-public-game-count>16</span> Free Browser Games</h1>
-        <p>Puzzle, arcade, word, strategy, and casual games you can play instantly in your browser.</p>
+        <h1>Play <span data-public-game-count>18</span> Free Browser Games</h1>
+        <p>Puzzle, memory, arcade, word, strategy, and casual games you can play instantly in your browser.</p>
         <p class="hero-benefit">No downloads. No sign-up. Just play.</p>
         <ul class="hero-value-list" aria-label="Nyanya Mini Games highlights">
-          <li><span data-public-game-count>16</span> Games</li>
+          <li><span data-public-game-count>18</span> Games</li>
           <li>100% Free</li>
           <li>Play Instantly</li>
         </ul>
@@ -106,24 +106,27 @@ crossorigin="anonymous"></script>
       <div class="latest-updates-copy">
         <p class="eyebrow">Recently Added</p>
         <h2 id="recently-added-title">New games to try</h2>
-        <div class="game-grid">
+        <div class="game-grid" data-new-games-grid>
+          <article class="game-card">
+            <img class="game-icon game-card-image" src="mini-game-site/apps/optimized/simon-says.webp" width="180" height="120" loading="lazy" decoding="async" alt="Simon Says mini game artwork">
+            <div class="card-labels game-card-metadata" data-game-metadata></div>
+            <h3>Simon Says</h3>
+            <p>Repeat the growing sequence of colors for as long as you can.</p>
+            <a class="button secondary" href="games/simon-says.html">Play now</a>
+          </article>
+          <article class="game-card">
+            <img class="game-icon game-card-image" src="mini-game-site/apps/optimized/connect-four.webp" width="180" height="120" loading="lazy" decoding="async" alt="Connect Four mini game artwork">
+            <div class="card-labels game-card-metadata" data-game-metadata></div>
+            <h3>Connect Four</h3>
+            <p>Connect four pieces in a row before your opponent.</p>
+            <a class="button secondary" href="games/connect-four.html">Play now</a>
+          </article>
           <article class="game-card">
             <img class="game-icon game-card-image" src="mini-game-site/apps/optimized/whack-a-mole.webp" width="180" height="120" loading="lazy" decoding="async" alt="Whack-a-Mole mini game artwork">
+            <div class="card-labels game-card-metadata" data-game-metadata></div>
             <h3>Whack-a-Mole</h3>
             <p>Hit the active target, avoid empty holes, and score as much as possible in 30 seconds.</p>
-            <a class="button primary" href="games/whack-a-mole.html">Play Whack-a-Mole</a>
-          </article>
-          <article class="game-card">
-            <img class="game-icon game-card-image" src="mini-game-site/apps/optimized/hangman.webp" width="180" height="120" loading="lazy" decoding="async" alt="Hangman mini game artwork">
-            <h3>Hangman</h3>
-            <p>Guess the hidden word letter by letter before six wrong guesses run out.</p>
-            <a class="button secondary" href="games/hangman.html">Play Hangman</a>
-          </article>
-          <article class="game-card">
-            <img class="game-icon game-card-image" src="mini-game-site/apps/optimized/sudoku.webp" width="180" height="120" loading="lazy" decoding="async" alt="Sudoku mini game artwork">
-            <h3>Sudoku</h3>
-            <p>Complete the 9 x 9 grid so every row, column, and 3 x 3 box contains the numbers 1 through 9.</p>
-            <a class="button secondary" href="games/sudoku.html">Play Sudoku</a>
+            <a class="button secondary" href="games/whack-a-mole.html">Play now</a>
           </article>
         </div>
       </div>
@@ -298,6 +301,27 @@ crossorigin="anonymous"></script>
         });
       }
 
+      function renderNewGames(games) {
+        const grid = document.querySelector("[data-new-games-grid]");
+
+        if (!grid) {
+          return;
+        }
+
+        const newGames = games.filter(function (game) {
+          return game.isNew;
+        }).slice().reverse().slice(0, 3);
+
+        if (!newGames.length) {
+          return;
+        }
+
+        grid.innerHTML = "";
+        newGames.forEach(function (game) {
+          grid.appendChild(createGameCard(game));
+        });
+      }
+
       function revealHomeGames() {
         document.documentElement.classList.remove("home-games-loading");
       }
@@ -310,6 +334,7 @@ crossorigin="anonymous"></script>
           const featuredGame = chooseWeightedFeaturedGame(games);
           renderFeaturedGame(featuredGame);
           renderPickGames(featuredGame, games);
+          renderNewGames(games);
         }
       } catch (error) {
         console.error("Home game randomization failed.", error);

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect Four - Free Browser Game | Nyanya Mini Games</title>
+  <meta name="description" content="Play Connect Four online with a friend on the same device. Drop pieces, connect four in a row, and restart for another round.">
+  <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/connect-four.html" />
+  <link rel="stylesheet" href="../css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
+crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Nyanya Mini Games home">
+      <span class="brand-mark">N</span>
+      <span>Nyanya Mini Games</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
+      <a href="../news.html">News</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <button class="sound-toggle" type="button" data-sound-toggle aria-pressed="false">Sound Off</button>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <p class="eyebrow">Strategy game</p>
+      <h1>Connect Four</h1>
+      <p>Drop pieces into the board and connect four in a row before your opponent.</p>
+    </section>
+
+    <aside class="ad-banner ad-before-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="game-shell" aria-labelledby="connect-four-title">
+      <div class="game-panel connect-four-panel">
+        <h2 id="connect-four-title">Connect Four</h2>
+        <p class="game-description">Take turns as Red and Yellow on the same device.</p>
+
+        <div class="score-board connect-four-score-board" aria-live="polite">
+          <div>
+            <span class="score-label">Current Turn</span>
+            <strong id="connect-four-turn">Red</strong>
+          </div>
+          <div>
+            <span class="score-label">Status</span>
+            <strong id="connect-four-status">Playing</strong>
+          </div>
+        </div>
+
+        <div id="connect-four-board" class="connect-four-board" role="grid" aria-label="Connect Four board"></div>
+
+        <p id="connect-four-message" class="game-message" aria-live="polite">Red starts. Choose a column.</p>
+
+        <div class="game-actions">
+          <button id="connect-four-restart" class="button primary" type="button">Restart</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="ad-banner ad-after-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="text-page" aria-labelledby="connect-four-guide-title">
+      <h2 id="connect-four-guide-title">Game Details</h2>
+      <div class="game-details-block" data-game-details></div>
+
+      <h2>About Connect Four</h2>
+      <p>Connect Four is a two-player strategy game played on a 7-column by 6-row board. Players take turns dropping pieces into columns, and each piece falls to the lowest open cell.</p>
+
+      <h2>How to Play</h2>
+      <ol>
+        <li>Choose a column to drop your piece.</li>
+        <li>Red and Yellow alternate turns on the same device.</li>
+        <li>Build horizontal, vertical, or diagonal lines while blocking your opponent.</li>
+        <li>The first player to connect four pieces wins.</li>
+        <li>If the board fills with no winner, the game ends in a draw.</li>
+      </ol>
+
+      <h2>Rules</h2>
+      <ul>
+        <li>The board has 7 columns and 6 rows.</li>
+        <li>Pieces always land in the lowest empty cell of the selected column.</li>
+        <li>A full column cannot accept another piece.</li>
+        <li>Four connected pieces horizontally, vertically, or diagonally wins.</li>
+        <li>Moves stop after a win or draw until Restart is pressed.</li>
+      </ul>
+
+      <h2>Tips</h2>
+      <ul>
+        <li>Watch the center columns because they can support more winning lines.</li>
+        <li>Block obvious three-in-a-row threats before building your own plan.</li>
+        <li>Look for diagonal setups as well as straight lines.</li>
+        <li>Avoid giving your opponent a winning drop on the next turn.</li>
+      </ul>
+
+      <h2>Related Games</h2>
+      <div class="related-games-grid" data-related-games></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Nyanya Mini Games</p>
+    <nav aria-label="Footer navigation">
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
+      <a href="../about.html">About</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../terms.html">Terms</a>
+    </nav>
+  </footer>
+
+  <script src="../js/game-data.js"></script>
+  <script src="../js/game-page-details.js"></script>
+  <script src="../js/sound.js"></script>
+  <script src="../js/connect-four.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon Says - Free Browser Game | Nyanya Mini Games</title>
+  <meta name="description" content="Repeat the growing sequence of colors in Simon Says, build your score, and try to beat your best memory streak.">
+  <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/simon-says.html" />
+  <link rel="stylesheet" href="../css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
+crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Nyanya Mini Games home">
+      <span class="brand-mark">N</span>
+      <span>Nyanya Mini Games</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
+      <a href="../news.html">News</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <button class="sound-toggle" type="button" data-sound-toggle aria-pressed="false">Sound Off</button>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <p class="eyebrow">Memory game</p>
+      <h1>Simon Says</h1>
+      <p>Watch the color sequence, repeat it back, and keep your streak going as long as you can.</p>
+    </section>
+
+    <aside class="ad-banner ad-before-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="game-shell" aria-labelledby="simon-title">
+      <div class="game-panel simon-panel">
+        <h2 id="simon-title">Simon Says</h2>
+        <p class="game-description">Repeat the growing sequence of colors for as long as you can.</p>
+
+        <div class="score-board simon-score-board" aria-live="polite">
+          <div>
+            <span class="score-label">Score</span>
+            <strong id="simon-score">0</strong>
+          </div>
+          <div>
+            <span class="score-label">Best</span>
+            <strong id="simon-best">0</strong>
+          </div>
+        </div>
+
+        <div id="simon-board" class="simon-board" aria-label="Simon Says color buttons">
+          <button class="simon-button simon-green" type="button" data-simon-color="green" aria-label="Green"></button>
+          <button class="simon-button simon-red" type="button" data-simon-color="red" aria-label="Red"></button>
+          <button class="simon-button simon-yellow" type="button" data-simon-color="yellow" aria-label="Yellow"></button>
+          <button class="simon-button simon-blue" type="button" data-simon-color="blue" aria-label="Blue"></button>
+        </div>
+
+        <p id="simon-message" class="game-message" aria-live="polite">Press Start to begin.</p>
+
+        <div class="game-actions">
+          <button id="simon-start" class="button primary" type="button">Start</button>
+          <button id="simon-replay" class="button primary" type="button" hidden>Replay</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="ad-banner ad-after-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="text-page" aria-labelledby="simon-guide-title">
+      <h2 id="simon-guide-title">Game Details</h2>
+      <div class="game-details-block" data-game-details></div>
+
+      <h2>About Simon Says</h2>
+      <p>Simon Says is a memory sequence game with four colored buttons. Each round shows a pattern, and your goal is to repeat the exact order without making a mistake.</p>
+
+      <h2>How to Play</h2>
+      <ol>
+        <li>Press Start to begin the first sequence.</li>
+        <li>Watch the buttons flash in order.</li>
+        <li>Click, tap, or keyboard-activate the colors in the same order.</li>
+        <li>Complete the full sequence to score and receive one extra step.</li>
+        <li>After a wrong color, use Replay to start again.</li>
+      </ol>
+
+      <h2>Rules</h2>
+      <ul>
+        <li>The game uses four colors: green, red, yellow, and blue.</li>
+        <li>Only player input after the sequence finishes is counted.</li>
+        <li>Each correct completed sequence increases the score by 1.</li>
+        <li>A wrong color ends the game and shows the final score.</li>
+        <li>The best score is saved locally in this browser.</li>
+      </ul>
+
+      <h2>Tips</h2>
+      <ul>
+        <li>Say the color names quietly in your head while the sequence plays.</li>
+        <li>Focus on small groups of colors instead of the whole pattern at once.</li>
+        <li>Wait until the flashing stops before entering your answer.</li>
+        <li>On mobile, keep one thumb near the board so each tap stays controlled.</li>
+      </ul>
+
+      <h2>Related Games</h2>
+      <div class="related-games-grid" data-related-games></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Nyanya Mini Games</p>
+    <nav aria-label="Footer navigation">
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
+      <a href="../about.html">About</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../terms.html">Terms</a>
+    </nav>
+  </footer>
+
+  <script src="../js/game-data.js"></script>
+  <script src="../js/game-page-details.js"></script>
+  <script src="../js/sound.js"></script>
+  <script src="../js/simon-says.js"></script>
+</body>
+</html>

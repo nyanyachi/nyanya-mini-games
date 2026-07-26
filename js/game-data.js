@@ -12,7 +12,8 @@
     puzzle: "Puzzle",
     word: "Word",
     casual: "Casual",
-    strategy: "Strategy"
+    strategy: "Strategy",
+    memory: "Memory"
   };
 
   const DIFFICULTY_LABELS = {
@@ -35,6 +36,8 @@
     { title: "2048", description: "Slide matching number tiles, merge values, and try to reach the 2048 tile.", image: "mini-game-site/apps/optimized/2048.webp", url: "games/2048.html", category: "puzzle", difficulty: "medium", playTime: "10+ min", isNew: false, isPopular: true },
     { title: "Hangman", description: "Guess the hidden word letter by letter before six wrong guesses run out.", image: "mini-game-site/apps/optimized/hangman.webp", url: "games/hangman.html", category: "word", difficulty: "medium", playTime: "1-5 min", isNew: true, isPopular: false },
     { title: "Whack-a-Mole", description: "Hit the active target, avoid empty holes, and score as much as possible in 30 seconds.", image: "mini-game-site/apps/optimized/whack-a-mole.webp", url: "games/whack-a-mole.html", category: "arcade", difficulty: "easy", playTime: "Under 1 min", isNew: true, isPopular: false },
+    { title: "Connect Four", description: "Connect four pieces in a row before your opponent.", image: "mini-game-site/apps/optimized/connect-four.webp", url: "games/connect-four.html", category: "strategy", difficulty: "medium", playTime: "5-10 min", isNew: true, isPopular: false },
+    { title: "Simon Says", description: "Repeat the growing sequence of colors for as long as you can.", image: "mini-game-site/apps/optimized/simon-says.webp", url: "games/simon-says.html", category: "memory", difficulty: "medium", playTime: "2-5 min", isNew: true, isPopular: false },
     { title: "Sudoku", description: "Complete the 9 x 9 grid so every row, column, and box contains the numbers 1 through 9.", image: "mini-game-site/apps/optimized/sudoku.webp", url: "games/sudoku.html", category: "puzzle", difficulty: "hard", playTime: "10+ min", isNew: false, isPopular: false },
     { title: "Reaction Test", description: "Wait for the signal, react as quickly as possible, and compare your latest and best times.", image: "mini-game-site/apps/optimized/reaction-test.webp", url: "games/reaction-test.html", category: "casual", difficulty: "easy", playTime: "Under 1 min", isNew: false, isPopular: false },
     { title: "Memory Match", description: "Turn over cards, remember their positions, and match all pairs in as few moves as possible.", image: "mini-game-site/apps/optimized/memory-match.webp", url: "games/memory-match.html", category: "puzzle", difficulty: "medium", playTime: "3-10 min", isNew: false, isPopular: false }
@@ -128,49 +131,27 @@
     return cleanUrl.indexOf("games/") === 0 ? cleanUrl : "games/" + cleanUrl;
   }
 
+  function shuffleGames(games) {
+    const shuffled = games.slice();
+
+    for (let index = shuffled.length - 1; index > 0; index -= 1) {
+      const swapIndex = Math.floor(Math.random() * (index + 1));
+      const currentGame = shuffled[index];
+      shuffled[index] = shuffled[swapIndex];
+      shuffled[swapIndex] = currentGame;
+    }
+
+    return shuffled;
+  }
+
   function getRelatedGames(currentGameUrl, limit) {
     const normalizedUrl = normalizeGameUrl(currentGameUrl);
     const gameLimit = typeof limit === "number" ? limit : 3;
-    const games = getPublicGames();
-    const currentGame = getGameByUrl(normalizedUrl);
-
-    return games.map(function (game, index) {
-      let score = 0;
-
-      if (currentGame) {
-        if (game.category === currentGame.category) {
-          score += 8;
-        }
-
-        if (game.difficulty === currentGame.difficulty) {
-          score += 2;
-        }
-
-        if (game.playTime === currentGame.playTime) {
-          score += 1;
-        }
-      }
-
-      if (game.isPopular) {
-        score += 1;
-      }
-
-      return {
-        game: game,
-        index: index,
-        score: score
-      };
-    }).filter(function (item) {
-      return item.game.url !== normalizedUrl;
-    }).sort(function (first, second) {
-      if (second.score !== first.score) {
-        return second.score - first.score;
-      }
-
-      return first.index - second.index;
-    }).slice(0, gameLimit).map(function (item) {
-      return item.game;
+    const candidates = getPublicGames().filter(function (game) {
+      return game.url !== normalizedUrl;
     });
+
+    return shuffleGames(candidates).slice(0, gameLimit);
   }
 
   window.NyanyaGameData = {
