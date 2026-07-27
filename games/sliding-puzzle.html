@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sliding Puzzle - Free Online Number Puzzle | Nyanya Mini Games</title>
+  <meta name="description" content="Play Sliding Puzzle online for free. Move numbered tiles into the empty space, restore the correct order, and solve the classic 15 puzzle in as few moves as possible.">
+  <meta name="keywords" content="sliding puzzle, 15 puzzle, number puzzle, tile puzzle, free browser game, mobile puzzle game">
+  <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/sliding-puzzle.html" />
+  <link rel="stylesheet" href="../css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
+crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Nyanya Mini Games home">
+      <span class="brand-mark">N</span>
+      <span>Nyanya Mini Games</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
+      <a href="../news.html">News</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <button class="sound-toggle" type="button" data-sound-toggle aria-pressed="false">Sound Off</button>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <p class="eyebrow">Number puzzle</p>
+      <h1>Sliding Puzzle</h1>
+      <p>Slide the numbered tiles into the empty space and restore the board in the correct order.</p>
+    </section>
+
+    <aside class="ad-banner ad-before-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="game-shell" aria-labelledby="sliding-puzzle-title">
+      <div class="game-panel sliding-puzzle-panel">
+        <h2 id="sliding-puzzle-title">Sliding Puzzle</h2>
+        <p class="game-description">Arrange tiles 1 through 15 in order while using as few moves as possible.</p>
+
+        <div class="score-board sliding-puzzle-score-board" aria-live="polite">
+          <div>
+            <span class="score-label">Moves</span>
+            <strong id="sliding-moves">0</strong>
+          </div>
+          <div>
+            <span class="score-label">Time</span>
+            <strong id="sliding-time">00:00</strong>
+          </div>
+          <div>
+            <span class="score-label">Best Moves</span>
+            <strong id="sliding-best-moves">--</strong>
+          </div>
+          <div>
+            <span class="score-label">Best Time</span>
+            <strong id="sliding-best-time">--:--</strong>
+          </div>
+        </div>
+
+        <div id="sliding-board" class="sliding-puzzle-board" role="grid" tabindex="0" aria-label="Sliding Puzzle board"></div>
+
+        <p id="sliding-message" class="game-message" aria-live="polite">Use Shuffle to start a puzzle.</p>
+
+        <div class="game-actions">
+          <button id="sliding-new-game" class="button primary" type="button">Shuffle</button>
+          <button id="sliding-restart" class="button secondary" type="button">Restart Current Puzzle</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="ad-banner ad-after-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="text-page" aria-labelledby="sliding-guide-title">
+      <h2 id="sliding-guide-title">About Sliding Puzzle</h2>
+      <p>Sliding Puzzle is a classic 15 puzzle played on a 4 x 4 board. The numbered tiles share one empty space, and every move slides one adjacent tile into that space.</p>
+
+      <h2>How to Play</h2>
+      <ol>
+        <li>Tap a tile next to the empty space to move it.</li>
+        <li>Arrange the numbers from 1 to 15 in order.</li>
+        <li>Try to solve the puzzle using as few moves as possible.</li>
+        <li>Use Restart to retry the same puzzle or Shuffle to create a new one.</li>
+      </ol>
+
+      <h2>Rules</h2>
+      <ul>
+        <li>Only tiles directly above, below, left, or right of the empty space can move.</li>
+        <li>Invalid tile taps do not change the board or increase the move counter.</li>
+        <li>The timer starts after the first valid move.</li>
+        <li>The puzzle is complete when the board returns to 1 through 15 with the empty space last.</li>
+      </ul>
+
+      <h2>Tips</h2>
+      <ul>
+        <li>Solve one row or small section at a time instead of chasing every tile at once.</li>
+        <li>Use Restart when you want to practice the same shuffled layout again.</li>
+        <li>Watch the empty space carefully; every move is really about positioning that slot.</li>
+      </ul>
+
+      <h2>Saving and Controls</h2>
+      <p>Your best completed result is saved in this browser. The lowest move count wins; if two results use the same number of moves, the faster time is kept. You can play with mouse, touch, or arrow keys while the board is focused.</p>
+
+      <h2>Related Games</h2>
+      <div class="related-games-grid" data-related-games></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Nyanya Mini Games</p>
+    <nav aria-label="Footer navigation">
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
+      <a href="../about.html">About</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../terms.html">Terms</a>
+    </nav>
+  </footer>
+
+  <script src="../js/game-data.js"></script>
+  <script src="../js/game-page-details.js"></script>
+  <script src="../js/sound.js"></script>
+  <script src="../js/sliding-puzzle.js"></script>
+</body>
+</html>

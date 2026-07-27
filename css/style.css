@@ -1442,6 +1442,200 @@ a:focus-visible {
 
 
 
+.hanoi-panel {
+  width: min(100%, 48rem);
+}
+
+.hanoi-controls {
+  display: grid;
+  gap: 0.4rem;
+  justify-items: center;
+  margin-top: 1.25rem;
+}
+
+.hanoi-select {
+  min-height: 2.75rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: #ffffff;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+}
+
+.hanoi-score-board {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.hanoi-board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.6rem, 2.2vw, 1rem);
+  width: min(100%, 44rem);
+  margin: 1.25rem auto 0;
+  padding: clamp(0.6rem, 2vw, 1rem);
+  border: 2px solid var(--line);
+  border-radius: 1rem;
+  background: rgba(246, 221, 255, 0.42);
+}
+
+.hanoi-board:focus-visible,
+.hanoi-peg:focus-visible {
+  outline: 3px solid rgba(90, 164, 105, 0.45);
+  outline-offset: 3px;
+}
+
+.hanoi-peg {
+  position: relative;
+  display: grid;
+  align-items: end;
+  min-width: 0;
+  min-height: clamp(14rem, 42vw, 20rem);
+  padding: 1rem 0.35rem 1.15rem;
+  border: 1px solid rgba(113, 76, 46, 0.14);
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.72);
+  cursor: pointer;
+  overflow: hidden;
+  touch-action: manipulation;
+}
+
+.hanoi-peg.is-selected {
+  box-shadow: inset 0 0 0 3px rgba(240, 98, 123, 0.28), 0 12px 22px rgba(113, 76, 46, 0.12);
+}
+
+.hanoi-peg-line {
+  position: absolute;
+  left: calc(50% - 0.28rem);
+  bottom: 1.25rem;
+  width: 0.56rem;
+  height: 78%;
+  border-radius: 999px;
+  background: rgba(191, 55, 82, 0.48);
+}
+
+.hanoi-peg-base {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 0.65rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: var(--accent-dark);
+  opacity: 0.68;
+}
+
+.hanoi-disk-stack {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-content: end;
+  gap: 0.25rem;
+  min-height: 100%;
+  justify-items: center;
+}
+
+.hanoi-disk {
+  display: grid;
+  min-height: clamp(1.6rem, 5.6vw, 2.15rem);
+  place-items: center;
+  border: 1px solid rgba(56, 40, 31, 0.12);
+  border-radius: 999px;
+  color: #ffffff;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: inset 0 -0.25rem 0 rgba(56, 40, 31, 0.12), 0 6px 12px rgba(113, 76, 46, 0.12);
+  animation: hanoi-disk-move 180ms ease-out;
+}
+
+.hanoi-disk-1 { width: 34%; background: #6da8ff; }
+.hanoi-disk-2 { width: 46%; background: #5aa469; }
+.hanoi-disk-3 { width: 58%; background: #ffd36a; color: var(--ink); }
+.hanoi-disk-4 { width: 70%; background: #f0627b; }
+.hanoi-disk-5 { width: 82%; background: #9b6df3; }
+.hanoi-disk-6 { width: 94%; background: var(--accent-dark); }
+
+@keyframes hanoi-disk-move {
+  from {
+    transform: translateY(-0.45rem) scale(0.98);
+  }
+
+  to {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.sliding-puzzle-panel {
+  width: min(100%, 42rem);
+}
+
+.sliding-puzzle-score-board {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.sliding-puzzle-board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.4rem, 2vw, 0.65rem);
+  width: min(100%, 30rem);
+  margin: 1.25rem auto 0;
+  padding: clamp(0.55rem, 2vw, 0.85rem);
+  border: 2px solid var(--line);
+  border-radius: 1rem;
+  background: rgba(246, 221, 255, 0.45);
+  box-shadow: inset 0 -0.45rem 0 rgba(113, 76, 46, 0.08);
+}
+
+.sliding-puzzle-board:focus-visible {
+  outline: 3px solid rgba(90, 164, 105, 0.45);
+  outline-offset: 4px;
+}
+
+.sliding-puzzle-tile {
+  display: grid;
+  aspect-ratio: 1;
+  min-width: 0;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  background: #ffffff;
+  color: var(--accent-dark);
+  font: inherit;
+  font-size: clamp(1.35rem, 7vw, 2.35rem);
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: inset 0 -0.35rem 0 rgba(240, 98, 123, 0.12), 0 8px 16px rgba(113, 76, 46, 0.1);
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+  touch-action: manipulation;
+}
+
+.sliding-puzzle-tile:focus-visible {
+  outline: 3px solid rgba(90, 164, 105, 0.45);
+  outline-offset: 3px;
+}
+
+.sliding-puzzle-tile.is-empty {
+  border-style: dashed;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 0 0 2px rgba(113, 76, 46, 0.06);
+  cursor: default;
+}
+
+.sliding-puzzle-tile.is-moving {
+  animation: sliding-tile-move 180ms ease-out;
+}
+
+@keyframes sliding-tile-move {
+  from {
+    transform: scale(0.94);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
 .connect-four-panel {
   width: min(100%, 44rem);
 }

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tower of Hanoi - Free Online Puzzle Game | Nyanya Mini Games</title>
+  <meta name="description" content="Play Tower of Hanoi online for free. Move every disk to the final peg using the fewest moves while never placing a larger disk on a smaller one.">
+  <meta name="keywords" content="tower of hanoi, hanoi puzzle, logic puzzle, disk puzzle, free browser game, mobile puzzle game">
+  <link rel="canonical" href="https://nyanya-mini-games.pages.dev/games/tower-of-hanoi.html" />
+  <link rel="stylesheet" href="../css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8991695338529706"
+crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Nyanya Mini Games home">
+      <span class="brand-mark">N</span>
+      <span>Nyanya Mini Games</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
+      <a href="../news.html">News</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <button class="sound-toggle" type="button" data-sound-toggle aria-pressed="false">Sound Off</button>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <p class="eyebrow">Puzzle game</p>
+      <h1>Tower of Hanoi</h1>
+      <p>Move the entire tower to the final peg without placing a larger disk on a smaller one.</p>
+    </section>
+
+    <aside class="ad-banner ad-before-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="game-shell" aria-labelledby="hanoi-title">
+      <div class="game-panel hanoi-panel">
+        <h2 id="hanoi-title">Tower of Hanoi</h2>
+        <p class="game-description">Move the full tower from the left peg to the right peg.</p>
+
+        <div class="hanoi-controls">
+          <label for="hanoi-disk-count">Disks</label>
+          <select id="hanoi-disk-count" class="hanoi-select">
+            <option value="3">3 disks</option>
+            <option value="4">4 disks</option>
+            <option value="5">5 disks</option>
+            <option value="6">6 disks</option>
+          </select>
+        </div>
+
+        <div class="score-board hanoi-score-board" aria-live="polite">
+          <div>
+            <span class="score-label">Disks</span>
+            <strong id="hanoi-disks">3</strong>
+          </div>
+          <div>
+            <span class="score-label">Moves</span>
+            <strong id="hanoi-moves">0</strong>
+          </div>
+          <div>
+            <span class="score-label">Minimum</span>
+            <strong id="hanoi-minimum">7</strong>
+          </div>
+          <div>
+            <span class="score-label">Time</span>
+            <strong id="hanoi-time">00:00</strong>
+          </div>
+          <div>
+            <span class="score-label">Best</span>
+            <strong id="hanoi-best">--</strong>
+          </div>
+        </div>
+
+        <div id="hanoi-board" class="hanoi-board" tabindex="0" aria-label="Tower of Hanoi board. Use number keys 1, 2, and 3 to choose pegs.">
+          <button class="hanoi-peg" type="button" data-peg="0" aria-label="Peg 1"></button>
+          <button class="hanoi-peg" type="button" data-peg="1" aria-label="Peg 2"></button>
+          <button class="hanoi-peg" type="button" data-peg="2" aria-label="Peg 3"></button>
+        </div>
+
+        <p id="hanoi-message" class="game-message" aria-live="polite">Select the left peg to begin.</p>
+
+        <div class="game-actions">
+          <button id="hanoi-new-game" class="button primary" type="button">New Game</button>
+          <button id="hanoi-restart" class="button secondary" type="button">Restart</button>
+          <button id="hanoi-play-again" class="button primary" type="button" hidden>Play Again</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="ad-banner ad-after-game" aria-label="Advertisement">
+      Advertisement
+    </aside>
+
+    <section class="text-page" aria-labelledby="hanoi-guide-title">
+      <h2 id="hanoi-guide-title">Game Details</h2>
+      <div class="game-details-block" data-game-details></div>
+
+      <h2>About Tower of Hanoi</h2>
+      <p>Tower of Hanoi is a classic logic puzzle about moving a stack of disks between three pegs. The goal is simple, but every move must respect the disk order.</p>
+
+      <h2>How to Play</h2>
+      <ol>
+        <li>Move the complete tower from the left peg to the right peg.</li>
+        <li>Move only one disk at a time.</li>
+        <li>Only the top disk of a peg can be moved.</li>
+        <li>Never place a larger disk on top of a smaller disk.</li>
+        <li>Complete the puzzle using as few moves as possible.</li>
+      </ol>
+
+      <h2>Rules</h2>
+      <ul>
+        <li>Choose 3, 4, 5, or 6 disks before starting a new puzzle.</li>
+        <li>The minimum possible move count is 2^n - 1, where n is the disk count.</li>
+        <li>Invalid moves are ignored and do not increase the move counter.</li>
+        <li>The timer starts after the first valid move and stops when the puzzle is complete.</li>
+      </ul>
+
+      <h2>Tips</h2>
+      <ul>
+        <li>Try to move the smallest disk often; it helps unlock larger disks.</li>
+        <li>Use the middle peg as temporary storage while building the final tower.</li>
+        <li>Restart if you want to practice the same disk count from the beginning.</li>
+      </ul>
+
+      <h2>Controls and Saving</h2>
+      <p>Click or tap pegs to select and move the top disk. Keyboard users can focus the board, press 1, 2, or 3 to choose pegs, and press Escape to clear a selection. Best results are saved separately for each disk count in this browser.</p>
+
+      <h2>Related Games</h2>
+      <div class="related-games-grid" data-related-games></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Nyanya Mini Games</p>
+    <nav aria-label="Footer navigation">
+      <a href="../index.html">Home</a>
+      <a href="../games.html">Games</a>
+      <a href="../about.html">About</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../terms.html">Terms</a>
+    </nav>
+  </footer>
+
+  <script src="../js/game-data.js"></script>
+  <script src="../js/game-page-details.js"></script>
+  <script src="../js/sound.js"></script>
+  <script src="../js/tower-of-hanoi.js"></script>
+</body>
+</html>

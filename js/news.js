@@ -24,6 +24,32 @@
   const newsPosts = [
     {
       section: "July 2026",
+      title: "Tower of Hanoi Added \u2014 20 Games Milestone",
+      date: "July 27, 2026",
+      category: "Game Release",
+      description: [
+        'Nyanya Mini Games has reached 20 free browser games with the addition of the classic <a href="games/tower-of-hanoi.html">Tower of Hanoi</a> puzzle.',
+        "Added Tower of Hanoi with 3 to 6 disk difficulty options, move tracking, a timer, minimum-move goals, and per-difficulty best results.",
+        "The game supports keyboard, touch, and mouse controls and is now available on Home, Games, search, filters, Random Game, and Related Games.",
+        "Nyanya Mini Games now includes 20 public games."
+      ],
+      link: { href: "games/tower-of-hanoi.html", label: "Play Tower of Hanoi" }
+    },
+    {
+      section: "July 2026",
+      title: "Sliding Puzzle Added \u2014 19 Games Available",
+      date: "July 27, 2026",
+      category: "Game Release",
+      description: [
+        'Nyanya Mini Games now includes 19 free browser games with the addition of the classic <a href="games/sliding-puzzle.html">Sliding Puzzle</a>.',
+        "Added a 4 x 4 Sliding Puzzle with 15 numbered tiles, solvable shuffling, move tracking, a timer, win detection, and best-result storage.",
+        "The game supports keyboard, mouse, and touch controls and was added to Home, Games, search, category filters, Random Game, and Related Games.",
+        "Nyanya Mini Games reached 19 public games with this update."
+      ],
+      link: { href: "games/sliding-puzzle.html", label: "Play Sliding Puzzle" }
+    },
+    {
+      section: "July 2026",
       title: "Two New Games Added: Simon Says & Connect Four",
       date: "July 26, 2026",
       category: "Game Release",
@@ -160,7 +186,7 @@
       title: "Current Status",
       category: "Under Development",
       description: [
-        "The site currently has 15 playable games, a responsive layout, SEO-focused page metadata, Google Search Console configuration, and AdSense review in progress."
+        "At the time of this update, the site had 15 playable games, a responsive layout, SEO-focused page metadata, Google Search Console configuration, and AdSense review in progress."
       ]
     },
     {
